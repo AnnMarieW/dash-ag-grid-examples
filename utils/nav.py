@@ -36,7 +36,7 @@ navbar = dbc.NavbarSimple(
         ),
         html.A(
             html.I(className="bi bi-github ps-2 text-white fs-1"),
-            href="https://github.com/plotly/dash-ag-grid",
+            href="https://github.com/AnnMarieW/dash-ag-grid-examples",
             target="blank",
             title="GitHub"
         )

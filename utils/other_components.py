@@ -50,9 +50,18 @@ def make_link_hashtag(text, icon, link):
     )
 
 
-def up_next(text, link):
+
+# text=<dccLink href="/" children="Home" />
+def up_next(text= 'Back <dccLink href="/" children="Home" />'):
+    next = f"""
+    -----------------  
+
+    ### Next:  
+    {text}
+    """
+
     return dcc.Markdown(
-       [f'<dccLink  href={link} children={text} />'],
+       [next],
         className="m-5 px-3 dbc",
         dangerously_allow_html=True,
     )
@@ -84,7 +93,7 @@ def make_nav_card(img, content):
         dbc.CardBody(content),
     ],
     className="shadow my-2 m-auto",
-    style={"maxWidth": 400, "minHeight": 460},
+    style={"maxWidth": 400, "minHeight": 460, "minWidth":300},
 )
 
 

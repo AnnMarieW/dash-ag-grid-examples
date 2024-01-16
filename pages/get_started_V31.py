@@ -25,7 +25,7 @@ Once complete, you'll have an interactive grid, with custom components and forma
 text2 = """
 ## Create a Basic Grid
 
-Add a beautiful data grid to your app layout with 3 lines of code!  Simply define the rows and columns:
+Add a beautiful data grid to your Dash app with 3 lines of code!  Simply define the rows and columns:
 
 ```python
 dag.AgGrid(
@@ -33,8 +33,8 @@ dag.AgGrid(
     rowData=df.to_dict("records"),
 )
 ```
-Features:
-- The Alpine theme is applied
+Features available by default:
+- Alpine theme is applied to style the grid
 - The columns are resizable (drag on the vertical handle in the header)
 - The rows are sortable (click on the header to sort. shift-click the header to sort by multiple columns)
 - Note the row animation when sorting
@@ -42,7 +42,7 @@ Features:
 - Reorder the columns by dragging the column header
 
 
-For people upgrading from dash-ag-grid 2.4, you will notice a bunch of features are now enabled by default. 
+If you are upgrading from dash-ag-grid 2.4, you will notice that a bunch of features are now enabled by default. 
 If you prefer to disable these features, see the [Migration Guide](https://dash.plotly.com/dash-ag-grid/migration-guide) in the dash docs.
 
 """
@@ -91,10 +91,9 @@ AG Grid is highly customizable and has hundreds of properties. Only a subset of 
 Let's try this by adding `pagination: True` to our `dashGridOptions`:
 
 ```python
-dashGridOptions = {
-  "pagination": True
-  
-}
+dag.AgGrid(
+    dashGridOptions = {"pagination": True}
+)
 ```
 
 We should now see Pagination has been enabled on the grid:
@@ -228,21 +227,21 @@ text10 = """
 ## Summary
 Congratulations! You've completed the tutorial and built your first grid. By now, you should be familiar with the key concepts of AG Grid:
 
-- Row Data: Your data, in JSON format, that you want the grid to display.
+- __Row Data__: Your data, in JSON format, that you want the grid to display.
 
-- Column Definitions: Define your columns and control column-specific functionality, like sorting and filtering.
+- __Column Definitions__: Define your columns and control column-specific functionality, like sorting and filtering.
 
-- Default Column Definitions: Similar to Column Definitions, but applies configurations to all columns.
+- __Default Column Definitions__: Similar to Column Definitions, but applies configurations to all columns.
 
--  Grid Options: Configure functionality which extends across the entire grid.
+-  __Grid Options__: Configure functionality which extends across the entire grid.
 
-- Value Formatters: Functions used for basic text formatting
+- __Value Formatters__: Functions used for basic text formatting
 
-- Cell Renderers: Add your own components to cells
+- __Cell Renderers__: Add your own components to cells
 
-- Editing:  Editing cells with provided text, number, date and checkbox editors
+- __Editing__:  Editing cells with provided text, number, date and checkbox editors
 
-Callbacks : Events that trigger Dash callbacks, typically as a result of user interaction.
+- __Callbacks__ : Events that trigger Dash callbacks, typically as a result of user interaction.
 
 ## Next Steps
 - See more features in the Dash docs and the AG Grid docs
@@ -250,6 +249,7 @@ Callbacks : Events that trigger Dash callbacks, typically as a result of user in
 Happy Coding!
 
 """
+
 
 layout = html.Div(
     [
@@ -272,7 +272,6 @@ layout = html.Div(
         make_md(text9),
         example_app("examples.get_started.V31_tutorial_callbacks", make_layout=make_tabs),
         make_md(text10),
-        up_next("Home", "/")
-
+        up_next()
     ],
 )

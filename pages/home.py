@@ -10,9 +10,43 @@ register_page(
 
 
 text1 = """
-__Welcome to Dash AG Grid Examples.  Here you'll find How Tos, Tips and Tricks, Tutorials, and additional examples to supplement the Dash AG Grid documentation.__
+__Welcome to Dash AG Grid Examples.  Here you'll find Tips and Tricks, Tutorials, and additional examples to supplement the Dash AG Grid documentation.__
 
 """
+
+
+
+under_construction_content = [
+    html.Div("Tutorial", className="text-primary border-top pt-2"),
+    html.H4(
+        dcc.Link(
+            "Coming Soon", href="/"
+        )
+    ),
+    html.Div(
+        "",
+        className="small",
+    ),
+]
+under_construction_card = make_nav_card(links.under_construction_img, under_construction_content)
+
+
+under_construction_content2 = [
+    html.Div("Examples", className="text-primary border-top pt-2"),
+    html.H4(
+        dcc.Link(
+            "Coming Soon", href="/"
+        )
+    ),
+    html.Div(
+        "",
+        className="small",
+    ),
+]
+under_construction_card2 = make_nav_card(links.examples_img, under_construction_content2)
+
+
+
 ag_grid_docs_card_content = [
     html.Div("Documentation", className="text-primary border-top pt-2"),
     html.H4(
@@ -59,6 +93,22 @@ get_started_V31_card = make_nav_card(links.get_started_V31_img, get_started_V31_
 
 
 
+get_started_easy = [
+    html.Div("Tutorial", className="text-primary border-top pt-2"),
+    html.H4(
+        dcc.Link(
+            "Dash AG Grid Quickstart", href=links.get_started_easy
+        )
+    ),
+    html.Div(
+        "Make your first grid in 30 seconds.",
+        className="small",
+    ),
+]
+get_started_easy = make_nav_card(links.get_started_easy_img, get_started_easy)
+
+
+
 layout = html.Div(
     [
         dbc.Row(dbc.Col(make_md(text1, className="mt-4 m-auto"))),
@@ -70,11 +120,21 @@ layout = html.Div(
             ],
             className="px-5",
         ),
-        html.H2("Tutorials", className="text-center py-2"),
+        html.H2("Tutorials", className="text-center py-2 mt-4"),
         dbc.Row(
             [
-                dbc.Col(get_started_V31_card)
+                dbc.Col(get_started_easy),
+                dbc.Col(get_started_V31_card),
+                dbc.Col(under_construction_card),
             ]
-        )
+        ),
+        html.H2("Examples", className="text-center py-2 mt-4 pt-4"),
+        dbc.Row(
+            [
+                dbc.Col(under_construction_card2),
+                dbc.Col(under_construction_card2),
+                dbc.Col(under_construction_card2)
+            ]
+        ),
     ],
 )
