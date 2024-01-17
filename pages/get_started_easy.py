@@ -53,7 +53,7 @@ next  =f'<dccLink href="{links.get_started_V31}" children="Getting Started with 
 layout = html.Div(
     [
         make_md(text1),
-        example_app("examples.get_started.V31_quickstart", make_layout=make_app_first),
+        example_app("examples.get_started.V31_quickstart", make_layout=make_tabs),
         make_md(text2),
         up_next(next)
     ],

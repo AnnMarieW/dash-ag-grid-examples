@@ -256,7 +256,7 @@ layout = html.Div(
         make_md(text1),
         example_app("examples.get_started.V31_tutorial", make_layout=make_tabs),
         make_md(text2),
-        example_app("examples.get_started.V31_quickstart", make_layout=make_app_first),
+        example_app("examples.get_started.V31_quickstart", make_layout=make_tabs),
         make_md(text3),
         example_app("examples.get_started.V31_columns", make_layout=make_tabs),
         make_md(text4),
