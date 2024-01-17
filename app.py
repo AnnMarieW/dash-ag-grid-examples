@@ -1,6 +1,6 @@
 
 import dash
-from dash import Dash, html, dcc, Input, Output, State
+from dash import Dash, html, dcc, Input, Output, State, clientside_callback
 import dash_bootstrap_components as dbc
 from utils.nav import navbar
 from utils.utils import example_apps
@@ -27,7 +27,7 @@ jquery_external_stylesheets=[
         "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
     ]
 
-
+dbc_css = "https://cdn.jsdelivr.net/gh/AnnMarieW/dash-bootstrap-templates/dbc.min.css"
 app = Dash(
     __name__,
     use_pages=True,
@@ -51,15 +51,30 @@ for k in example_apps:
     app._callback_list.extend(new_callback_list)
 
 
-app.layout = dbc.Container(
+app.layout = html.Div(
     [
         navbar,
-        html.Div(dash.page_container, className="p-2"),
+        dbc.Container(dash.page_container, className="p-2"),
 
     ],
-    className="mb-4 dbc-css",
-    fluid=True,
+    className="mb-4 dbc dbc-ag-grid",
+
 )
+
+
+clientside_callback(
+    """ 
+    (switchOn) => {
+       switchOn
+         ? document.documentElement.setAttribute('data-bs-theme', 'light')
+         : document.documentElement.setAttribute('data-bs-theme', 'dark')
+       return window.dash_clientside.no_update
+    }
+    """,
+    Output("switch", "id"),
+    Input("switch", "value"),
+)
+
 
 if __name__ == "__main__":
     app.run_server(debug=True)

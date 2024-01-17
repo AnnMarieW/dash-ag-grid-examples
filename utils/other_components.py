@@ -92,7 +92,7 @@ def make_nav_card(img, content):
         dbc.CardImg(src=img, top=True),
         dbc.CardBody(content),
     ],
-    className="shadow my-2 m-auto",
+    className="shadow my-2 m-auto border border-3",
     style={"maxWidth": 400, "minHeight": 460, "minWidth":300},
 )
 

@@ -16,7 +16,7 @@ __Welcome to Dash AG Grid Examples.  Here you'll find Tips and Tricks, Tutorials
 
 
 
-under_construction_content = [
+under_construction = [
     html.Div("Tutorial", className="text-primary border-top pt-2"),
     html.H4(
         dcc.Link(
@@ -28,10 +28,10 @@ under_construction_content = [
         className="small",
     ),
 ]
-under_construction_card = make_nav_card(links.under_construction_img, under_construction_content)
+under_construction = make_nav_card(links.under_construction_img, under_construction)
 
 
-under_construction_content2 = [
+under_construction2 = [
     html.Div("Examples", className="text-primary border-top pt-2"),
     html.H4(
         dcc.Link(
@@ -43,11 +43,11 @@ under_construction_content2 = [
         className="small",
     ),
 ]
-under_construction_card2 = make_nav_card(links.examples_img, under_construction_content2)
+under_construction2 = make_nav_card(links.examples_img, under_construction2)
 
 
 
-ag_grid_docs_card_content = [
+ag_grid_docs_card = [
     html.Div("Documentation", className="text-primary border-top pt-2"),
     html.H4(
         dcc.Link(
@@ -59,10 +59,10 @@ ag_grid_docs_card_content = [
         className="small",
     ),
 ]
-ag_grid_docs_card = make_nav_card(links.ag_grid_docs_img, ag_grid_docs_card_content)
+ag_grid_docs_card = make_nav_card(links.ag_grid_docs_img, ag_grid_docs_card)
 
 
-dag_docs_card_content = [
+dag_docs_card = [
     html.Div("Documentation", className="text-primary border-top pt-2"),
     html.H4(
         dcc.Link(
@@ -74,10 +74,10 @@ dag_docs_card_content = [
         className="small",
     ),
 ]
-dag_docs_card = make_nav_card(links.dag_docs_img, dag_docs_card_content)
+dag_docs_card = make_nav_card(links.dag_docs_img, dag_docs_card)
 
 
-get_started_V31_content = [
+get_started_V31 = [
     html.Div("Tutorial", className="text-primary border-top pt-2"),
     html.H4(
         dcc.Link(
@@ -89,7 +89,7 @@ get_started_V31_content = [
         className="small",
     ),
 ]
-get_started_V31_card = make_nav_card(links.get_started_V31_img, get_started_V31_content)
+get_started_V31 = make_nav_card(links.get_started_V31_img, get_started_V31)
 
 
 
@@ -108,6 +108,19 @@ get_started_easy = [
 get_started_easy = make_nav_card(links.get_started_easy_img, get_started_easy)
 
 
+theme_switch = [
+    html.Div("Tutorial", className="text-primary border-top pt-2"),
+    html.H4(
+        dcc.Link(
+            "Dash AG Grid with light and dark theme", href=links.theme_switch
+        )
+    ),
+    html.Div(
+        "Learn how to add a theme switch to your Dash app and style the grid in light and dark mode",
+        className="small",
+    ),
+]
+theme_switch = make_nav_card(links.theme_switch_img, theme_switch)
 
 layout = html.Div(
     [
@@ -124,16 +137,16 @@ layout = html.Div(
         dbc.Row(
             [
                 dbc.Col(get_started_easy),
-                dbc.Col(get_started_V31_card),
-                dbc.Col(under_construction_card),
+                dbc.Col(get_started_V31),
+                dbc.Col(theme_switch),
             ]
         ),
         html.H2("Examples", className="text-center py-2 mt-4 pt-4"),
         dbc.Row(
             [
-                dbc.Col(under_construction_card2),
-                dbc.Col(under_construction_card2),
-                dbc.Col(under_construction_card2)
+                dbc.Col(under_construction2),
+                dbc.Col(under_construction2),
+                dbc.Col(under_construction2)
             ]
         ),
     ],

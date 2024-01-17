@@ -18,28 +18,35 @@ examples_index_url = "https://dash-example-index.herokuapp.com/"
 dash_docs_url = "https://dash.plotly.com/"
 dash_forum_url = "https://community.plotly.com/"
 
-
+color_mode_switch =  html.Span(
+    [
+        dbc.Label(className="fa fa-moon", html_for="switch"),
+        dbc.Switch( id="switch", value=False, className="d-inline-block ms-1", persistence=True),
+        dbc.Label(className="fa fa-sun", html_for="switch"),
+    ], className="text-primary  pb-1 ms-3 bg-white rounded", style={"height": 16, "marginTop":18, "fontSize":11 }
+)
 
 navbar = dbc.NavbarSimple(
     [
         html.A(
-            html.Img(src=plotly_logo, height=50, className="m-2 shadow rounded"),
+            html.Img(src=plotly_logo, height=36, className="m-2 shadow rounded"),
             href=dash_docs_url,
             target="blank",
             title="Plotly",
         ),
         html.A(
-            html.Img(src=aggrid_logo, height=50, className="m-2 shadow rounded"),
+            html.Img(src=aggrid_logo, height=36, className="m-2 shadow rounded"),
             href=aggrid_docs_url,
             target="blank",
             title="Plotly",
         ),
         html.A(
-            html.I(className="bi bi-github ps-2 text-white fs-1"),
+            html.I(className="bi bi-github ps-2 text-white fs-2"),
             href="https://github.com/AnnMarieW/dash-ag-grid-examples",
             target="blank",
             title="GitHub"
-        )
+        ),
+        color_mode_switch
     ],
     brand="Dash AG Grid Examples",
     brand_href="/",

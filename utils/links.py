@@ -8,15 +8,17 @@ dash_ag_grid_github = "https://github.com/plotly/dash-ag-grid"
 dag_docs = "https://dash.plotly.com/dash-ag-grid"
 dag_docs_img = "https://github.com/AnnMarieW/HelloDash/assets/72614349/978dfcdc-7510-42ac-a562-0b8e85132a0e"
 
-get_started_V31_img = "https://github.com/AnnMarieW/HelloDash/assets/72614349/b0ff7c04-814a-48f8-b562-8bf1d6cba96a"
-get_started_easy_img = "https://github.com/AnnMarieW/HelloDash/assets/72614349/703d505c-f7cf-478c-9223-1512b62d9920"
+get_started_V31_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/21c45aff-9a9b-4cf2-9e27-8e598efd4074"
+get_started_easy_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/fea66e88-92c1-4680-8be2-315293e3eb0d"
 
-under_construction_img = "https://github.com/AnnMarieW/HelloDash/assets/72614349/2c007bed-dacb-472e-81fe-7f85526fa454"
-examples_img = "https://github.com/AnnMarieW/HelloDash/assets/72614349/dca0ecae-2fec-4d1c-b91b-2ea461a5141b"
+under_construction_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/0aaaf2dc-51aa-4ca5-bda8-f7e2e3a53b87"
+examples_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/9d46bfd7-0fe1-4a55-a63b-e935c7ca8d5e"
 # Page links
 get_started_V31 = "/get-started-v31"
 get_started_easy = "/get-started-easy"
+theme_switch = "/theme-switch"
 
+theme_switch_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/6aaa5b0c-2200-4594-95af-f6bffe849235"
 
 # Notes:
 """
