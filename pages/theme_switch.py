@@ -22,7 +22,9 @@ This app uses the Bootstrap Spacelab theme with a light and dark color mode swit
  using [Bootstrap Color Modes](https://getbootstrap.com/docs/5.3/customize/color-modes/) at [Dash Bootstrap Theme Explorer](https://hellodash.pythonanywhere.com/adding-themes/color-modes).
  
 Note that all the grids in the Dash AG Grid Examples site automatically use the light or dark theme based on the
- app's theme. No callbacks are required!  Try changing the theme with the theme switch in the header.
+ app's theme. No callbacks are required!  This achieved with a custom stylesheet.  Find more information at the Dash Bootstrap Theme Explorer [Dash AG Grid ](https://hellodash.pythonanywhere.com/adding-themes/ag-grid) section.
+ 
+Try changing the theme with the theme switch in the header.
   
 __Note: Requires Dash Bootstrap Components>=1.5.0__
 

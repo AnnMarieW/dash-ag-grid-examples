@@ -13,12 +13,22 @@ get_started_easy_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/asset
 
 under_construction_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/0aaaf2dc-51aa-4ca5-bda8-f7e2e3a53b87"
 examples_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/9d46bfd7-0fe1-4a55-a63b-e935c7ca8d5e"
+
+theme_switch_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/6aaa5b0c-2200-4594-95af-f6bffe849235"
+
+
+
 # Page links
 get_started_V31 = "/get-started-v31"
 get_started_easy = "/get-started-easy"
 theme_switch = "/theme-switch"
+components_dbc= "/components-dbc"
+components_dcc= "/components-dcc"
+components_dmc= "/components-dmc"
 
-theme_switch_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/6aaa5b0c-2200-4594-95af-f6bffe849235"
+
+
+
 
 # Notes:
 """

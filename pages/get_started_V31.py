@@ -2,7 +2,7 @@ from dash import  html, dcc, register_page
 import dash_bootstrap_components as dbc
 from utils.code_and_show import example_app, make_tabs, make_app_first
 from utils.utils import app_description
-from utils.other_components import  up_next, make_md, make_feature_card, make_nav_card
+from utils.other_components import  up_next, make_md, make_feature_card, make_img_card
 import utils.links as links
 
 register_page(
@@ -134,34 +134,26 @@ Cell Renderers allow you add custom HTML, JavaScript and other Dash components w
 If you are new to JavaScript see:
  - [Adding Your Own CSS and JS to Dash Apps](https://dash.plotly.com/external-resources)
  - [JavaScript and Dash AG Grid](https://dash.plotly.com/dash-ag-grid/javascript-and-the-grid)
- - [Cell Renderer Components](https://dash.plotly.com/dash-ag-grid/cell-renderer-components)
+ - [Components](https://dash.plotly.com/dash-ag-grid/cell-renderer-components) section of the Dash AG Grid docs.
  
 
 Let's try this by creating a new component to display the company logo in the 'company' column.
 
 Add the following into a the `dashAgGridComponentFunctions.js` file in the `/assets` folder:
 
-```
+```js
 var dagcomponentfuncs = (window.dashAgGridComponentFunctions =
   window.dashAgGridComponentFunctions || {});
-
+  
 dagcomponentfuncs.CompanyLogoRenderer = function (props) {
-  const url = `https://www.ag-grid.com/example-assets/space-company-logos/${props.data.company.toLowerCase()}.png`
-
-  return React.createElement("span", {}, [
-    React.createElement("img", {
-      style: { width: "25px", height: "auto", filter: "brightness(1.1)" },
-      src: url,
-    }),
-    React.createElement(
-      "span",
-      {
-        style: { paddingLeft: "4px" },
-      },
-      props.value
-    ),
-  ]);
-};
+  var url = "https://www.ag-grid.com/example-assets/space-company-logos/" + props.value.toLowerCase() + ".png";
+  return React.createElement(
+    "span",
+    null,
+    React.createElement("img", { src: url, style: { width: "25px", height: "auto", filter: "brightness(1.1)" } }),
+    React.createElement("span", { style: { paddingLeft: "4px" } }, props.value)
+  );
+}
 ```
 
 If you aren't very familiar with JavaScript and React, the component can look intimidating.  However, when you see a
@@ -175,8 +167,9 @@ def company_logo_renderer(company):
         html.Img(src=url, style={ "width": "25px", "height": "auto", "filter": "brightness(1.1)" }),
         html.Span(company, { "paddingLeft": "4px" })
     ])
-
 ``` 
+
+
 """
 
 text8="""

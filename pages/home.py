@@ -1,7 +1,7 @@
 from dash import  html, dcc, register_page
 import dash_bootstrap_components as dbc
 from utils.utils import app_description
-from utils.other_components import  up_next, make_md, make_feature_card, make_nav_card
+from utils.other_components import  up_next, make_md, make_feature_card, make_img_card, make_card
 import utils.links as links
 
 register_page(
@@ -28,7 +28,7 @@ under_construction = [
         className="small",
     ),
 ]
-under_construction = make_nav_card(links.under_construction_img, under_construction)
+under_construction = make_img_card(links.under_construction_img, under_construction)
 
 
 under_construction2 = [
@@ -43,7 +43,7 @@ under_construction2 = [
         className="small",
     ),
 ]
-under_construction2 = make_nav_card(links.examples_img, under_construction2)
+under_construction2 = make_img_card(links.examples_img, under_construction2)
 
 
 
@@ -59,7 +59,7 @@ ag_grid_docs_card = [
         className="small",
     ),
 ]
-ag_grid_docs_card = make_nav_card(links.ag_grid_docs_img, ag_grid_docs_card)
+ag_grid_docs_card = make_img_card(links.ag_grid_docs_img, ag_grid_docs_card)
 
 
 dag_docs_card = [
@@ -74,7 +74,7 @@ dag_docs_card = [
         className="small",
     ),
 ]
-dag_docs_card = make_nav_card(links.dag_docs_img, dag_docs_card)
+dag_docs_card = make_img_card(links.dag_docs_img, dag_docs_card)
 
 
 get_started_V31 = [
@@ -89,7 +89,7 @@ get_started_V31 = [
         className="small",
     ),
 ]
-get_started_V31 = make_nav_card(links.get_started_V31_img, get_started_V31)
+get_started_V31 = make_img_card(links.get_started_V31_img, get_started_V31)
 
 
 
@@ -105,7 +105,7 @@ get_started_easy = [
         className="small",
     ),
 ]
-get_started_easy = make_nav_card(links.get_started_easy_img, get_started_easy)
+get_started_easy = make_img_card(links.get_started_easy_img, get_started_easy)
 
 
 theme_switch = [
@@ -120,7 +120,67 @@ theme_switch = [
         className="small",
     ),
 ]
-theme_switch = make_nav_card(links.theme_switch_img, theme_switch)
+theme_switch = make_img_card(links.theme_switch_img, theme_switch)
+
+dbc_components = [
+    html.Div("Examples", className="text-primary border-top pt-2"),
+    html.H4(
+        dcc.Link(
+            "dbc components", href=links.components_dbc
+        )
+    ),
+    dcc.Markdown(
+        """
+        Examples of  __Dash Bootstrap Components__ in AG Grid cells
+        - dbc.Progress
+        - dbc.Switch    
+        - dbc.Spinner
+        """,
+        className="small",
+    ),
+]
+dbc_components = make_card("### dbc Components", dbc_components)
+
+
+dcc_components = [
+    html.Div("Examples", className="text-primary border-top pt-2"),
+    html.H4(
+        dcc.Link(
+            "dcc components", href=links.components_dcc
+        )
+    ),
+    dcc.Markdown(
+        """
+        Examples of  __Dash Core Components__ in AG Grid cells
+        - dcc.Clipboard - copy cell
+        - dcc.Clipboard - copy row
+        - dcc.Graph - Figure in Tooltip
+        
+        """,
+        className="small",
+    ),
+]
+dcc_components = make_card("### dcc Components", dcc_components)
+
+dmc_components = [
+    html.Div("Examples", className="text-primary border-top pt-2"),
+    html.H4(
+        dcc.Link(
+            "dmc components", href=links.components_dmc
+        )
+    ),
+    dcc.Markdown(
+        """
+        Examples of  __Dash Mantine Components__ in AG Grid cells
+        - dmc.Button
+        - dmc.Select
+        - dmc.Select with Grouping
+
+        """,
+        className="small",
+    ),
+]
+dmc_components = make_card("### dmc Components", dmc_components)
 
 layout = html.Div(
     [
@@ -144,7 +204,9 @@ layout = html.Div(
         html.H2("Examples", className="text-center py-2 mt-4 pt-4"),
         dbc.Row(
             [
-                dbc.Col(under_construction2),
+                dbc.Col(dbc_components),
+                dbc.Col(dcc_components),
+                dbc.Col(dmc_components),
                 dbc.Col(under_construction2),
                 dbc.Col(under_construction2)
             ]

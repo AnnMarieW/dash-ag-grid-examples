@@ -2,7 +2,7 @@ from dash import  html, dcc, register_page
 import dash_bootstrap_components as dbc
 from utils.code_and_show import example_app, make_tabs, make_app_first
 from utils.utils import app_description
-from utils.other_components import  up_next, make_md, make_feature_card, make_nav_card
+from utils.other_components import  up_next, make_md, make_feature_card, make_img_card
 import utils.links as links
 
 register_page(

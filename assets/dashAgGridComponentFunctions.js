@@ -4,26 +4,80 @@ var dagcomponentfuncs = (window.dashAgGridComponentFunctions =
 
 // used in the V31 tutorial
 dagcomponentfuncs.CompanyLogoRenderer = function (props) {
-  const url = `https://www.ag-grid.com/example-assets/space-company-logos/${props.data.company.toLowerCase()}.png`
+  var url = "https://www.ag-grid.com/example-assets/space-company-logos/" + props.value.toLowerCase() + ".png";
+  return React.createElement(
+    "span",
+    null,
+    React.createElement("img", { src: url, style: { width: "25px", height: "auto", filter: "brightness(1.1)" } }),
+    React.createElement("span", { style: { paddingLeft: "4px" } }, props.value)
+  );
+}
 
-  return React.createElement("span", {}, [
-    React.createElement("img", {
-      style: { width: "25px", height: "auto", filter: "brightness(1.1)" },
-      src: url,
-    }),
-    React.createElement(
-      "span",
-      {
-        style: { paddingLeft: "4px" },
+
+// use for making dbc.Spinner
+dagcomponentfuncs.DBC_Spinner = function (props) {
+    if (props.value) {
+        return props.value;
+    } else {
+        return React.createElement(
+            window.dash_bootstrap_components.Spinner,
+            {
+                color: props.color,
+                size: props.size,
+                type: props.type,
+                style: {
+                    margin: props.margin,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                },
+            },
+        );
+    }
+};
+
+// dcc.Clipboard - copy cell
+dagcomponentfuncs.DCC_Clipboard = function (props) {
+  return React.createElement("div", {}, [
+    props.value,
+    React.createElement(window.dash_core_components.Clipboard, {
+      content: props.value,
+      title: "Copy cell",
+      style: {
+        display: "inline-block",
+        verticalAlign: "top",
+        paddingLeft: 10,
+        cursor: "pointer",
       },
-      props.value
-    ),
+      setProps: () => {},
+    }),
+  ]);
+};
+
+// dcc.Clipboard copy row
+dagcomponentfuncs.CopyRow = function (props) {
+  return React.createElement("div", {}, [
+    React.createElement(window.dash_core_components.Clipboard, {
+      content: JSON.stringify(props.data),
+      title: "Copy Row",
+      style: {
+        display: "inline-block",
+        verticalAlign: "top",
+        paddingLeft: 3,
+        cursor: "pointer",
+      },
+      setProps: () => {},
+    }),
   ]);
 };
 
 
-
-
+dagcomponentfuncs.CustomTooltipGraph = function (props) {
+    return React.createElement(
+        window.dash_core_components.Graph, {
+            figure: props.value,
+        })
+};
 
 
 //////////////// Everything below is from  dag docs  ///////////////////////////////////////////////

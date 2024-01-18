@@ -86,7 +86,7 @@ def make_feature_card(img, txt):
         style={"maxWidth": 1000},
     )
 
-def make_nav_card(img, content):
+def make_img_card(img, content):
     return dbc.Card(
     [
         dbc.CardImg(src=img, top=True),
@@ -95,6 +95,20 @@ def make_nav_card(img, content):
     className="shadow my-2 m-auto border border-3",
     style={"maxWidth": 400, "minHeight": 460, "minWidth":300},
 )
+
+def make_card(heading, content):
+    return dbc.Card(
+        [
+            dcc.Markdown(
+               [heading],
+                className="text-center py-4 bg-primary text-white"
+            ),
+            dbc.CardBody(content)
+        ],
+
+        className="shadow my-2 m-auto border border-3",
+        style={"maxWidth": 400, "minHeight": 460, "minWidth": 300},
+    )
 
 
 
