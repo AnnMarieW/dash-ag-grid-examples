@@ -1,5 +1,16 @@
 var dagfuncs = window.dashAgGridFunctions = window.dashAgGridFunctions || {};
 
+// used in dmc.Select popup parent
+dagfuncs.setBody = () => {
+    return document.querySelector('body')
+}
+
+
+
+
+
+
+/////////////////  Everything below is from old docs site
 dagfuncs.Round = function (v, a = 2) {
     return Math.round(v * (10 ** a)) / (10 ** a)
 }

@@ -14,7 +14,7 @@ app.layout = html.Div(
                 {
                     "field": "items",
                     "cellEditor": {"function": "DMC_Select"},
-                    "cellEditorParams": {"values": items},
+                    "cellEditorParams": {"options": items,   "shadow": "xl",},
                     "cellEditorPopup": True,
                     "editable": True,
                 }
