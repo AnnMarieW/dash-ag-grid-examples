@@ -5,373 +5,76 @@ dagfuncs.setBody = () => {
     return document.querySelector('body')
 }
 
+// Used in the dcc.RadioItems header filter
+const [useImperativeHandle, useState, useEffect, forwardRef, Component] = [React.useImperativeHandle, React.useState, React.useEffect, React.forwardRef, React.component]
 
+dagfuncs.YearFilter = forwardRef((props, ref) => {
+   const [year, setYear] = useState('All');
 
+   useImperativeHandle(ref, () => {
+       return {
+           doesFilterPass(params) {
+               return params.data.year >= 2010;
+           },
 
+           isFilterActive() {
+               return year === '2010'
+           },
 
+           // this example isn't using getModel() and setModel(),
+           // so safe to just leave these empty. don't do this in your code!!!
+           getModel() {
+           },
 
-/////////////////  Everything below is from old docs site
-dagfuncs.Round = function (v, a = 2) {
-    return Math.round(v * (10 ** a)) / (10 ** a)
-}
+           setModel() {
+           }
+       }
+   });
 
-dagfuncs.toFixed = function (v, a = 2) {
-    return Number(v).toFixed(a)
-}
+   useEffect(() => {
+       props.filterChangedCallback()
+   }, [year]);
 
-dagfuncs.addEdits = function (params) {
-    if (params.data.changes) {
-        var newList = JSON.parse(params.data.changes)
-        newList.push(params.colDef.field)
-        params.data.changes = JSON.stringify(newList)
-    } else {
-        params.data.changes = JSON.stringify([params.colDef.field])
-    }
-    params.data[params.colDef.field] = params.newValue
-    return true;
-}
-
-dagfuncs.highlightEdits = function (params) {
-    if (params.data.changes) {
-        if (JSON.parse(params.data.changes).includes(params.colDef.field)) {
-            return true
+    setProps = (props) => {
+        if (props.value) {
+            setYear(props.value)
         }
     }
-    return false;
-}
 
+    return React.createElement(
+        window.dash_core_components.RadioItems,
+        {
+            options:[
+                {'label': 'All', 'value': 'All'},
+                {'label': 'Since 2010', 'value': '2010'},
+            ],
+            style: { 'padding': 5},
+            value: year,
+            setProps
+        }
+    )
+});
 
-dagfuncs.Intl = Intl
-
-dagfuncs.EUR = function (number) {
-    return Intl.NumberFormat('de-DE', {style: 'currency', currency: 'EUR'}).format(number);
-}
-
-
-dagfuncs.JPY = function (number) {
-    return Intl.NumberFormat('ja-JP', {style: 'currency', currency: 'JPY'}).format(number)
-}
-
-
-dagfuncs.USD = function (number) {
-    return Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(number);
-}
-
-
-dagfuncs.CAD = function (number) {
-    return Intl.NumberFormat('en-CA', {style: 'currency', currency: 'CAD', currencyDisplay: 'code'}).format(number);
-}
-
-
-dagfuncs.PercentageFilna = function (number, filna = "") {
-    if (isNaN(number)) {
-        return filna
+dagfuncs.dateComparator = function (filterLocalDateAtMidnight, cellValue) {
+    const dateAsString = cellValue;
+    const dateParts = dateAsString.split('/');
+    const cellDate = new Date(
+        Number(dateParts[2]),
+        Number(dateParts[1]) - 1,
+        Number(dateParts[0])
+    );
+    if (filterLocalDateAtMidnight.getTime() === cellDate.getTime()) {
+        return 0;
     }
-    return Intl.NumberFormat("en-US", {style: "percent"}).format(number)
-}
-
-
-dagfuncs.MoneyFilna = function (number, filna = "") {
-    if (isNaN(number)) {
-        return filna
+    if (cellDate < filterLocalDateAtMidnight) {
+        return -1;
     }
-    return Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(number);
-}
-
-
-// Used in Row Spanning Simple Example
-dagfuncs.rowSpan = function (params) {
-    var athlete = params.data ? params.data.athlete : undefined;
-    if (athlete === 'Aleksey Nemov') {
-        // have all Aleksey Nemov cells in column athlete of height of 2 rows
-        return 2;
-    } else if (athlete === 'Ryan Lochte') {
-        // have all Ryan Lochte cells in column athlete of height of 4 rows
-        return 4;
-    } else {
-        // all other rows should be just normal
+    if (cellDate > filterLocalDateAtMidnight) {
         return 1;
     }
 }
-
-// Used in Row Spanning Complex Example
-dagfuncs.rowSpanComplex = function (params) {
-    if (params.data.show) {
-        return 4;
-    } else {
-        return 1;
-    }
-}
-
-
-// used in the Enterprise Aggregation Custom Functions example
-
-dagfuncs.ratioValueGetter = function (params) {
-    if (!(params.node && params.node.group)) {
-        // no need to handle group levels - calculated in the 'ratioAggFunc'
-        return createValueObject(params.data.gold, params.data.silver);
-    }
-}
-dagfuncs.ratioAggFunc = function (params) {
-    let goldSum = 0;
-    let silverSum = 0;
-    params.values.forEach((value) => {
-        if (value && value.gold) {
-            goldSum += value.gold;
-        }
-        if (value && value.silver) {
-            silverSum += value.silver;
-        }
-    });
-    return createValueObject(goldSum, silverSum);
-}
-
-function createValueObject(gold, silver) {
-    return {
-        gold: gold,
-        silver: silver,
-        toString: () => `${gold && silver ? gold / silver : 0}`,
-    };
-}
-
-dagfuncs.ratioFormatter = function (params) {
-    if (!params.value || params.value === 0) return '';
-    return '' + Math.round(params.value * 100) / 100;
-}
-
-// Used in the column spanning simple example
-dagfuncs.simpleSpanning = function (params) {
-    const country = params.data.country;
-    if (country === 'Russia') {
-        // have all Russia cells in column country of width of 2 columns
-        return 2;
-    } else if (country === 'United States') {
-        // have all United States cells in column country of width of 4 columns
-        return 4;
-    } else {
-        // all other rows should be just normal
-        return 1;
-    }
-}
-// end column spanning simple example
-
-
-// Used in the column spanning complex example
-function isHeaderRow(params) {
-    return params.data.section === 'big-title';
-}
-
-function isQuarterRow(params) {
-    return params.data.section === 'quarters';
-}
-
-dagfuncs.janColSpan = function (params) {
-    if (isHeaderRow(params)) {
-        return 6;
-    } else if (isQuarterRow(params)) {
-        return 3;
-    } else {
-        return 1;
-    }
-}
-
-dagfuncs.aprColSpan = function (params) {
-    if (isQuarterRow(params)) {
-        return 3;
-    } else {
-        return 1;
-    }
-}
-// end column spanning complex example
-
-
-// used in the cell editor example
-
-dagfuncs.DatePicker = class {
-
-    // gets called once before the renderer is used
-    init(params) {
-        // create the cell
-        this.eInput = document.createElement('input');
-        this.eInput.value = params.value;
-        this.eInput.classList.add('ag-input');
-        this.eInput.style.height = 'var(--ag-row-height)';
-        this.eInput.style.fontSize = 'calc(var(--ag-font-size) + 1px)';
-
-        // https://jqueryui.com/datepicker/
-        $(this.eInput).datepicker({
-            dateFormat: 'dd/mm/yy',
-            onSelect: () => {
-                this.eInput.focus();
-            },
-        });
-    }
-
-    // gets called once when grid ready to insert the element
-    getGui() {
-        return this.eInput;
-    }
-
-    // focus and select can be done after the gui is attached
-    afterGuiAttached() {
-        this.eInput.focus();
-        this.eInput.select();
-    }
-
-    // returns the new value after editing
-    getValue() {
-        return this.eInput.value;
-    }
-
-    // any cleanup we need to be done here
-    destroy() {
-        // but this example is simple, no cleanup, we could
-        // even leave this method out as it's optional
-    }
-
-    // if true, then this editor will appear in a popup
-    isPopup() {
-        // and we could leave this method out also, false is the default
-        return false;
-    }
-
-}
-
-
-// used in the tree data example
-dagfuncs.getDataPath = function (data) {
-    return data.orgHierarchy;
-}
-
-
-// used in cell editors dynamic options example
-dagfuncs.dynamicOptions = function (params) {
-    const selectedCountry = params.data.country;
-    if (selectedCountry === 'United States') {
-        return {
-            values: ['Boston', 'Chicago', 'San Francisco'],
-        };
-    } else {
-        return {
-            values: ['Montreal', 'Vancouver', 'Calgary']
-        };
-    }
-}
-
-
-// Used in the conditional rendering example
-dagfuncs.moodOrGender = function (params) {
-    var dagcomponentfuncs = window.dashAgGridComponentFunctions
-    const moodDetails = {
-        component: dagcomponentfuncs.MoodRenderer,
-    };
-    const genderDetails = {
-        component: dagcomponentfuncs.GenderRenderer,
-    };
-    if (params.data) {
-        if (params.data.type === 'gender') return genderDetails;
-        else if (params.data.type === 'mood') return moodDetails;
-    }
-    return undefined;
-}
-
-
-// Custom number input - used in Editing/cell editors example
-dagfuncs.NumberInput = class {
-    // gets called once before the renderer is used
-    init(params) {
-        // create the cell
-        this.eInput = document.createElement('input');
-        this.eInput.value = params.value;
-        this.eInput.style.height = 'var(--ag-row-height)';
-        this.eInput.style.fontSize = 'calc(var(--ag-font-size) + 1px)';
-        this.eInput.style.borderWidth = 0;
-        this.eInput.style.width = '95%';
-        this.eInput.type = "number";
-        this.eInput.min = params.min;
-        this.eInput.max = params.max;
-        this.eInput.step = params.step || "any";
-        this.eInput.required = params.required;
-        this.eInput.placeholder = params.placeholder || "";
-        this.eInput.name = params.name;
-        this.eInput.disabled = params.disabled;
-        this.eInput.title = params.title || ""
-    }
-
-    // gets called once when grid ready to insert the element
-    getGui() {
-        return this.eInput;
-    }
-
-    // focus and select can be done after the gui is attached
-    afterGuiAttached() {
-        this.eInput.focus();
-        this.eInput.select();
-    }
-
-    // returns the new value after editing
-    getValue() {
-        return this.eInput.value;
-    }
-
-    // any cleanup we need to be done here
-    destroy() {
-        // but this example is simple, no cleanup, we could
-        // even leave this method out as it's optional
-    }
-
-    // if true, then this editor will appear in a popup
-    isPopup() {
-        // and we could leave this method out also, false is the default
-        return false;
-    }
-}
-
-
-// Used in the layout & Style cell styling heatmap example
-function rgbToHex(r, g, b) {
-    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
-};
-
-dagfuncs.heatMap = function (props) {
-    const min = props.colDef.cellRendererParams.min;
-    const max = props.colDef.cellRendererParams.max;
-    const val = props.value;
-
-    if (val) {
-        if (val > 0) {
-            g = 255;
-            r = b = Math.round(255 * (1 - val / max));
-        } else {
-            r = 255;
-            g = b = Math.round(255 * (1 - val / min));
-        }
-        ;
-
-        return {
-            backgroundColor: rgbToHex(r, g, b),
-            color: 'black',
-        }
-    } else {
-        return {};
-    }
-};
 // end
 
-
-// Used in the cell editor dropdown examples
-//     filterArray function displays the label instead of the value when the dropdown options contain both
-//     Use this in a valueFormatter
-dagfuncs.filterArray = function (array, condition, col = null) {
-    newArray = array.filter((t) => condition.includes(t.value));
-    if (!col) {
-        return newArray;
-    } else {
-        var values = [];
-        newArray.map((t) => values.push(t[col]));
-        return values;
-    }
-};
 
 // cell editor custom component  - dmc.Select
 dagfuncs.DMC_Select = class {
@@ -485,71 +188,156 @@ dagfuncs.DMC_Select = class {
 // end dmc.Select
 
 
-// Used in the row sorting custom comparator example
-dagfuncs.dateComparator = function (date1, date2) {
-    const date1Number = monthToComparableNumber(date1);
-    const date2Number = monthToComparableNumber(date2);
-    if (date1Number === null && date2Number === null) {
-        return 0;
-    }
-    if (date1Number === null) {
-        return -1;
-    }
-    if (date2Number === null) {
-        return 1;
-    }
-    return date1Number - date2Number;
+
+
+/////////////////  Everything below is from old docs site
+dagfuncs.Round = function (v, a = 2) {
+    return Math.round(v * (10 ** a)) / (10 ** a)
 }
 
-// eg 29/08/2004 gets converted to 20040829
-function monthToComparableNumber(date) {
-    if (date === undefined || date === null) {
-        return null;
-    }
-    const yearNumber = parseInt(date.split('/')[2]);
-    const monthNumber = parseInt(date.split('/')[1]);
-    const dayNumber = parseInt(date.split('/')[0]);
-    return (yearNumber * 10000) + (monthNumber * 100) + dayNumber;
+dagfuncs.toFixed = function (v, a = 2) {
+    return Number(v).toFixed(a)
 }
 
-// end custom comparator example
+dagfuncs.addEdits = function (params) {
+    if (params.data.changes) {
+        var newList = JSON.parse(params.data.changes)
+        newList.push(params.colDef.field)
+        params.data.changes = JSON.stringify(newList)
+    } else {
+        params.data.changes = JSON.stringify([params.colDef.field])
+    }
+    params.data[params.colDef.field] = params.newValue
+    return true;
+}
 
-// Used in the row sorting - post sort example
-dagfuncs.postSort = function (params) {
-    const rowNodes = params.nodes;
-    // here we put Michael Phelps rows on top while preserving the sort order
-    let nextInsertPos = 0;
-    for (let i = 0; i < rowNodes.length; i++) {
-        const athlete = rowNodes[i].data ? rowNodes[i].data.athlete : undefined;
-        if (athlete === 'Michael Phelps') {
-            rowNodes.splice(nextInsertPos, 0, rowNodes.splice(i, 1)[0]);
-            nextInsertPos++;
+dagfuncs.highlightEdits = function (params) {
+    if (params.data.changes) {
+        if (JSON.parse(params.data.changes).includes(params.colDef.field)) {
+            return true
         }
     }
+    return false;
 }
-// end row sorting - post sort example
 
-// Used in the row dragging - Custom Row Drag Text example and Custom Row Drag Text with Multiple Draggers example
-const hostCities = {2000: "Sydney", 2004: "Athens", 2008: "Beijing", 2012: "London",}
 
-dagfuncs.rowDragText = function (params) {
-    const {year} = params.rowNode.data;
-    if (year in hostCities) {
-        return `${params.defaultTextValue} (${hostCities[year]} Olympics)`
+dagfuncs.Intl = Intl
+
+dagfuncs.EUR = function (number) {
+    return Intl.NumberFormat('de-DE', {style: 'currency', currency: 'EUR'}).format(number);
+}
+
+
+dagfuncs.JPY = function (number) {
+    return Intl.NumberFormat('ja-JP', {style: 'currency', currency: 'JPY'}).format(number)
+}
+
+
+dagfuncs.USD = function (number) {
+    return Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(number);
+}
+
+
+dagfuncs.CAD = function (number) {
+    return Intl.NumberFormat('en-CA', {style: 'currency', currency: 'CAD', currencyDisplay: 'code'}).format(number);
+}
+
+
+dagfuncs.PercentageFilna = function (number, filna = "") {
+    if (isNaN(number)) {
+        return filna
     }
-    return params.defaultTextValue;
+    return Intl.NumberFormat("en-US", {style: "percent"}).format(number)
 }
 
-// added for multi draggers
-dagfuncs.athleteRowDragText = function (params) {
-    return `${params.rowNodes.length} athlete(s) selected`
+
+dagfuncs.MoneyFilna = function (number, filna = "") {
+    if (isNaN(number)) {
+        return filna
+    }
+    return Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(number);
 }
-// end row dragging - Custom Row Drag Text example  and Custom Row Drag Text with Multiple Draggers example
 
 
-// Used in the Selections - "Just Filtered" example,  to keep check boxes always in the first column
-dagfuncs.isFirstColumn = function (params) {
-    var displayedColumns = params.columnApi.getAllDisplayedColumns();
-    var thisIsFirstColumn = displayedColumns[0] === params.column;
-    return thisIsFirstColumn;
+// used in the cell editor example
+dagfuncs.DatePicker = class {
+
+    // gets called once before the renderer is used
+    init(params) {
+        // create the cell
+        this.eInput = document.createElement('input');
+        this.eInput.value = params.value;
+        this.eInput.classList.add('ag-input');
+        this.eInput.style.height = 'var(--ag-row-height)';
+        this.eInput.style.fontSize = 'calc(var(--ag-font-size) + 1px)';
+
+        // https://jqueryui.com/datepicker/
+        $(this.eInput).datepicker({
+            dateFormat: 'dd/mm/yy',
+            onSelect: () => {
+                this.eInput.focus();
+            },
+        });
+    }
+
+    // gets called once when grid ready to insert the element
+    getGui() {
+        return this.eInput;
+    }
+
+    // focus and select can be done after the gui is attached
+    afterGuiAttached() {
+        this.eInput.focus();
+        this.eInput.select();
+    }
+
+    // returns the new value after editing
+    getValue() {
+        return this.eInput.value;
+    }
+
+    // any cleanup we need to be done here
+    destroy() {
+        // but this example is simple, no cleanup, we could
+        // even leave this method out as it's optional
+    }
+
+    // if true, then this editor will appear in a popup
+    isPopup() {
+        // and we could leave this method out also, false is the default
+        return false;
+    }
+
 }
+
+
+
+// used in cell editors dynamic options example
+dagfuncs.dynamicOptions = function (params) {
+    const selectedCountry = params.data.country;
+    if (selectedCountry === 'United States') {
+        return {
+            values: ['Boston', 'Chicago', 'San Francisco'],
+        };
+    } else {
+        return {
+            values: ['Montreal', 'Vancouver', 'Calgary']
+        };
+    }
+}
+
+
+
+// Used in the cell editor dropdown examples
+//     filterArray function displays the label instead of the value when the dropdown options contain both
+//     Use this in a valueFormatter
+dagfuncs.filterArray = function (array, condition, col = null) {
+    newArray = array.filter((t) => condition.includes(t.value));
+    if (!col) {
+        return newArray;
+    } else {
+        var values = [];
+        newArray.map((t) => values.push(t[col]));
+        return values;
+    }
+};

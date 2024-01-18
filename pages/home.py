@@ -156,6 +156,7 @@ dcc_components = [
         - dcc.Clipboard - copy cell
         - dcc.Clipboard - copy row
         - dcc.Graph - Figure in Tooltip
+        - dcc.RadioItems - Custom Filter in header
         
         """,
         className="small",

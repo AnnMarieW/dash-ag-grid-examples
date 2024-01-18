@@ -20,10 +20,10 @@ dash_forum_url = "https://community.plotly.com/"
 
 color_mode_switch =  html.Span(
     [
-        dbc.Label(className="fa fa-moon", html_for="switch"),
+        dbc.Label(className="fa fa-moon ps-1", html_for="switch"),
         dbc.Switch( id="switch", value=False, className="d-inline-block ms-1", persistence=True),
-        dbc.Label(className="fa fa-sun", html_for="switch"),
-    ], className="text-primary  pb-1 ms-3 bg-white rounded", style={"height": 16, "marginTop":18, "fontSize":11 }
+        dbc.Label(className="fa fa-sun pe1", html_for="switch"),
+    ], className="text-primary  pb-1 ms-3 bg-white rounded", style={"height": 18, "marginTop":17, "fontSize":12 }
 )
 
 navbar = dbc.NavbarSimple(
