@@ -30,6 +30,10 @@ text3 = """
 See a use-case in the docs [Infinite Row Model with Loading Spinner](https://dash.plotly.com/dash-ag-grid/infinite-row-model#loading-spinner)
 """
 
+text4="""
+## dbc.Switch
+
+"""
 
 next  =f'<dccLink href="{links.get_started_V31}" children="Getting Started with Dash AG Grid V31" />'
 
@@ -41,6 +45,8 @@ layout = html.Div(
         example_app("examples.components.cell_renderer_dbc_button", make_layout=make_tabs),
         make_md(text3),
         example_app("examples.components.cell_renderer_dbc_spinner", make_layout=make_tabs),
+        make_md(text4),
+        example_app("examples.components.dbc_switch", make_layout=make_tabs),
         up_next()
     ],
 )

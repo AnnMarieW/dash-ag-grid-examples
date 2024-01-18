@@ -132,6 +132,7 @@ dbc_components = [
     dcc.Markdown(
         """
         Examples of  __Dash Bootstrap Components__ in AG Grid cells
+        - dbc.Button with icons
         - dbc.Progress
         - dbc.Switch    
         - dbc.Spinner
