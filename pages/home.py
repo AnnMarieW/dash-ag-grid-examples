@@ -208,7 +208,7 @@ layout = html.Div(
                 dbc.Col(dcc_components),
                 dbc.Col(dmc_components),
                 dbc.Col(under_construction2),
-                dbc.Col(under_construction2)
+               # dbc.Col(under_construction2)
             ]
         ),
     ],
