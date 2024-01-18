@@ -101,7 +101,7 @@ def make_card(heading, content):
         [
             dcc.Markdown(
                [heading],
-                className="text-center py-4 bg-primary text-white"
+                className="text-center py-4 bg-dark text-white"
             ),
             dbc.CardBody(content)
         ],

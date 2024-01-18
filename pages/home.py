@@ -175,6 +175,7 @@ dmc_components = [
         Examples of  __Dash Mantine Components__ in AG Grid cells
         - dmc.Button
         - dmc.Select
+        - dmc.Select with Popup Parent
         - dmc.Select with Grouping
 
         """,

@@ -24,7 +24,17 @@ text2 = """
 
 """
 
+
 text3 = """
+## dmc.Select with Popup Parent
+
+Under most scenarios, the menu will fit inside the grid. However if the grid is small and / or the menu is very large, then the menu will not fit inside the grid and it will be clipped. This will lead to a bad user experience.
+
+This example fixes this by setting the popup parent.
+
+"""
+
+text4 = """
 ## dmc.Select with grouping
 
 """
@@ -39,6 +49,8 @@ layout = html.Div(
         make_md(text2),
         example_app("examples.components.dmc_select", make_layout=make_tabs),
         make_md(text3),
+        example_app("examples.components.dmc_select_popupparent", make_layout=make_tabs),
+        make_md(text4),
         example_app("examples.components.dmc_select_labels_and_vals", make_layout=make_tabs),
         up_next()
     ],
