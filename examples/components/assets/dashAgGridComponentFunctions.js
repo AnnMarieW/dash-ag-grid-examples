@@ -1,6 +1,22 @@
 var dagcomponentfuncs = (window.dashAgGridComponentFunctions =
     window.dashAgGridComponentFunctions || {});
 
+
+
+
+
+
+dagcomponentfuncs.CustomHeaderTooltip = function(props) {
+  return React.createElement(
+    "span",
+    { className: "p-2 bg-secondary text-white" },
+    [
+      React.createElement("i", { className: "fa-solid fa-medal p-2" }),
+      React.createElement("span", null, `${props.value} medal`),
+    ]
+  );
+}
+
 // Simple component to create a custom link
 dagcomponentfuncs.StockLink = function (props) {
     return React.createElement(

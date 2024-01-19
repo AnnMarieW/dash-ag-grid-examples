@@ -15,6 +15,9 @@ text1 = """
 
 Here are some examples of using Dash Mantine Components in Dash AG Grid cells.  
 
+For more information, please see the [Components](https://dash.plotly.com/dash-ag-grid/cell-renderer-components) section of the Dash AG Grid docs.
+ 
+
 ## dmc.Button
 
 """

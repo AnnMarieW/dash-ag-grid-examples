@@ -164,6 +164,26 @@ dcc_components = [
 ]
 dcc_components = make_card("### dcc Components", dcc_components)
 
+html_components = [
+    html.Div("Examples", className="text-primary border-top pt-2"),
+    html.H4(
+        dcc.Link(
+            "html components", href=links.components_html
+        )
+    ),
+    dcc.Markdown(
+        """
+        Examples of  __HTML Components__ in AG Grid cells
+        - img - flag renderer
+        - i -add icons to a header toolip
+                
+
+        """,
+        className="small",
+    ),
+]
+html_components = make_card("### HTML Components", html_components)
+
 dmc_components = [
     html.Div("Examples", className="text-primary border-top pt-2"),
     html.H4(
@@ -210,8 +230,9 @@ layout = html.Div(
                 dbc.Col(dbc_components),
                 dbc.Col(dcc_components),
                 dbc.Col(dmc_components),
+                dbc.Col(html_components),
                 dbc.Col(under_construction2),
-               # dbc.Col(under_construction2)
+                dbc.Col(under_construction2)
             ]
         ),
     ],

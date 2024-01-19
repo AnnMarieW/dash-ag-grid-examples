@@ -35,7 +35,7 @@ app.layout = html.Div(
             rowData=df2.to_dict("records"),
             columnSize="autoSize",
             columnDefs=columnDefs,
-            dashGridOptions={"tooltipShowDelay": 100},
+            dashGridOptions={"tooltipShowDelay": 100, "tooltipInteraction": True},
         ),
     ]
 )

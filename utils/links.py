@@ -25,6 +25,8 @@ theme_switch = "/theme-switch"
 components_dbc= "/components-dbc"
 components_dcc= "/components-dcc"
 components_dmc= "/components-dmc"
+components_html= "/components-html"
+
 
 
 

@@ -102,6 +102,43 @@ dagcomponentfuncs.DBC_Switch = function (props) {
     )
 };
 
+dagcomponentfuncs.FlagsCellRenderer = function (props) {
+
+   // for more info see https://flagpedia.net/
+    const url = `https://flagcdn.com/h20/${props.data.country_code}.png`;
+
+    return React.createElement('span', {}, [
+        React.createElement(
+            'img',
+            {
+                style: {height: '10px'},
+                src: url
+            },
+
+        ),
+        React.createElement(
+            'span',
+            {
+                style: {paddingLeft: '4px'},
+            },
+            props.value
+        ),
+    ]);
+};
+
+
+// used in the html I example to show adding icons to a header tooltip
+dagcomponentfuncs.CustomHeaderTooltip = function (props) {
+  return React.createElement(
+    "span",
+    { className: "p-2 bg-secondary text-white" },
+    [
+      React.createElement("i", { className: "fa-solid fa-medal p-2" }),
+      React.createElement("span", null, `${props.value} medal`),
+    ]
+  );
+}
+
 
 //////////////// Everything below is from  dag docs  ///////////////////////////////////////////////
 // Simple component to create a custom link
