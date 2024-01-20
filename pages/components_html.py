@@ -18,17 +18,16 @@ Here are some examples adding custom components to cells in the Dash AG Grid com
 For more information, please see the [Components](https://dash.plotly.com/dash-ag-grid/cell-renderer-components) section of the Dash AG Grid docs.
  
 
-## HTML img component
+## HTML `img` component
 
-Here is an example of adding country flags to the cells in the grid.  For more information see
- this [forum post](https://community.plotly.com/t/ag-grid-country-flags-cell-renderer/75932) for a tutorial.
+This app adds flags in the celss in the country column.  See  this [forum post](https://community.plotly.com/t/ag-grid-country-flags-cell-renderer/75932) for a tutorial.
 
 """
 
 text2 = """
-## HTML i component Add icons
+## HTML `i` component (for icons)
 
-This app uses a custom componenet in the header tooltiop.  It adds icons to the tooltip in the Gold Silver and Bronze columns.
+This example shows how to use a custom component in the header tooltip. See the tooltip with icons in the Gold Silver and Bronze columns.
 Note that the Athlete column uses the default tooltip.
 """
 

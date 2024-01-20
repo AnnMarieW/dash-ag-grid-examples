@@ -18,13 +18,14 @@ To learn all about AG Grid themes see Dash AG Grid docs [Layout and Styles](http
 
 ## Bootstrap Light & Dark Color Modes
 
-This app uses the Bootstrap Spacelab theme with a light and dark color mode switch.  You can see a complete tutorial on
+This site uses the Bootstrap Spacelab theme with a light and dark color mode switch.  You can see a complete tutorial on
  using [Bootstrap Color Modes](https://getbootstrap.com/docs/5.3/customize/color-modes/) at [Dash Bootstrap Theme Explorer](https://hellodash.pythonanywhere.com/adding-themes/color-modes).
  
-Note that all the grids in the Dash AG Grid Examples site automatically use the light or dark theme based on the
- app's theme. No callbacks are required!  This achieved with a custom stylesheet.  Find more information at the Dash Bootstrap Theme Explorer [Dash AG Grid ](https://hellodash.pythonanywhere.com/adding-themes/ag-grid) section.
+Note that all the grids in this site automatically use the light or dark mode based on the app's theme. Try changing the theme with switch in the header.
  
-Try changing the theme with the theme switch in the header.
+This is achieved with a custom Alpine theme.  Learn more about [Customizing Themes] in the Dash docs, and at the Dash Bootstrap Theme Explorer [Dash AG Grid ](https://hellodash.pythonanywhere.com/adding-themes/ag-grid) section.
+ 
+
   
 __Note: Requires Dash Bootstrap Components>=1.5.0__
 
@@ -47,8 +48,7 @@ text3 = f"""
 The 'auto' versions of each theme use the [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) CSS media feature to switch between dark and light
  variants depending on whether the user has enabled dark mode on their operating system.
  
-Note that if you use the `auto` theme, that you would also need to make the rest of your Dash app respond to the browser's color scheme otherwise, the only thing that will change in the app is the grid.
-
+This is a cool feature, it would be great to have an `auto` mode for all Dash components!
 
 Happy Coding!
 

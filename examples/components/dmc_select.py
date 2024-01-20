@@ -47,13 +47,7 @@ columnDefs = [
     {"field": "total"},
 ]
 
-defaultColDef = {
-    "resizable": True,
-    "sortable": True,
-    "filter": True,
-    "minWidth": 100,
-    "editable": True,
-}
+defaultColDef = {"filter": True, "minWidth": 100, "editable": True}
 
 
 app.layout = html.Div(

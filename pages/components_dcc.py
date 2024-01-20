@@ -35,14 +35,11 @@ Try hovering over the Avg life expectancy column!
 """
 
 text4 = """
-## dcc.RadioItems as a custom filter component in header
+## `dcc.RadioItems` as a custom filter component in header
 
 This example was adapted from [React Data Grid: Filter Component](https://www.ag-grid.com/react-data-grid/component-filter/)
-The only differences are:
-- React.createElement instead of JSX
-- `setProps`, which all Dash components use to report user interactions, instead of a plain js event handler
 
-Try filtering the Year column and you will see the dcc.Radio component instead of the default number filter.
+Try filtering the Year column and you will see the `dcc.RadioItems` component instead of the default number filter.
 """
 
 

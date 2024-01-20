@@ -106,15 +106,18 @@ text6 = """
 ## Format Cell Values
 The data supplied to the grid usually requires some degree of formatting. For basic text formatting we can use [Value Formatters.](https://dash.plotly.com/dash-ag-grid/value-formatters)
 
-Value Formatters are basic functions which take the value of the cell, apply some basic formatting, and return a new value to be displayed by the grid. Let's try this by adding the `valueFormatter property` to our 'price' column and returning the formatted value:
+Value Formatters are basic functions which take the value of the cell, apply some basic formatting, and return a new value to be displayed by the grid. 
+In Dash, it's not possible to have functions as props.  Instead we use a dictionary with `"function"` as the key and the value is the javascript function to execute.
+You can find more information the  [Dash docs](https://dash.plotly.com/dash-ag-grid/javascript-and-the-grid).
 
 In dash-ag-grid, the [d3 format](https://dash.plotly.com/dash-ag-grid/d3-value-formatters) functions are included.  This makes it even easier to formant numbers and dates.
+
+Let's try this by adding the `valueFormatter property` to our 'price' column.
 
 ```python
 columnDefs = [
   {
     field: "price",
-    # Return formatted value
     "valueFormatter": {"function": "d3.format('$,.0f')(params.value)"},
   },
 ]
@@ -131,10 +134,10 @@ Value Formatters are useful for basic formatting, but for more advanced use-case
 Cell Renderers allow you add custom HTML, JavaScript and other Dash components within cells. To use a Cell Renderer, set
  the `cellRenderer` prop on a column, with the value as the name of your Cell Renderer.
  
-If you are new to JavaScript see:
+If you are new to JavaScript see these sections of the Dash Docs
  - [Adding Your Own CSS and JS to Dash Apps](https://dash.plotly.com/external-resources)
  - [JavaScript and Dash AG Grid](https://dash.plotly.com/dash-ag-grid/javascript-and-the-grid)
- - [Components](https://dash.plotly.com/dash-ag-grid/cell-renderer-components) section of the Dash AG Grid docs.
+ - [Dash AG Grid Components](https://dash.plotly.com/dash-ag-grid/cell-renderer-components)
  
 
 Let's try this by creating a new component to display the company logo in the 'company' column.
@@ -168,7 +171,6 @@ def company_logo_renderer(company):
         html.Span(company, { "paddingLeft": "4px" })
     ])
 ``` 
-
 
 """
 

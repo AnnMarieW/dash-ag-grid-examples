@@ -16,6 +16,7 @@ app.layout = html.Div(
                     "cellEditor": {"function": "DMC_Select"},
                     "cellEditorParams": {"options": items,   "shadow": "xl",},
                     "cellEditorPopup": True,
+                    "singleClickEdit": True,
                     "editable": True,
                 }
             ],
@@ -41,7 +42,5 @@ var dagfuncs = window.dashAgGridFunctions = window.dashAgGridFunctions || {};
 dagfuncs.setBody = () => {
     return document.querySelector('body')
 }
-
-
 
 """
