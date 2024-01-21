@@ -13,11 +13,7 @@ register_page(
 text1 = """
 # Import & Export Data
 
-Here are some additional examples of exporting to CSV and Excel files.  
-
-Note that AG Grid has an excellent export to  Excel feature, but it's Enterprise only. If you are using AG Grid
- community, you can use the [`dcc.Download`](https://dash.plotly.com/dash-core-components/download) component for some
-  basic export to Excel functionality.  
+Here are some additional examples of exporting grid data to CSV and Excel files.  
 
 For more information see:
  - Dash AG Grid Docs [Import Export CSV](https://dash.plotly.com/dash-ag-grid/export-data-csv)
@@ -46,8 +42,8 @@ text2 = """
 
 ## Export to Excel
 
-If you are using AG Grid Enterprise, please see the AG Grid docs.  This example is for AG Grid community, and it
- uses `dcc.Download` to export to Excel. 
+If you are using AG Grid Enterprise, please see the [AG Grid Excel Export](https://www.ag-grid.com/react-data-grid/excel-export/) docs.  This example is for AG Grid community, and it
+ uses [`dcc.Download`](https://dash.plotly.com/dash-core-components/download) to export data to Excel. 
   
 
 ### Example 1: Export to Excel - basic

@@ -158,10 +158,13 @@ dagcomponentfuncs.CompanyLogoRenderer = function (props) {
   );
 }
 ```
+A JavaScript variable defined in the global window object can passed as a Dash component property. The
+ `dagcomponentfuncs` variable is used to register custom components for use in Dash AG Grid.
 
-If you aren't very familiar with JavaScript and React, the component can look intimidating.  However, when you see a
- few examples, the syntax starts to make sense.  The above code is a function that returns a component.  Here's what it
- would look like in Python: 
+For those familiar with React, you will see that the `CompanyLogoRenderer` is a function that returns a [React element without
+ using JSX](https://react.dev/reference/react/createElement#creating-an-element-without-jsx). 
+ 
+To make this look a little more familiar to Python coders, here's what it would look like if you could write it in Python and `Dash html components:
  
 ```
 def company_logo_renderer(company):
