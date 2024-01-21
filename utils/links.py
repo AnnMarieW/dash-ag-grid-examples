@@ -26,6 +26,8 @@ components_dbc= "/components-dbc"
 components_dcc= "/components-dcc"
 components_dmc= "/components-dmc"
 components_html= "/components-html"
+import_export="/import-export"
+styling="/styling"
 
 
 

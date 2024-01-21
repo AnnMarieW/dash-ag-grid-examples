@@ -33,6 +33,9 @@ Note that the Athlete column uses the default tooltip.
 
 
 text3 = """
+## HTML `button` component
+
+This example shows how to add a delete button in each row.  For more information on deleting rows, see this [tutorial](https://community.plotly.com/t/deleting-rows-in-dash-ag-grid/78700) on the Dash forum.
 
 """
 
@@ -48,8 +51,8 @@ layout = html.Div(
         example_app("examples.components.html_img_flags", make_layout=make_tabs),
          make_md(text2),
         example_app("examples.components.html_i_tooltip_header", make_layout=make_tabs),
-        # make_md(text3),
-        # example_app("examples.components.dmc_select_popupparent", make_layout=make_tabs),
+        make_md(text3),
+        example_app("examples.components.html_button_delete_rows", make_layout=make_tabs),
         # make_md(text4),
         # example_app("examples.components.dmc_select_labels_and_vals", make_layout=make_tabs),
         up_next()

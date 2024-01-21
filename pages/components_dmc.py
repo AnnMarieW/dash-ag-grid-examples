@@ -33,7 +33,7 @@ text3 = """
 
 Under most scenarios, the menu will fit inside the grid. However if the grid is small and / or the menu is very large, then the menu will not fit inside the grid and it will be clipped. This will lead to a bad user experience.
 
-This example fixes this by setting the popup parent.
+This example shows how to set the popup parent to allow the options menu to overflow the grid.
 
 """
 

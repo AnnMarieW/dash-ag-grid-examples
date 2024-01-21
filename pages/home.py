@@ -132,10 +132,10 @@ dbc_components = [
     dcc.Markdown(
         """
         Examples of  __Dash Bootstrap Components__ in AG Grid cells
-        - dbc.Button with icons
-        - dbc.Progress
-        - dbc.Switch    
-        - dbc.Spinner
+        - `dbc.Button` with icons
+        - `dbc.Progress`
+        - `dbc.Switch`   
+        - `dbc.Spinner`
         """,
         className="small",
     ),
@@ -153,10 +153,10 @@ dcc_components = [
     dcc.Markdown(
         """
         Examples of  __Dash Core Components__ in AG Grid cells
-        - dcc.Clipboard - copy cell
-        - dcc.Clipboard - copy row
-        - dcc.Graph - Figure in Tooltip
-        - dcc.RadioItems - Custom Filter in header
+        - `dcc.Clipboard` - copy cell
+        - `dcc.Clipboard` - copy row
+        - `dcc.Graph` - Figure in Tooltip
+        - `dcc.RadioItems` - Custom Filter in header
         
         """,
         className="small",
@@ -174,15 +174,16 @@ html_components = [
     dcc.Markdown(
         """
         Examples of  __HTML Components__ in AG Grid cells
-        - img - flag renderer
-        - i -add icons to a header toolip
+        - `img`  Image of flag in cells 
+        - `i  `   Icons in header toolip
+        - `button` Delete row button       
                 
 
         """,
         className="small",
     ),
 ]
-html_components = make_card("### HTML Components", html_components)
+html_components = make_card("### html Components", html_components)
 
 dmc_components = [
     html.Div("Examples", className="text-primary border-top pt-2"),
@@ -194,10 +195,10 @@ dmc_components = [
     dcc.Markdown(
         """
         Examples of  __Dash Mantine Components__ in AG Grid cells
-        - dmc.Button
-        - dmc.Select
-        - dmc.Select with Popup Parent
-        - dmc.Select with Grouping
+        - `dmc.Button`
+        - `dmc.Select`
+        - `dmc.Select` with Popup Parent
+        - `dmc.Select` with Grouping
 
         """,
         className="small",
@@ -205,10 +206,50 @@ dmc_components = [
 ]
 dmc_components = make_card("### dmc Components", dmc_components)
 
+import_export  = [
+    html.Div("Examples", className="text-primary border-top pt-2"),
+    html.H4(
+        dcc.Link(
+            "Import & Export", href=links.import_export
+        )
+    ),
+    dcc.Markdown(
+        """
+        Export to CSV and Excel
+        - CSV export with params
+        - Excel export (community) 4 examples
+        - Excel export(Enterprise)
+        """,
+        className="small",
+    ),
+]
+import_export = make_card("### Import & Export", import_export)
+
+styling = [
+    html.Div("Examples", className="text-primary border-top pt-2"),
+    html.H4(
+        dcc.Link(
+            "Styling", href=links.styling
+        )
+    ),
+    dcc.Markdown(
+        """
+        Styling and Themes
+        - CSV export with params
+        - Excel export (community)
+        - Excel export(Enterprise)
+        """,
+        className="small",
+    ),
+]
+styling = make_card("### Styling", styling)
+
+
+
 layout = html.Div(
     [
         dbc.Row(dbc.Col(make_md(text1, className="mt-4 m-auto"))),
-        html.H2("Documentation", className="text-center py-2"),
+        html.H2("AG Grid Documentation", className="text-center py-2"),
         dbc.Row(
             [
                 dbc.Col(dag_docs_card, md=6),
@@ -216,7 +257,7 @@ layout = html.Div(
             ],
             className="px-5",
         ),
-        html.H2("Tutorials", className="text-center py-2 mt-4"),
+        html.H2("Dash AG Grid Tutorials", className="text-center py-2 mt-4"),
         dbc.Row(
             [
                 dbc.Col(get_started_easy),
@@ -224,16 +265,24 @@ layout = html.Div(
                 dbc.Col(theme_switch),
             ]
         ),
-        html.H2("Examples", className="text-center py-2 mt-4 pt-4"),
+        html.H2("Dash AG Grid Examples", className="text-center py-2 mt-4 pt-4"),
         dbc.Row(
             [
                 dbc.Col(dbc_components),
                 dbc.Col(dcc_components),
                 dbc.Col(dmc_components),
                 dbc.Col(html_components),
+                dbc.Col(import_export),
+                #dbc.Col(styling),
                 dbc.Col(under_construction2),
-                dbc.Col(under_construction2)
+
             ]
         ),
+        # dbc.Row(
+        #     [
+        #         dbc.Col(under_construction2),
+        #    #     dbc.Col(under_construction2)
+        #     ]
+        # )
     ],
 )

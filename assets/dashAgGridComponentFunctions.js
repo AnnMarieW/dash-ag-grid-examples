@@ -140,6 +140,33 @@ dagcomponentfuncs.CustomHeaderTooltip = function (props) {
 }
 
 
+dagcomponentfuncs.DeleteButton = function (props) {
+    function onClick() {
+          props.api.applyTransaction({ remove: [props.node.data] })
+    }
+    return React.createElement(
+        'div',
+        {
+            style: {
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                alignItems: 'center',
+            },
+        },
+        React.createElement(
+            'button',
+            {
+                onClick,
+                style: {borderWidth: '1px', height: '95%'},
+            },
+            "X"
+        )
+    );
+};
+
+
+
 //////////////// Everything below is from  dag docs  ///////////////////////////////////////////////
 // Simple component to create a custom link
 dagcomponentfuncs.StockLink = function (props) {

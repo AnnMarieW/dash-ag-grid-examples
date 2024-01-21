@@ -188,6 +188,15 @@ dagfuncs.DMC_Select = class {
 // end dmc.Select
 
 
+// used in the csv export
+dagfuncs.shouldRowBeSkipped = (params) => {
+    return params.node.data.make == "Ford"
+}
+
+dagfuncs.processCellCallback = (params) => {
+    return params.column.colDef.field == 'price'? '$' + params.value : params.value
+}
+//end
 
 
 /////////////////  Everything below is from old docs site
