@@ -13,14 +13,19 @@ register_page(
 text1 = """
 # Dash AG Grid Quickstart
 
-Add a beautiful data grid to your Dash app with 3 lines of code!  Simply define the rows and columns:
 
+Add a beautiful data grid to your Dash app with 3 lines of code!  
+
+The `rowData` defines the data and the `columnDefs` control how the data is displayed. In this example, the data is in
+ a Pandas dataframe.
+ 
 ```python
 dag.AgGrid(
-    columnDefs=[{"field": i} for i in df.columns],
     rowData=df.to_dict("records"),
+    columnDefs=[{"field": i} for i in df.columns],    
 )
 ```
+
 Features available by default:
 - Alpine theme is applied to style the grid
 - The columns are resizable (drag on the vertical handle in the header)

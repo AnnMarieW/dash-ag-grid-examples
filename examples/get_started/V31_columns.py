@@ -11,13 +11,13 @@ df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/ag-gr
 app.layout = html.Div(
     [
         dag.AgGrid(
+            rowData=df.to_dict("records"),
             columnDefs=[
                 {"field": "mission", "filter": True},
                 {"field": "date"},
                 {"field": "price"},
                 {"field": "successful"}
             ],
-            rowData=df.to_dict("records"),
         ),
     ],
 )

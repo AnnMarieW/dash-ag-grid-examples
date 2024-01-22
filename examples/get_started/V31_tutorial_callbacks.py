@@ -47,8 +47,8 @@ app.layout = html.Div(
     [
         dag.AgGrid(
             id="grid-v31-tutorial",
-            columnDefs=columnDefs,
             rowData=df.to_dict("records"),
+            columnDefs=columnDefs,
             columnSize="sizeToFit",
             defaultColDef={"filter": True, "editable": True},
             dashGridOptions={

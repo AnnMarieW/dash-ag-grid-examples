@@ -46,8 +46,8 @@ columnDefs = [
 app.layout = html.Div(
     [
         dag.AgGrid(
-            columnDefs=columnDefs,
             rowData=df.to_dict("records"),
+            columnDefs=columnDefs,
             columnSize="sizeToFit",
             defaultColDef={"filter": True, "editable": True},
         ),

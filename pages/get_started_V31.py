@@ -25,14 +25,18 @@ Once complete, you'll have an interactive grid, with custom components and forma
 text2 = """
 ## Create a Basic Grid
 
-Add a beautiful data grid to your Dash app with 3 lines of code!  Simply define the rows and columns:
+Add a beautiful data grid to your Dash app with 3 lines of code!  
+
+The `rowData` defines the data and the `columnDefs` control how the data is displayed. In this example, the data is in
+ a Pandas dataframe.
 
 ```python
 dag.AgGrid(
-    columnDefs=[{"field": i} for i in df.columns],
     rowData=df.to_dict("records"),
+    columnDefs=[{"field": i} for i in df.columns],    
 )
 ```
+
 Features available by default:
 - Alpine theme is applied to style the grid
 - The columns are resizable (drag on the vertical handle in the header)
@@ -134,6 +138,7 @@ Value Formatters are useful for basic formatting, but for more advanced use-case
 Cell Renderers allow you add custom HTML, JavaScript and other Dash components within cells. To use a Cell Renderer, set
  the `cellRenderer` prop on a column, with the value as the name of your Cell Renderer.
  
+
 If you are new to JavaScript see these sections of the Dash Docs
  - [Adding Your Own CSS and JS to Dash Apps](https://dash.plotly.com/external-resources)
  - [JavaScript and Dash AG Grid](https://dash.plotly.com/dash-ag-grid/javascript-and-the-grid)
@@ -158,13 +163,13 @@ dagcomponentfuncs.CompanyLogoRenderer = function (props) {
   );
 }
 ```
-A JavaScript variable defined in the global window object can passed as a Dash component property. The
+A JavaScript variable defined in the global window object can be passed as a Dash component property. The
  `dagcomponentfuncs` variable is used to register custom components for use in Dash AG Grid.
 
 For those familiar with React, you will see that the `CompanyLogoRenderer` is a function that returns a [React element without
  using JSX](https://react.dev/reference/react/createElement#creating-an-element-without-jsx). 
  
-To make this look a little more familiar to Python coders, here's what it would look like if you could write it in Python and `Dash html components:
+To make this look a little more familiar to Python coders, here's what it would look like if you could write it in Python and Dash html components:
  
 ```
 def company_logo_renderer(company):
@@ -221,7 +226,7 @@ This last example has a few more features:
  
 """
 
-text10 = """
+text10 = f"""
 ## Summary
 Congratulations! You've completed the tutorial and built your first grid. By now, you should be familiar with the key concepts of AG Grid:
 
@@ -242,7 +247,10 @@ Congratulations! You've completed the tutorial and built your first grid. By now
 - __Callbacks__ : Events that trigger Dash callbacks, typically as a result of user interaction.
 
 ## Next Steps
-- See more features in the Dash docs and the AG Grid docs
+
+- See the [Dash docs]({links.dag_docs}) and the [AG Grid docs]({links.ag_grid_docs}) for details on all the features.
+
+- Have questions?  Ask them on the [Dash Community Form]({links.forum})
 
 Happy Coding!
 

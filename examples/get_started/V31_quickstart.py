@@ -11,8 +11,8 @@ df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/ag-gr
 app.layout = html.Div(
     [
         dag.AgGrid(
-            columnDefs=[{"field": i} for i in df.columns],
             rowData=df.to_dict("records"),
+            columnDefs=[{"field": i} for i in df.columns],
         ),
     ],
 )
