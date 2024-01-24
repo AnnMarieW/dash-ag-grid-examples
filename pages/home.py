@@ -45,7 +45,7 @@ under_construction2 = [
 ]
 under_construction2 = make_img_card(links.examples_img, under_construction2)
 
-
+# Documentation -----------------------------
 
 ag_grid_docs_card = [
     html.Div("Documentation", className="text-primary border-top pt-2"),
@@ -75,6 +75,8 @@ dag_docs_card = [
     ),
 ]
 dag_docs_card = make_img_card(links.dag_docs_img, dag_docs_card)
+
+# Tutorials ------------------------------
 
 
 get_started_V31 = [
@@ -121,6 +123,23 @@ theme_switch = [
     ),
 ]
 theme_switch = make_img_card(links.theme_switch_img, theme_switch)
+
+#
+# migrating_DataTable = [
+#     html.Div("Tutorial", className="text-primary border-top pt-2"),
+#     html.H4(
+#         dcc.Link(
+#             "Migrating from Dash DataTable to Dash AG Grid", href=links.migrating_DataTable
+#         )
+#     ),
+#     html.Div(
+#         "Guide for migrating from Dash DataTable to AG Grid based on the DataTable documentation",
+#         className="small",
+#     ),
+# ]
+# migrating_DataTable = make_img_card(links.theme_switch_img, migrating_DataTable)
+
+# Examples -----------------------------------------------
 
 dbc_components = [
     html.Div("Examples", className="text-primary border-top pt-2"),
@@ -234,10 +253,9 @@ styling = [
     ),
     dcc.Markdown(
         """
-        Styling and Themes
-        - CSV export with params
-        - Excel export (community)
-        - Excel export(Enterprise)
+        Styling, conditional formatting and themes
+        - 10+ Conditional formatting recipies 
+        
         """,
         className="small",
     ),
@@ -263,6 +281,7 @@ layout = html.Div(
                 dbc.Col(get_started_easy),
                 dbc.Col(get_started_V31),
                 dbc.Col(theme_switch),
+               # dbc.Col(migrating_DataTable),
             ]
         ),
         html.H2("Dash AG Grid Examples", className="text-center py-2 mt-4 pt-4"),
@@ -273,16 +292,16 @@ layout = html.Div(
                 dbc.Col(dmc_components),
                 dbc.Col(html_components),
                 dbc.Col(import_export),
-                #dbc.Col(styling),
-                dbc.Col(under_construction2),
+                dbc.Col(styling),
+                #dbc.Col(under_construction2),
 
             ]
         ),
-        # dbc.Row(
-        #     [
-        #         dbc.Col(under_construction2),
-        #    #     dbc.Col(under_construction2)
-        #     ]
-        # )
+        dbc.Row(
+            [
+                dbc.Col(under_construction2),
+           #     dbc.Col(under_construction2)
+            ]
+        )
     ],
 )

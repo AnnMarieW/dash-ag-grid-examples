@@ -67,11 +67,11 @@ def up_next(text= 'Back <dccLink href="/" children="Home" />'):
     )
 
 
-def make_md(text, className="mt-5"):
+def make_md(text, className="mt-5", id=""):
     return html.Div(dcc.Markdown(
-        text, className="mx-5 px-3", dangerously_allow_html=True, link_target="_blank",
-
-    ),className=className,  style={"maxWidth": 1000})
+        text, className="mx-5 px-3",
+        dangerously_allow_html=True, link_target="_blank",
+    ),className=className,  style={"maxWidth": 1000}, id=id)
 
 
 enterprise_blurb = """

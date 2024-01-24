@@ -1,0 +1,21 @@
+
+/* used in the styling/row_color_picker */
+.priority-1 {
+    background-color: #0074D9 !important;
+}
+.priority-2 {
+    background-color: #3D9970 !important;
+}
+.priority-3 {
+    background-color: #cd0200; !important;
+}
+
+
+.max-value {
+    background-color: #3D9970;
+}
+
+
+.range-value {
+    background-color: #3D9970;
+}

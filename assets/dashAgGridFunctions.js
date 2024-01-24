@@ -199,6 +199,28 @@ dagfuncs.processCellCallback = (params) => {
 //end
 
 
+
+// Returns the max number in a row.  Used in Styling
+dagfuncs.maxRowValue = (obj) => {
+    const numericValues = Object.values(obj).filter(value => typeof value === 'number' && !isNaN(value));
+    return  Math.max(...numericValues)
+}
+
+// Returns the max number in a grid.  Used in Styling
+dagfuncs.maxGridValue = (params) => {
+    const maxRowValues = [];
+    params.api.forEachLeafNode((node) => {
+        maxRowValues.push(dagfuncs.maxRowValue(node.data));
+    });
+    return Math.max(...maxRowValues)
+}
+
+// Used in styling format nan example
+dagfuncs.formatNaN = function (val) {
+    return isNaN(val) ? 'N/A' : (val === '' ? 'None' : val);
+};
+
+
 /////////////////  Everything below is from old docs site
 dagfuncs.Round = function (v, a = 2) {
     return Math.round(v * (10 ** a)) / (10 ** a)
