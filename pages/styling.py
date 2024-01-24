@@ -61,8 +61,8 @@ layout = html.Div(
         make_md("## Displaying Special Values for NaN or None Values"),
         example_app("examples.styling.format_nan", make_layout=make_tabs),
 
-        # make_md("## Highlighting Text that Contains a Value"),
-        # example_app("examples.styling.style_", make_layout=make_tabs),
+        make_md("## Highlighting Text that Contains a Value"),
+        example_app("examples.styling.style_text_that_contains_value", make_layout=make_tabs),
 
         # make_md("## Highlighting Text that Equals a Value"),
         # example_app("examples.styling.style_", make_layout=make_tabs),
@@ -76,8 +76,8 @@ layout = html.Div(
         make_md("## Displaying Data Bars"),
         example_app("examples.styling.data_bars", make_layout=make_tabs),
 
-        # make_md("## Data Bars without Text"),
-        # example_app("examples.styling.style_", make_layout=make_tabs),
+        make_md("## Data Bars without Text"),
+        example_app("examples.styling.data_bars_without_text", make_layout=make_tabs),
 
         # make_md("## Diverging Data Bars"),
         # example_app("examples.styling.style_", make_layout=make_tabs),
@@ -99,8 +99,6 @@ layout = html.Div(
         # example_app("examples.styling.style_", make_layout=make_tabs),
 
 
-
-        make_md(text2),
-        up_next(next)
+        up_next()
     ],
 )
