@@ -10,6 +10,7 @@ dag_docs_img = "https://github.com/AnnMarieW/HelloDash/assets/72614349/978dfcdc-
 
 get_started_V31_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/21c45aff-9a9b-4cf2-9e27-8e598efd4074"
 get_started_easy_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/4f358545-ff20-4f68-9009-0675508c249f"
+get_started_easy_gif = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/e4b7ff06-4491-47d0-8f80-48ab226c14aa"
 
 under_construction_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/0aaaf2dc-51aa-4ca5-bda8-f7e2e3a53b87"
 examples_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/9d46bfd7-0fe1-4a55-a63b-e935c7ca8d5e"

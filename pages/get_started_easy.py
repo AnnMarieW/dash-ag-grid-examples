@@ -25,6 +25,9 @@ dag.AgGrid(
     columnDefs=[{"field": i} for i in df.columns],    
 )
 ```
+"""
+
+text1a = """
 
 Features available by default:
 - Alpine theme is applied to style the grid
@@ -33,6 +36,7 @@ Features available by default:
 - Note the row animation when sorting
 - Boolean values are rendered as a checkbox 
 - Reorder the columns by dragging the column header
+- Pin a column to the right or left side of the grid
 
 """
 
@@ -58,6 +62,8 @@ next  =f'<dccLink href="{links.get_started_V31}" children="Getting Started with 
 layout = html.Div(
     [
         make_md(text1),
+        make_feature_card(links.get_started_easy_gif, text1a),
+        make_md("Now give it a try here!"),
         example_app("examples.get_started.V31_quickstart", make_layout=make_tabs),
         make_md(text2),
         up_next(next)
