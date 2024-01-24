@@ -248,13 +248,12 @@ styling = [
     html.Div("Examples", className="text-primary border-top pt-2"),
     html.H4(
         dcc.Link(
-            "Styling", href=links.styling
+            "Styling -  Conditional Formatting", href=links.styling
         )
     ),
     dcc.Markdown(
         """
-        Styling, conditional formatting and themes
-        - 10+ Conditional formatting recipies 
+        10+ Conditional formatting recipies!
         
         """,
         className="small",
