@@ -124,22 +124,9 @@ theme_switch = [
 ]
 theme_switch = make_img_card(links.theme_switch_img, theme_switch)
 
-#
-# migrating_DataTable = [
-#     html.Div("Tutorial", className="text-primary border-top pt-2"),
-#     html.H4(
-#         dcc.Link(
-#             "Migrating from Dash DataTable to Dash AG Grid", href=links.migrating_DataTable
-#         )
-#     ),
-#     html.Div(
-#         "Guide for migrating from Dash DataTable to AG Grid based on the DataTable documentation",
-#         className="small",
-#     ),
-# ]
-# migrating_DataTable = make_img_card(links.theme_switch_img, migrating_DataTable)
 
-# Examples -----------------------------------------------
+
+# Component GALLERY -----------------------------------------------
 
 dbc_components = [
     html.Div("Examples", className="text-primary border-top pt-2"),
@@ -225,6 +212,10 @@ dmc_components = [
 ]
 dmc_components = make_card("### dmc Components", dmc_components)
 
+
+# Examples ---------------------------
+
+
 import_export  = [
     html.Div("Examples", className="text-primary border-top pt-2"),
     html.H4(
@@ -261,6 +252,23 @@ styling = [
 ]
 styling = make_card("### Styling", styling)
 
+migrating_DataTable = [
+    html.Div("Examples", className="text-primary border-top pt-2"),
+    html.H4(
+        dcc.Link(
+            "Migrating From DataTable", href=links.migrating_DataTable
+        )
+    ),
+    dcc.Markdown(
+        """
+        Examples to help migrate your app from Dash DataTable to Dash AG Grid.
+
+        """,
+        className="small",
+    ),
+]
+migrating_DataTable = make_card("### Migrating from DataTable", migrating_DataTable)
+
 
 
 layout = html.Div(
@@ -280,20 +288,27 @@ layout = html.Div(
                 dbc.Col(get_started_easy),
                 dbc.Col(get_started_V31),
                 dbc.Col(theme_switch),
-               # dbc.Col(migrating_DataTable),
+
             ]
         ),
         html.H2("Dash AG Grid Examples", className="text-center py-2 mt-4 pt-4"),
+        dbc.Row(
+            [
+
+                dbc.Col(import_export),
+                dbc.Col(styling),
+                dbc.Col(migrating_DataTable),
+                #dbc.Col(under_construction2),
+
+            ]
+        ),
+        html.H2("Dash AG Grid Custom Component Gallery", className="text-center py-2 mt-4 pt-4"),
         dbc.Row(
             [
                 dbc.Col(dbc_components),
                 dbc.Col(dcc_components),
                 dbc.Col(dmc_components),
                 dbc.Col(html_components),
-                dbc.Col(import_export),
-                dbc.Col(styling),
-                #dbc.Col(under_construction2),
-
             ]
         ),
         dbc.Row(
