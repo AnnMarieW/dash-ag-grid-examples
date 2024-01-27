@@ -139,7 +139,7 @@ Cell Renderers allow you add custom HTML, JavaScript and other Dash components w
  the `cellRenderer` prop on a column, with the value as the name of your Cell Renderer.
  
 
-If you are new to JavaScript see these sections of the Dash Docs
+If you are new to JavaScript see the Dash Docs:
  - [Adding Your Own CSS and JS to Dash Apps](https://dash.plotly.com/external-resources)
  - [JavaScript and Dash AG Grid](https://dash.plotly.com/dash-ag-grid/javascript-and-the-grid)
  - [Dash AG Grid Components](https://dash.plotly.com/dash-ag-grid/cell-renderer-components)
@@ -147,8 +147,16 @@ If you are new to JavaScript see these sections of the Dash Docs
 
 Let's try this by creating a new component to display the company logo in the 'company' column.
 
-Add the following into a the `dashAgGridComponentFunctions.js` file in the `/assets` folder:
+If you don't have one already, add a folder called `assets` in the same folder as your app.  Dash automatically
+ serves the files in this folder.
 
+```
+- app.py
+- assets/
+    |-- dashAgGridComponentFunctions.js   
+```
+
+`dashAgGridComponentFunctions.js`
 ```js
 var dagcomponentfuncs = (window.dashAgGridComponentFunctions =
   window.dashAgGridComponentFunctions || {});
@@ -163,15 +171,17 @@ dagcomponentfuncs.CompanyLogoRenderer = function (props) {
   );
 }
 ```
-A JavaScript variable defined in the global window object can be passed as a Dash component property. The
- `dagcomponentfuncs` variable is used to register custom components for use in Dash AG Grid.
 
-For those familiar with React, you will see that the `CompanyLogoRenderer` is a function that returns a [React element without
- using JSX](https://react.dev/reference/react/createElement#creating-an-element-without-jsx). 
+Let's take a closer look at this file.  The first two lines defines a JavaScript variable  `dagcomponentfuncs`.  It defines
+an object in the global window namespace.  Variables defined in this namespace are registered as custom components in Dash AG Grid.
+
+Next we add our component called `CompanyLogoRenderer` to the `dagcompoentfuncs` object. For those familiar with React,
+ you will see that the `CompanyLogoRenderer` is a function that returns a [React element without  using JSX](https://react.dev/reference/react/createElement#creating-an-element-without-jsx). 
  
-To make this look a little more familiar to Python coders, here's what it would look like if you could write it in Python and Dash html components:
+To make this look a little more familiar to Python coders, let's translate it to Python.  This is a funtion that returns
+ a component using Dash html components.  (Don't use this Python function - it's just for illustration.)
  
-```
+```python
 def company_logo_renderer(company):
     url = f"https://www.ag-grid.com/example-assets/space-company-logos/{company.lower()}.png"
     return html.Span([
@@ -179,6 +189,20 @@ def company_logo_renderer(company):
         html.Span(company, { "paddingLeft": "4px" })
     ])
 ``` 
+
+Now we can use the `CompanyLogoRenderer` in our app like this:
+
+```python
+columnDefs = [   
+    {
+      "field": "company",    
+      "cellRenderer": "CompanyLogoRenderer"
+    },
+    #... 
+]
+```
+
+Be sure to check out the dash docs [Cell Renderer](https://dash.plotly.com/dash-ag-grid/cell-renderer-components) section for more details and examples.  Plus check out all the components in the  <dccLink href="/" children="Dash AG Grid Custom Component Gallery" /> 
 
 """
 
