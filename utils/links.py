@@ -29,6 +29,7 @@ components_dmc= "/components-dmc"
 components_html= "/components-html"
 import_export="/import-export"
 styling="/styling"
+tooltips="/tooltips"
 
 migrating_DataTable= "/migrating-DataTable"
 

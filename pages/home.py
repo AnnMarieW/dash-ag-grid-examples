@@ -125,6 +125,20 @@ theme_switch = [
 theme_switch = make_img_card(links.theme_switch_img, theme_switch)
 
 
+tooltips = [
+    html.Div("Tutorial", className="text-primary border-top pt-2"),
+    html.H4(
+        dcc.Link(
+            "Tooltips ", href=links.tooltips
+        )
+    ),
+    html.Div(
+        "How to add tooltips to the cell and header in Dash AG Grid.  Includes examples of conditional tooltips, formatting tooltips and tooltips with custom components",
+        className="small",
+    ),
+]
+tooltips = make_img_card(links.get_started_V31_img, tooltips)
+
 
 # Component GALLERY -----------------------------------------------
 
@@ -162,6 +176,7 @@ dcc_components = [
         - `dcc.Clipboard` - copy cell
         - `dcc.Clipboard` - copy row
         - `dcc.Graph` - Figure in Tooltip
+        - `dcc.Markdown` - Markdown text in a Tooltip
         - `dcc.RadioItems` - Custom Filter in header
         
         """,
@@ -288,6 +303,7 @@ layout = html.Div(
                 dbc.Col(get_started_easy),
                 dbc.Col(get_started_V31),
                 dbc.Col(theme_switch),
+                dbc.Col(tooltips),
 
             ]
         ),

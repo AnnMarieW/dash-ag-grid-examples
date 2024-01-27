@@ -80,6 +80,20 @@ dagcomponentfuncs.CustomTooltipGraph = function (props) {
 };
 
 
+dagcomponentfuncs.CustomTooltipMarkdown = function (props) {
+    return React.createElement(
+        window.dash_core_components.Markdown, {
+            children: props.value,
+            className: props.className,
+            style: props.style,
+            dangerously_allow_html : props.dangerously_allow_html | false,
+            link_target: props.link_target,
+            mathjax: props.mathjax
+        })
+};
+
+
+
 // custom component to display boolean data as a DBC Switch
 dagcomponentfuncs.DBC_Switch = function (props) {
     const {setData, value} = props;

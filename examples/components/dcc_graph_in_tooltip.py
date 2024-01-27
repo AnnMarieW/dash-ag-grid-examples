@@ -8,7 +8,7 @@ app = Dash(__name__)
 df = px.data.gapminder().query("continent=='Europe'")
 df2 = df.groupby("country")[["lifeExp", "gdpPercap", "pop"]].mean().reset_index()
 
-df2[f"graph"] = ""
+df2["graph"] = ""
 for i, r in df2.iterrows():
     filterDf = df[df["country"] == r["country"]]
     fig = px.line(filterDf, x="year", y="lifeExp", title=r["country"], width=400, height=200)
@@ -31,6 +31,7 @@ columnDefs = [
 
 app.layout = html.Div(
     [
+        html.H4("See the custom tooltip component in the Avg Life Expectancy column"),
         dag.AgGrid(
             rowData=df2.to_dict("records"),
             columnSize="autoSize",

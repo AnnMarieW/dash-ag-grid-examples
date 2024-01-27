@@ -31,10 +31,16 @@ See this [forum post](https://community.plotly.com/t/ag-grid-with-dcc-clipboard/
 text3 = """
 ## dcc.Graph in a custom tooltip
 
-Try hovering over the Avg life expectancy column!
+__Try hovering over the Avg life expectancy column!__
 """
 
 text4 = """
+### dcc.Markdown in a custom tooltip
+
+__Try hovering over the Company column!__
+"""
+
+text5 = """
 ## `dcc.RadioItems` as a custom filter component in header
 
 This example was adapted from [React Data Grid: Filter Component](https://www.ag-grid.com/react-data-grid/component-filter/)
@@ -54,6 +60,8 @@ layout = html.Div(
         make_md(text3),
         example_app("examples.components.dcc_graph_in_tooltip", make_layout=make_tabs),
         make_md(text4),
+        example_app("examples.components.dcc_markdown_in_tooltip", make_layout=make_tabs),
+        make_md(text5),
         example_app("examples.components.dcc_radioitems_header", make_layout=make_tabs),
         up_next()
     ],

@@ -22,6 +22,7 @@ columnDefs = [
 
 app.layout = html.Div(
     [
+        html.H4("See the Custom Tooltips in the Gold, Silver and Bronze header"),
         dag.AgGrid(
             rowData=df.to_dict("records"),
             columnDefs=columnDefs,
