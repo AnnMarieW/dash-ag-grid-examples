@@ -5,17 +5,21 @@ import plotly.express as px
 
 app = Dash(__name__)
 
+
+def make_country_figure(df, country):
+    filter_df = df[df["country"] == country]
+    fig = px.line(filter_df, x="year", y="lifeExp", title=country, width=400, height=200)
+    fig.update_layout(
+        margin=dict(l=10, r=10, t=40, b=10),
+        paper_bgcolor="LightSteelBlue"
+    )
+    return fig
+
 df = px.data.gapminder().query("continent=='Europe'")
 df2 = df.groupby("country")[["lifeExp", "gdpPercap", "pop"]].mean().reset_index()
 
-df2["graph"] = ""
-for i, r in df2.iterrows():
-    filterDf = df[df["country"] == r["country"]]
-    fig = px.line(filterDf, x="year", y="lifeExp", title=r["country"], width=400, height=200)
-    fig.update_layout(
-        margin=dict(l=10, r=10, t=40, b=10),
-        paper_bgcolor="LightSteelBlue")
-    df2.at[i, "graph"] = fig
+# define the figure in the "graph" column.  This is he data for the tooltip
+df2["graph"] = df2["country"].apply(lambda country: make_country_figure(df, country))
 
 
 columnDefs = [
