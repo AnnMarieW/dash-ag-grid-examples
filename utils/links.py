@@ -16,6 +16,8 @@ under_construction_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/ass
 examples_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/9d46bfd7-0fe1-4a55-a63b-e935c7ca8d5e"
 
 theme_switch_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/6aaa5b0c-2200-4594-95af-f6bffe849235"
+tootips_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/65eb7cb3-0d20-4325-92a9-0f7f941fbad0"
+
 
 
 

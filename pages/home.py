@@ -137,7 +137,7 @@ tooltips = [
         className="small",
     ),
 ]
-tooltips = make_img_card(links.get_started_V31_img, tooltips)
+tooltips = make_img_card(links.tootips_img, tooltips)
 
 
 # Component GALLERY -----------------------------------------------
