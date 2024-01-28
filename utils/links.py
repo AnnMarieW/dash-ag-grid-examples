@@ -17,7 +17,7 @@ examples_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/726143
 
 theme_switch_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/6aaa5b0c-2200-4594-95af-f6bffe849235"
 tootips_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/65eb7cb3-0d20-4325-92a9-0f7f941fbad0"
-
+upload_image_files_tooltip_gif ="https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/dc63bd13-7716-42a7-9d25-b61b59a7150b"
 
 
 

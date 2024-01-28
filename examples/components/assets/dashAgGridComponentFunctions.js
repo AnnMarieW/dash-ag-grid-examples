@@ -1,7 +1,23 @@
 var dagcomponentfuncs = (window.dashAgGridComponentFunctions =
     window.dashAgGridComponentFunctions || {});
 
+var dagcomponentfuncs = window.dashAgGridComponentFunctions = window.dashAgGridComponentFunctions || {};
 
+dagcomponentfuncs.CustomTooltipImage = function (props) {
+  return React.createElement(
+    'img',
+    {
+      style: props.style || {
+        width: '100%',
+        maxWidth: '400px',
+        height: 'auto',
+        border: '2px solid grey',
+        pointerEvents: 'none',
+      },
+      src: props.value
+    },
+  );
+};
 
 
 

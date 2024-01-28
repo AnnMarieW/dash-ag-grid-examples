@@ -39,8 +39,12 @@ This example shows how to add a delete button in each row.  For more information
 
 """
 
-text4 = """
+text4="""
+## Upload image files and display them in a tooltip
+
 """
+
+
 
 
 next  =f'<dccLink href="{links.get_started_V31}" children="Getting Started with Dash AG Grid V31" />'
@@ -53,8 +57,9 @@ layout = html.Div(
         example_app("examples.components.html_i_tooltip_header", make_layout=make_tabs),
         make_md(text3),
         example_app("examples.components.html_button_delete_rows", make_layout=make_tabs),
-        # make_md(text4),
-        # example_app("examples.components.dmc_select_labels_and_vals", make_layout=make_tabs),
+        make_md(text4),
+        example_app("examples.components.html_img_upload", make_layout=make_tabs),
+        make_feature_card(links.upload_image_files_tooltip_gif, "## After upload"),
         up_next()
     ],
 )

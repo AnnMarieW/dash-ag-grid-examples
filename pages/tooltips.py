@@ -113,6 +113,11 @@ Add a column of markdown text to the `rowData`.  The custom component will displ
 
 """
 
+text8="""
+### Upload image files and display them in a tooltip
+
+"""
+
 
 
 text_next = f"""
@@ -148,6 +153,9 @@ layout = html.Div(
         example_app("examples.components.dcc_graph_in_tooltip", make_layout=make_tabs),
         make_md(text7),
         example_app("examples.components.dcc_markdown_in_tooltip", make_layout=make_tabs),
+        make_md(text8),
+        example_app("examples.components.html_img_upload", make_layout=make_tabs),
+        make_feature_card(links.upload_image_files_tooltip_gif, "After upload"),
         make_md(text_next),
         up_next()
     ],

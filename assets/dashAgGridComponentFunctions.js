@@ -80,6 +80,20 @@ dagcomponentfuncs.CustomTooltipGraph = function (props) {
 };
 
 
+dagcomponentfuncs.CustomTooltipImage = function (props) {
+  return React.createElement('img', {
+    style: props.style || {
+      width: '100%',
+      maxWidth: '400px',
+      height: 'auto',
+      border: '2px solid grey',
+      pointerEvents: 'none',
+    },
+    src: props.value,
+  });
+};
+
+
 dagcomponentfuncs.CustomTooltipMarkdown = function (props) {
     return React.createElement(
         window.dash_core_components.Markdown, {

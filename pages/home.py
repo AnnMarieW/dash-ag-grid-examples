@@ -132,9 +132,12 @@ tooltips = [
             "Tooltips ", href=links.tooltips
         )
     ),
-    html.Div(
-        "How to add tooltips to the cell and header in Dash AG Grid.  Includes examples of conditional tooltips, formatting tooltips and tooltips with custom components",
-        className="small",
+    dcc.Markdown("""
+    How to add tooltips to the cell and header in Dash AG Grid.  Includes examples of conditional tooltips,
+     formatting tooltips and tooltips with custom components.
+    
+    With 8 examples.  
+    """, className="small",
     ),
 ]
 tooltips = make_img_card(links.tootips_img, tooltips)
@@ -196,6 +199,7 @@ html_components = [
         """
         Examples of  __HTML Components__ in AG Grid cells
         - `img`  Image of flag in cells 
+        - `img`  Upload images and display them in a tooltip
         - `i  `   Icons in header toolip
         - `button` Delete row button       
                 
