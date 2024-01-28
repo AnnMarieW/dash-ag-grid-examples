@@ -67,11 +67,15 @@ layout = html.Div(
         # make_md("## Highlighting Text that Equals a Value"),
         # example_app("examples.styling.style_", make_layout=make_tabs),
 
-       # make_md("## Highlighting Cells by Value with a Colorscale Like a Heatmap"),
-      #  example_app("examples.styling.style_", make_layout=make_tabs),
+        make_md("""
+        ## Highlighting Cells by Value with a Colorscale Like a Heatmap  
+        - See [Dash Docs](https://dash.plotly.com/dash-ag-grid/styling-cells#cell-shading-examples)        
+        """),
 
-        # make_md("## Highlighting with a Colorscale on a Single Column"),
-        # example_app("examples.styling.style_", make_layout=make_tabs),
+        make_md("""
+        ## Highlighting with a Colorscale on a Single Column  
+        - See [Dash Docs](https://dash.plotly.com/dash-ag-grid/styling-cells#cell-shading-examples)        
+        """),
 
         make_md("## Displaying Data Bars"),
         example_app("examples.styling.data_bars", make_layout=make_tabs),

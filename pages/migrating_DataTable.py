@@ -14,24 +14,15 @@ text1 = f"""
 # From Dash DataTable to Dash AG Grid
 ### A Migration guide
  
+This section is organized like the DataTable Dash docs to make it easier to find similar features in the Dash AG Grid docs.
  
 --------------
 
 ` `  
 ` ` 
-## Getting Started
+## Overview Quickstart 
 
  - Check out the <dccLink href="{links.get_started_V31}" children="Getting Started with V31" /> for an overview of the basic grid features.
- 
-## Conditional Formatting
- 
- - See examples of  <dccLink href="{links.styling}" children="conditional formatting" /> based on the DataTable Dash docs.
- 
-
-## Deleting Rows
-Here is an example of how to delete a row by clicking on a button like in DataTable.  
-
-See a this tutorial on [deleting rows in Dash Ag Grid](https://community.plotly.com/t/deleting-rows-in-dash-ag-grid/78700) on the Dash community forum.
  
 """
 
@@ -63,20 +54,123 @@ Try navigating by either clicking on the cells or using the keyboard arrow keys:
 """
 
 
+text4 = f"""
 
+## User Guide
+
+### Reference  
+
+See a list of Dash AG Grid props in the [Reference](https://dash.plotly.com/dash-ag-grid/reference) section.  Note that
+ AG Grid has hundreds of props that are usable in Dash AG Grid with the `dashGridOptions` prop or accessing the grid's
+  API in a clientside callback.  It's necessary to also use the upstream [AG Grid docs]({links.ag_grid_docs}) as reference.
+
+### Grid Height
+
+By default the grid height is set to 400px.  It automatically includes vertical scroll, virtualization and fixed headers.
+See:
+- [Grid Size](https://dash.plotly.com/dash-ag-grid/grid-size)
+- [Pagination](https://dash.plotly.com/dash-ag-grid/pagination)
+
+### Grid Width and Column Width
+The grid automatically adds horizontal scroll bars if the grid width is wider than it's container.  
+
+The column width can be adjusted by the user by dragging the handle in the column headers.  It is also highly customizable.
+  See the [Column Sizing](https://dash.plotly.com/dash-ag-grid/column-sizing) section.
+  
+See the [Column Pinning](https://dash.plotly.com/dash-ag-grid/column-pinning) section for info on Fixed Columns.  The user can
+ pin one or more columns right or left by dragging the columns.  The column pinning can also be specified in the app and locked in position.
+ 
+If the cell content is wider than the column, the cell content is overflowing into ellipses by default. To set row height
+ and word wrapping, see the [Row Height](https://dash.plotly.com/dash-ag-grid/row-height) and [Column Headers](https://dash.plotly.com/dash-ag-grid/column-headers) sections.
+
+### Styling
+
+The style of the Dash AG Grid is highly customizable - see the Layout and Styling section, plus:
+- Displaying multiple rows of headers -- see [Grouping Columns](https://dash.plotly.com/dash-ag-grid/column-definitions#grouping-columns)
+- Text alignment - By default the data is left aligned.  This can be changed by setting the  [Column Types](https://dash.plotly.com/dash-ag-grid/column-definitions#column-types) or by using CSS in the `cellClass`, `cellStyle` or `headerClass` props.
+- Styling the table as a list view - this is the grid default.
+- Changing the colors (including a dark theme) - The grid has several themes in both light and dark.  See the [Themes](https://dash.plotly.com/dash-ag-grid/styling-themes) section.
+
+### Conditional Formatting
+
+See:
+- [Styling Rows](https://dash.plotly.com/dash-ag-grid/styling-rows)
+- [Styling Cells](https://dash.plotly.com/dash-ag-grid/styling-cells)
+- <dccLink href="{links.styling}" children="Styling Examples"/> on this site for a Dash AG Grid version of all the conditional styling receipies from the DataTable docs.
+
+### Number Formatting
+
+To see how to format numbers and dates, see:
+
+- [Vale Formatter](https://dash.plotly.com/dash-ag-grid/value-formatters) 
+- [D3 Value Formatters](https://dash.plotly.com/dash-ag-grid/d3-value-formatters)
+- [Cell Data Types](https://dash.plotly.com/dash-ag-grid/cell-data-types)
+
+
+### Sorting, Filtering, Selecting, and Paging Natively
+
+- [Cross Filter Example](https://dash.plotly.com/dash-ag-grid/crossfilter) - See a Dash AG Grid version of the app from this section.
+- [Filtering](https://dash.plotly.com/dash-ag-grid/column-filters) - Extensive filtering docs.
+- [Sorting](https://dash.plotly.com/dash-ag-grid/row-sorting)
+- [Row Selection](https://dash.plotly.com/dash-ag-grid/checkbox-row-selection)
+- Deleting rows with a button - see the <dccLink href="{links.components_html}" children="Custom Component Gallery"/>
+
+
+
+### Tooltips
+
+See the <dccLink href="{links.tooltips}" children="Tooltips Tutorial"/> for displaying tooltips on data and header rows, conditional tooltips, define tooltips for each cell, customize behavior.
+
+### Python-Driven Filtering, Paging, Sorting
+
+See the [Server Side Infinite Row Model](https://dash.plotly.com/dash-ag-grid/infinite-row-model) section.
+
+### Editing
+
+See the [Editing ](https://dash.plotly.com/dash-ag-grid/cell-editing) section
+- Determining which cell has changed in  [Editing and Callbacks](https://dash.plotly.com/dash-ag-grid/editing-and-callbacks)
+- Adding or removing rows 
+    - See forum post[](https://community.plotly.com/t/deleting-rows-in-dash-ag-grid/78700) and Deleting rows with a button - see the <dccLink href="{links.components_html}" children="Custom Component Gallery"/>
+    - [Row Transactions](https://dash.plotly.com/dash-ag-grid/client-side)
+
+- Running Python computations on certain columns or cells - See [Value Getters](https://dash.plotly.com/dash-ag-grid/value-getters)
+- [Exporting to CSV](https://dash.plotly.com/dash-ag-grid/export-data-csv)
+- <dccLink href="{links.import_export}" children="Exporting to Excel with dcc.Download"/>
+- [Exporting to Excel with AG Grid Enterprise](https://www.ag-grid.com/react-data-grid/excel-export/)
+
+
+### Typing and User Input Processing
+- See [Cell Data Types](https://dash.plotly.com/dash-ag-grid/cell-data-types)
+
+### Dropdowns Inside DataTable
+
+- [Provided Cell Editor Components](https://dash.plotly.com/dash-ag-grid/provided-cell-editors) - Select component.
+- <dccLink href="{links.components_dmc}" children="Custom Components dmc.Select"/>
+
+### Virtualization
+
+Dash AG Grid uses virtualization by default.  See [AG Grid docs](https://www.ag-grid.com/react-data-grid/dom-virtualisation/)
+
+
+### Filtering Syntax
+
+- [Filtering](https://dash.plotly.com/dash-ag-grid/column-filters) - Extensive filtering docs.
+
+
+
+"""
 
 next  =f'<dccLink href="{links.get_started_V31}" children="Getting Started with Dash AG Grid V31" />'
 
 layout = html.Div(
     [
         make_md(text1),
-        example_app("examples.components.html_button_delete_rows", make_layout=make_tabs),
+        make_md(text4),
+       # example_app("examples.components.html_button_delete_rows", make_layout=make_tabs),
         make_md(text2),
         example_app("examples.DataTable.cell_clicked", make_layout=make_tabs),
         make_md(text3),
         example_app("examples.DataTable.active_cell", make_layout=make_tabs),
-        make_md("### More content coming soon..."),
-
         up_next(next)
     ],
 )
