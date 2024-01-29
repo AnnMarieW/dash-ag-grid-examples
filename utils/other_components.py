@@ -89,7 +89,7 @@ def make_feature_card(img, txt):
 def make_img_card(img, content):
     return dbc.Card(
     [
-        dbc.CardImg(src=img, top=True),
+        dbc.CardImg(src=img, top=True, style={"height":175}),
         dbc.CardBody(content),
     ],
     className="shadow my-2 m-auto border border-3",

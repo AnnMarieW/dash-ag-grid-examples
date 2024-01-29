@@ -66,7 +66,7 @@ columndDefs = [
 """
 
 text4 = """
-## Formatting Tooltip text & Conditional Tooltips
+## Formatting tooltip text & conditional tooltips
 
 Customize the tooltip text with the `tooltipValueGetter` prop.  It takes a JavaScript function that returns
  a string to display in the tooltip. 
@@ -90,7 +90,7 @@ __Format the data in the tooltip__
 """
 
 text5=f"""
-## Custom Header Tooltip Component with icons
+## Custom header tooltip component with icons
 
 For an introduction to custom components, see the   <dccLink href="/{links.get_started_V31}" children="Getting Started" /> tutorial.
 
@@ -100,14 +100,14 @@ This app has custom header tooltips in the Gold, Silver and Bronze columns.  It 
 
 
 text6="""
-### Custom Cell Tooltip Component with figures
+### Custom cell tooltip component with figures
 
 Display a figure in a tooltip with this custom component that uses a `dcc.Graph` component.  
 
 
 """
 text7="""
-### Custom Cell Tooltip Component for Markdown
+### Custom cell tooltip component for markdown content
 
 Add a column of markdown text to the `rowData`.  The custom component will display it in a tooltip.
 
@@ -123,7 +123,7 @@ text8="""
 text_next = f"""
 
 
-Congratulations! You've seen how to add Toolips to headers and cells of Dash AG Grid. 
+Congratulations! You've seen how to add Tooltips to headers and cells of Dash AG Grid. 
 
 ## Next Steps
 

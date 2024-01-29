@@ -25,7 +25,7 @@ columnDefs = [
         "tooltipComponent": "CustomTooltipMarkdown",
         "tooltipComponentParams": {
             "style": {
-                "backgroundColor": "var(--ag-card-shadow)",
+                "backgroundColor": "grey",
                 "color": "white",
                 "padding": 20,
                 "backgroundImage": f"url('{webb_carina}')",
