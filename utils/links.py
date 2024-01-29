@@ -19,6 +19,8 @@ theme_switch_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72
 tootips_img = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/65eb7cb3-0d20-4325-92a9-0f7f941fbad0"
 upload_image_files_tooltip_gif ="https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/dc63bd13-7716-42a7-9d25-b61b59a7150b"
 
+cell_data_types = "/cell-data-types"
+
 
 
 # Page links
