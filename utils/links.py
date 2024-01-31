@@ -23,6 +23,7 @@ cell_data_types = "/cell-data-types"
 
 
 
+
 # Page links
 get_started_V31 = "/get-started-v31"
 get_started_easy = "/get-started-easy"

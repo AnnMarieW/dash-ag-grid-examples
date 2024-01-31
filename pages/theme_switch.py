@@ -39,10 +39,10 @@ If you have many grids in your app, you can update the grid theme of all the gri
  the  app's container.  
  
 In order for this work, it's necessary to remove the default theme, which Dash sets as `className="ag-theme-alpine"`.
-  To remove the default theme, you could  set `className=""` on the grid.  But it's more readable to set it to something more 
-   descriptive such as `className="no-default-theme"`
+  To remove the default theme, you could  set `className=""` on the grid.  However, it's more self-documenting to
+   use something more descriptive such as `className="no-default-theme"`
  
-Here's example:
+Here's an example:
 
 ```python
 app.layout = html.Div(

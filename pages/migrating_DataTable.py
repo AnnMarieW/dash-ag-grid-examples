@@ -56,13 +56,15 @@ Try navigating by either clicking on the cells or using the keyboard arrow keys:
 
 text4 = f"""
 
-## User Guide
+## DataTable docs cross reference
+Below you'll find each section of the DataTable docs and where to find more information about similar features in Dash AG Grid.
 
 ### Reference  
 
 See a list of Dash AG Grid props in the [Reference](https://dash.plotly.com/dash-ag-grid/reference) section.  Note that
- AG Grid has hundreds of props that are usable in Dash AG Grid with the `dashGridOptions` prop or accessing the grid's
-  API in a clientside callback.  It's necessary to also use the upstream [AG Grid docs]({links.ag_grid_docs}) as reference.
+ AG Grid has hundreds of props that are usable in Dash AG Grid by either passing them to the `dashGridOptions` prop or
+  accessing the grid's   API in a clientside callback. Not all the props are listed in the Dash AG Grid Reference section. Find more
+   information about all the grid's features in the upstream [AG Grid docs]({links.ag_grid_docs}).
 
 ### Grid Height
 
@@ -110,7 +112,7 @@ To see how to format numbers and dates, see:
 ### Sorting, Filtering, Selecting, and Paging Natively
 
 - [Cross Filter Example](https://dash.plotly.com/dash-ag-grid/crossfilter) - See a Dash AG Grid version of the app from this section.
-- [Filtering](https://dash.plotly.com/dash-ag-grid/column-filters) - Extensive filtering docs.
+- [Filtering](https://dash.plotly.com/dash-ag-grid/column-filters)
 - [Sorting](https://dash.plotly.com/dash-ag-grid/row-sorting)
 - [Row Selection](https://dash.plotly.com/dash-ag-grid/checkbox-row-selection)
 - Deleting rows with a button - see the <dccLink href="{links.components_html}" children="Custom Component Gallery"/>

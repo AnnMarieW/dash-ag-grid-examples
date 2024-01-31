@@ -20,7 +20,6 @@ app.layout = html.Div(
                 "tooltipInteraction": True, # Won't hide when hover on toolip.  Can select and copy content.
                # "tooltipMouseTrack": True # tooltips follows the cursor - don't use when tooltipInteraction = True
             },
-            style={"ag-tooltip-background-color": "red"}
         ),
     ],
 )

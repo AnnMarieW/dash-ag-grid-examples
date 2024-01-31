@@ -39,11 +39,12 @@ dag.AgGrid(
 
 Features available by default:
 - Alpine theme is applied to style the grid
-- The columns are resizable (drag on the vertical handle in the header)
-- The rows are sortable (click on the header to sort. shift-click the header to sort by multiple columns)
-- Note the row animation when sorting
-- Boolean values are rendered as a checkbox 
+- The columns are resizable (drag on the vertical handle in the header) (New default in V31)
+- The rows are sortable (click on the header to sort. shift-click the header to sort by multiple columns) (New default in V31)
+- Note the row animation when sorting (New default in V31)
+- Boolean values are rendered as a checkbox (New default  in V31)
 - Reorder the columns by dragging the column header
+- Pin a column to the right or left side of the grid by dragging the column header and holding near the grid edge until the pin icon appears.
 
 
 If you are upgrading from dash-ag-grid 2.4, you will notice that a bunch of features are now enabled by default. 
@@ -80,7 +81,13 @@ defaultColDef: {
 ```
 Note: Column Definitions take precedence over Default Column Definitions
 
-The grid should now allow filtering on all columns:
+The grid should now allow filtering on all columns.  Note that the filters are different based on the type of data.
+- The Success column has a dropdown that displays True and False
+- The Price has a number filter
+- The date has a date filter with a date picker component
+- The other columns have a text filter.
+
+New in V31: The data type is inferred by default.  See more information in the [Cell Data Type](https://dash.plotly.com/dash-ag-grid/cell-data-type) section.
 
 
 """
