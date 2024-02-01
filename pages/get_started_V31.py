@@ -37,12 +37,21 @@ dag.AgGrid(
 )
 ```
 
-Features available by default:
 - Alpine theme is applied to style the grid
-- The columns are resizable (drag on the vertical handle in the header) (New default in V31)
-- The rows are sortable (click on the header to sort. shift-click the header to sort by multiple columns) (New default in V31)
-- Note the row animation when sorting (New default in V31)
-- Boolean values are rendered as a checkbox (New default  in V31)
+- The columns are resizable (drag on the vertical handle in the header)
+- The rows are sortable (click on the header to sort. shift-click the header to sort by multiple columns)
+- Note the row animation when sorting
+- Boolean values are rendered as a checkbox 
+- Reorder the columns by dragging the column header
+- Pin a column to the right or left side of the grid
+
+
+Features available by default:
+- Alpine theme is applied to style the grid.
+- The columns are resizable by dragging on the vertical handle in the header.  (Resizing coluns is enabled by default in V31)
+- The rows are sortable.  Click click on the header to sort. shift-click the header to sort by multiple columns. (Sorting is enabled by default in V31)
+- There is row animation when sorting (This is enabled by default in V31)
+- Boolean values are rendered as a checkbox. (Cool new default in V31)
 - Reorder the columns by dragging the column header
 - Pin a column to the right or left side of the grid by dragging the column header and holding near the grid edge until the pin icon appears.
 
@@ -55,7 +64,7 @@ If you prefer to disable these features, see the [Migration Guide](https://dash.
 text3 = """
 ## Configure Columns
 
-Now that we have a basic grid with some arbitrary data, we can start to configure the grid with Column Properties.
+Now that we have a basic grid with some data, we can start to configure the grid with Column Properties.
 
 Column Properties can be added to one or more columns to enable/disable column-specific features. Let's try this by adding the `filter: True` property to the 'mission' column:
 
@@ -96,10 +105,10 @@ text5 = """
 
 So far we've covered creating a grid, updating the data within the grid, and configuring columns. This section introduces Grid Options, which control functionality that extends across both rows & columns, such as Pagination and Row Selection.
 
-AG Grid is highly customizable and has hundreds of properties. Only a subset of these are defined in the Dash AgGrid
+AG Grid is highly customizable and has msny properties. Only a subset of these are defined in the Dash AG Grid
  component. Valid grid-level properties that are not listed in the [Reference](https://dash.plotly.com/dash-ag-grid/reference) section can be used by passing them to the dashGridOptions property on the Dash AgGrid component.
 
-Let's try this by adding `pagination: True` to our `dashGridOptions`:
+Let's try this by setting `pagination=True` in `dashGridOptions`:
 
 ```python
 dag.AgGrid(

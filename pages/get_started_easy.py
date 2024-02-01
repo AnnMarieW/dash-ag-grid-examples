@@ -38,6 +38,9 @@ Features available by default:
 - Reorder the columns by dragging the column header
 - Pin a column to the right or left side of the grid
 
+Note that this site uses a custom Alpine theme so it works with the  light and dark Bootstrap themes.  Learn more in the the <dccLink href="//theme-switch" children="Theme Switch Tutorial." />
+If you would like to see a live demo of the grid themes see the [AG Grid Docs](https://www.ag-grid.com/example/)
+
 """
 
 text2 = f"""
