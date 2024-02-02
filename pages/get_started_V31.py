@@ -37,15 +37,6 @@ dag.AgGrid(
 )
 ```
 
-- Alpine theme is applied to style the grid
-- The columns are resizable (drag on the vertical handle in the header)
-- The rows are sortable (click on the header to sort. shift-click the header to sort by multiple columns)
-- Note the row animation when sorting
-- Boolean values are rendered as a checkbox 
-- Reorder the columns by dragging the column header
-- Pin a column to the right or left side of the grid
-
-
 Features available by default:
 - Alpine theme is applied to style the grid.
 - The columns are resizable by dragging on the vertical handle in the header.  (Resizing coluns is enabled by default in V31)
