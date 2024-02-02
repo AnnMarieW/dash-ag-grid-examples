@@ -39,7 +39,7 @@ dag.AgGrid(
 
 Features available by default:
 - Alpine theme is applied to style the grid.
-- The columns are resizable by dragging on the vertical handle in the header.  (Resizing coluns is enabled by default in V31)
+- The columns are resizable by dragging on the vertical handle in the header.  (Resizing columns is enabled by default in V31)
 - The rows are sortable.  Click click on the header to sort. shift-click the header to sort by multiple columns. (Sorting is enabled by default in V31)
 - There is row animation when sorting (This is enabled by default in V31)
 - Boolean values are rendered as a checkbox. (Cool new default in V31)
@@ -96,8 +96,7 @@ text5 = """
 
 So far we've covered creating a grid, updating the data within the grid, and configuring columns. This section introduces Grid Options, which control functionality that extends across both rows & columns, such as Pagination and Row Selection.
 
-AG Grid is highly customizable and has msny properties. Only a subset of these are defined in the Dash AG Grid
- component. Valid grid-level properties that are not listed in the [Reference](https://dash.plotly.com/dash-ag-grid/reference) section can be used by passing them to the dashGridOptions property on the Dash AgGrid component.
+AG Grid is highly customizable and has many props and only a subset of these are defined in the Dash AgGrid component. Valid grid-level properties that are not listed in the [reference section](https://dash.plotly.com/dash-ag-grid/reference) in the Dash docs can be used by passing them to the dashGridOptions property on the Dash AgGrid component.
 
 Let's try this by setting `pagination=True` in `dashGridOptions`:
 
@@ -185,7 +184,7 @@ an object in the global window namespace.  Variables defined in this namespace a
 Next we add our component called `CompanyLogoRenderer` to the `dagcompoentfuncs` object. For those familiar with React,
  you will see that the `CompanyLogoRenderer` is a function that returns a [React element without  using JSX](https://react.dev/reference/react/createElement#creating-an-element-without-jsx). 
  
-To make this look a little more familiar to Python coders, let's translate it to Python.  This is a funtion that returns
+To make this look a little more familiar to Python coders, let's translate it to Python.  This is a function that returns
  a component using Dash html components.  (Don't use this Python function - it's just for illustration.)
  
 ```python
@@ -244,7 +243,7 @@ In the grid below, we have filter and editing enabled.  The Cell Data Types are 
 text9="""
 ## With callbacks
 
-Certain props will trigger calback in Dash.  See the full list in the [Reference](https://dash.plotly.com/dash-ag-grid/reference) section of the Dash docs.
+Certain props will trigger callbacks in Dash.  See the full list in the [Reference](https://dash.plotly.com/dash-ag-grid/reference) section of the Dash docs.
 
 In this example, we will track what data was changed in a callback.
 
