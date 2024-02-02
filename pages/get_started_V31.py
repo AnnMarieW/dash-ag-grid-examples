@@ -238,9 +238,11 @@ New in V31 are some additional cell editors that are generally used with [Cell D
 - Date Cell Editor
 - Checkbox Cell Editor
 
+You can also configure the provided cell editors.  For example, the number editor in the Price column shows the stepper button. See more info in the Dash docs.
+
 In the grid below, we have filter and editing enabled.  The Cell Data Types are inferred and the following features
  are enabled automatically!
-
+ 
 - The **Text** columns has a `text` data type. It uses a text editor and the values are sorted and filtered as strings.
 - The **Number** columns has a `number` data type. It uses a number editor and number filter.
 - The **dateString** column has a `dateString` data type. The date editor, date filter and sort works automatically if
