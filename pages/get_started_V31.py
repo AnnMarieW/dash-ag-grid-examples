@@ -6,7 +6,7 @@ from utils.other_components import  up_next, make_md, make_feature_card, make_im
 import utils.links as links
 
 register_page(
-    __name__, description=app_description, title="Dash AG Grid Examples: Get started with V31", path=links.get_started_V31
+    __name__, description=app_description, title="Dash AG Grid Examples: Getting started with V31", path=links.get_started_V31
 )
 
 
@@ -82,9 +82,9 @@ defaultColDef: {
 Note: Column Definitions take precedence over Default Column Definitions
 
 The grid should now allow filtering on all columns.  Note that the filters are different based on the type of data.
-- The Success column has a dropdown that displays True and False
+- The Successful column has a dropdown that displays True and False
 - The Price has a number filter
-- The date has a date filter with a date picker component
+- The Date has a date filter with a date picker component
 - The other columns have a text filter.
 
 New in V31: The data type is inferred by default.  See more information in the [Cell Data Type](https://dash.plotly.com/dash-ag-grid/cell-data-type) section.
@@ -96,7 +96,7 @@ text5 = """
 
 So far we've covered creating a grid, updating the data within the grid, and configuring columns. This section introduces Grid Options, which control functionality that extends across both rows & columns, such as Pagination and Row Selection.
 
-AG Grid is highly customizable and has many props and only a subset of these are defined in the Dash AgGrid component. Valid grid-level properties that are not listed in the [reference section](https://dash.plotly.com/dash-ag-grid/reference) in the Dash docs can be used by passing them to the dashGridOptions property on the Dash AgGrid component.
+AG Grid is highly customizable and has many props -- only a subset of these are defined in the Dash AgGrid component. Valid grid-level properties that are not listed in the [reference section](https://dash.plotly.com/dash-ag-grid/reference) in the Dash docs can be used by passing them to the dashGridOptions property on the Dash AgGrid component.
 
 Let's try this by setting `pagination=True` in `dashGridOptions`:
 
