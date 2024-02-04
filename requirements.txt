@@ -1,7 +1,8 @@
 dash>=2.10.0
+dash-ag-grid>=31.0.0
 pandas>=1.2.3
 dash-bootstrap-components>=1.5.0
-dash-mantine-components
+dash-mantine-components==0.12.1
 dash-iconify
 openpyxl
 
