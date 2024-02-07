@@ -288,6 +288,24 @@ migrating_DataTable = [
 migrating_DataTable = make_card("### Migrating from DataTable", migrating_DataTable)
 
 
+tips_and_tricks = [
+    html.Div("Examples", className="text-primary border-top pt-2"),
+    html.H4(
+        dcc.Link(
+            "Tips & Tricks ", href=links.tips_and_tricks
+        )
+    ),
+    dcc.Markdown("""            
+        - Make a grid with less code  -- by using functions to create a grid with all your favorite features
+        - Access data created with a `valueGetter` in a callback
+    
+    """, className="small",
+                 ),
+]
+tips_and_tricks = make_card("### Tips & Tricks", tips_and_tricks)
+
+
+
 
 layout = html.Div(
     [
@@ -317,6 +335,7 @@ layout = html.Div(
                 dbc.Col(import_export),
                 dbc.Col(styling),
                 dbc.Col(migrating_DataTable),
+                dbc.Col(tips_and_tricks),
                 #dbc.Col(under_construction2),
 
             ]

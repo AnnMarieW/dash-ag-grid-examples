@@ -35,6 +35,7 @@ components_html= "/components-html"
 import_export="/import-export"
 styling="/styling"
 tooltips="/tooltips"
+tips_and_tricks="/tips-and-tricks"
 
 migrating_DataTable= "/migrating-DataTable"
 
