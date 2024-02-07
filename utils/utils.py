@@ -65,8 +65,11 @@ def file_names():
 
 
 file_names, module_names = file_names()
+print("step 1")
 example_modules = {p: import_module(p) for p in module_names}
+print("step 2")
 example_apps = {p: m.app for p, m in example_modules.items()}
+print("step 3")
 example_source_codes = {p: getsource(m) for p, m in example_modules.items()}
 
 

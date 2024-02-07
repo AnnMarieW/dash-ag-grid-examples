@@ -1,5 +1,14 @@
 var dagfuncs = window.dashAgGridFunctions = window.dashAgGridFunctions || {};
 
+// used in updating_rowData_with_ValueGetter
+dagfuncs.commentsValueGetter = (params) => {
+   const newComment = "The " + params.data.model + "Sold for $" + params.data.price
+   params.data.comments = newComment
+   return newComment
+}
+
+
+
 // used in dmc.Select popup parent
 dagfuncs.setBody = () => {
     return document.querySelector('body')

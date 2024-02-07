@@ -40,6 +40,7 @@ In this example, the value of the cell will show in a tooltip. This is
  useful when the column is too narrow for the cell content. Note that  by default, there is a 2 second delay before the
   tooltip shows. Next We'll show you how to change that.
 
+__Try hovering over any cell:__
 """
 
 text2 = """
@@ -50,6 +51,8 @@ You can configure the following tooltip features in the `dashGridOptions`
 -  `tooltipHideDelay` - set the number of milliseconds before the tooltip is hidden. In the example it's 3000
 - `tooltipInteraction` - When True, the tooltip does not hide on hover.  You can select and copy the content. 
 - `tooltipMouseTrack` - makes the tooltips follow the cursor - don't use when `tooltipInteraction` = True
+
+__Try hovering over any cell, then copy tooltip content__
 ```"""
 
 text3 = """
@@ -62,6 +65,8 @@ columndDefs = [
     {"field": "company", "tooltipField": "company", "headerTooltip: "This is the Company column"},
 ]
 ```
+
+__Try hovering over the headers__
 
 """
 
@@ -89,12 +94,29 @@ __Format the data in the tooltip__
   
 """
 
+text4b = """
+
+## Display the original value of edited field in tooltips
+
+In this example, the after a cell is edited, the original value is displayed in a tooltip.  
+
+We also set the following in `dashGridOptions` to make the original value easier to restore:
+ -  `tooltipInteraction=True`  Allows for selecting and copying the value in the tooltip
+ -  `undoRedoCellEditing=True` Allows for undoing the edits with ctrl-z
+
+
+__Try editing the Company or the Mission columns:__
+
+
+"""
+
 text5=f"""
 ## Custom header tooltip component with icons
 
 For an introduction to custom components, see the   <dccLink href="/{links.get_started_V31}" children="Getting Started" /> tutorial.
 
 This app has custom header tooltips in the Gold, Silver and Bronze columns.  It displays a FontAwesome icon using an HTML `i` component.
+
 
 """
 
@@ -109,7 +131,7 @@ Display a figure in a tooltip with this custom component that uses a `dcc.Graph`
 text7="""
 ### Custom cell tooltip component for markdown content
 
-Add a column of markdown text to the `rowData`.  The custom component will display it in a tooltip.
+This example displays markdown text in a custom tooltip component.  We add the text to display as a column in `rowData`
 
 """
 
@@ -147,6 +169,8 @@ layout = html.Div(
         example_app("examples.tooltips.tooltip_header", make_layout=make_tabs),
         make_md(text4),
         example_app("examples.tooltips.tooltip_valuegetters", make_layout=make_tabs),
+        make_md(text4b),
+        example_app("examples.tooltips.tooltip_display_original_values_in_tooltip", make_layout=make_tabs),
         make_md(text5),
         example_app("examples.components.html_i_tooltip_header", make_layout=make_tabs),
         make_md(text6),

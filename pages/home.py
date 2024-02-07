@@ -246,8 +246,7 @@ import_export  = [
         """
         Export to CSV and Excel
         - CSV export with params
-        - Excel export (community) 4 examples
-        - Excel export(Enterprise)
+        - Excel export (community) 4 examples    
         """,
         className="small",
     ),

@@ -49,7 +49,7 @@ for k in example_apps:
 
     app.callback_map.update(new_callback_map)
     app._callback_list.extend(new_callback_list)
-
+print("step 4")
 
 app.layout = html.Div(
     [
