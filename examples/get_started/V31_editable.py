@@ -35,7 +35,7 @@ columnDefs = [
       "width": 130,
         "type": "rightAligned",
         "valueFormatter": {"function": "d3.format('$,.0f')(params.value)"},
-        "cellEditorParams": {"showStepperButtons": True}
+        "cellEditorParams": {"showStepperButtons": True, "min": 0, "precision": 0}
     },
     {
       "field": "successful",

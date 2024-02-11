@@ -66,7 +66,7 @@ dag_docs_card = [
     html.Div("Documentation", className="text-primary border-top pt-2"),
     html.H4(
         dcc.Link(
-            "Plotly Dash AG Grid Docs", href=links.ag_grid_docs, target="_blank"
+            "Plotly Dash AG Grid Docs", href=links.dag_docs, target="_blank"
         )
     ),
     html.Div(
