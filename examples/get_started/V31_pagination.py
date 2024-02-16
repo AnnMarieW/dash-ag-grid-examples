@@ -14,7 +14,8 @@ app.layout = html.Div(
             rowData=df.to_dict("records"),
             columnDefs=[{"field": i} for i in df.columns],
             defaultColDef={"filter": True},
-            dashGridOptions={"pagination": True}
+            dashGridOptions={"pagination": True},
+            columnSize="sizeToFit",
         ),
     ],
 )
