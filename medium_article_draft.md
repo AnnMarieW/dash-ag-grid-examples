@@ -1,12 +1,12 @@
-
+﻿
 
 # Getting Started with Dash AG Grid V31
 
 Elevate your Dash app's data visualization capabilities with [Dash AG Grid](https://dash.plotly.com/dash-ag-grid), a high-performance and highly customizable Dash component that wraps [AG Grid](https://ag-grid.com/): "The best JavaScript grid in the world."
 
-I'm thrilled to announce the recent release of Dash AG Grid V31.0.0, aligning with AG Grid V31.0.3 and encompassing all its cutting-edge features. If you haven't tried Dash AG Grid yet, this is a great time to take it for a spin. The V31 release has many  grid features enabled by default, which means  __more features with less code__.  You'll be amazed at how easy it is to add this beautiful, feature rich data grid to your Dash app. If you've used previous versions of Dash AG Grid, please see this [Migration Guide](https://dash.plotly.com/dash-ag-grid/migration-guide) to help you upgrade to the latest release.
+I'm thrilled to announce the recent release of Dash AG Grid V31.0.0, aligning with AG Grid V31.0.3 and encompassing all its cutting-edge features. If you haven't tried Dash AG Grid yet, this is a great time to take it for a spin. The V31 release has many  grid features enabled by default, which means  __more features with less code__.  You'll be amazed at how easy it is to add this beautiful, feature-rich data grid to your Dash app. If you've used previous versions of Dash AG Grid, please see this [migration guide](https://dash.plotly.com/dash-ag-grid/migration-guide) to help you upgrade to the latest release.
 
-I've been a member of the Dash community team contributing to the development of Dash AG Grid since Plotly's decision to [open source this component last year](https://medium.com/plotly/announcing-dash-ag-grid-fbb4a1c83e62). My main focus has been on testing and documentation. Bryan Schroeder has taken the lead in developing the component, while Sébastien Didier has played a pivotal role in enhancing the documentation. Throughout this project, we've received invaluable mentorship from Alex Johnson, Plotly's CTO, and Liam Conners from the technical writing team. This project has been a great learning experience, and I'm excited to be part of the team working to make AG Grid available to all Dash users.
+I've been a member of the Dash community team contributing to the development of Dash AG Grid since Plotly's decision to [open source this component last year](https://medium.com/plotly/announcing-dash-ag-grid-fbb4a1c83e62). My main focus has been on testing and documentation. [Bryan Schroeder](https://community.plotly.com/u/jinnyzor/summary) has taken the lead in developing the component, while [Sébastien Didier](https://github.com/sdidier-dev) has played a pivotal role in enhancing the documentation. Throughout this project, we've received invaluable mentorship from [Alex Johnson](), Plotly's CTO, and [Liam Conners]() from the technical writing team. This project has been a great learning experience, and I'm excited to be part of the team working to make AG Grid available to all Dash users.
 
 This article draws inspiration from the AG Grid documentation's ["Creating a Basic Grid" tutorial](https://www.ag-grid.com/javascript-data-grid/deep-dive/). I'll walk you through getting started with Dash AG Grid, focusing on the **free** AG Grid Community features, then touch on some of the advanced features you can unlock with an AG Grid Enterprise license.
 
@@ -59,7 +59,7 @@ Access live examples and full code for each app featured in this article at the 
 Now that we have a basic grid with some data, let's configure the grid using Column Properties. Use Column Properties to configure a wide range of features; check out the [Columns documentation](https://dash.plotly.com/dash-ag-grid/column-definitions) for a complete list of options.
 
 
-Add Column Properties to enable/disable column-specific features in one or more columns. Try this by setting`filter=True` in the "mission" column.
+Add Column Properties to enable or disable column-specific features in one or more columns. Try this by setting`filter=True` in the "mission" column.
 
 ```python
 columnDefs=[
@@ -72,7 +72,7 @@ You'll now be able to filter the "mission" column --- give it a try by filtering
 
 
 ## Default Column Definitions
-The example above demonstrates how to configure a single column. To apply this configuration across all columns, we can use Default Column Definitions instead. Let's make all of our columns filterable by adding the `defaultColDef` property, and setting `filter=True`:
+The example above demonstrates how to configure a single column. To apply this configuration across all columns, we can use Default Column Definitions instead. Let's make all of our columns filterable by adding the `defaultColDef` property and setting `filter=True`:
 
 ```python
 dag.AgGrid(
@@ -89,7 +89,7 @@ This is one of the great new features available in this release.
 - The "Successful" column, with boolean data, has a dropdown filter with True and False selections
 - The "Price" has a [Number Filter](https://dash.plotly.com/dash-ag-grid/number-filters)
 - The "Date" has a [Date Filter](https://dash.plotly.com/dash-ag-grid/date-filters) with a date picker component
-- The other columns have the default [Text Filter](https://dash.plotly.com/dash-ag-grid/text-filters).
+- The other columns have the default [Text Filter](https://dash.plotly.com/dash-ag-grid/text-filters)
 
 
 ![ag-grid-v31b](https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/549968be-faf3-4e5d-b123-f10f43ff54f7)
@@ -98,14 +98,14 @@ This is one of the great new features available in this release.
 In this release, Dash AG Grid introduces built-in cell data types featuring automatic type inference from column data. 
 Beyond just filtering, as demonstrated in the above example, the grid can now automatically configure columns for rendering, editing, row grouping (an Enterprise feature), and Import & Export based on the data type. You have the flexibility to override predefined cell data types and even create fully custom data types for handling complex objects, such as dicts or lists within cells.
 
-This means that tasks that previously required manual column configuration can now be automated by the grid. This is another new low code feature in this latest release.
+This means that tasks that previously required manual column configuration can now be automated by the grid. This is another new low-code feature in this latest release.
 
 See more information in the [Cell Data Types](https://dash.plotly.com/dash-ag-grid/cell-data-types) section of the Dash Docs.
 
 
 
 ## Grid Options
-So far, I've covered creating a grid and configuring columns. This section introduces Grid Options, which control functionality that extends across both rows & columns, such as Pagination and Row Selection.
+So far, I've covered creating a grid and configuring columns. This section introduces Grid Options, which control functionality that extends across both rows and columns, such as Pagination and Row Selection.
 
 AG Grid is highly customizable and has many props --- only a subset of these are defined as separate props in the Dash AG Grid component. Valid grid-level properties that are not listed in the [reference](https://dash.plotly.com/dash-ag-grid/reference) section in the Dash docs can be used by passing them to the `dashGridOptions` property on the Dash AG Grid component.
 
@@ -122,11 +122,11 @@ You'll now see Pagination is enabled on the grid.  Note that the Page Size contr
 ![image](https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/e9b5c003-2257-477c-bf74-e503d0e1bd79)
 
 ## Format Cell Values
-The data supplied to the grid usually requires some degree of formatting. For basic text formatting we can use [Value Formatters](https://dash.plotly.com/dash-ag-grid/value-formatters).
+The data supplied to the grid usually requires some degree of formatting. For basic text formatting, we can use [Value Formatters](https://dash.plotly.com/dash-ag-grid/value-formatters).
 
-Value Formatters are functions which take the value of the cell, apply some formatting, and return a new value to be displayed by the grid. In Dash, it is not possible to have functions as props. Instead we use a dictionary with "function" as the key and the value is the JavaScript function to execute. You can find more information in the [Dash docs](https://dash.plotly.com/dash-ag-grid/javascript-and-the-grid).
+Value Formatters are functions that take the value of the cell, apply some formatting, and return a new value to be displayed by the grid. In Dash, it is not possible to have functions as props. Instead, we use a dictionary with "function" as the key and the value is the JavaScript function to execute. You can find more information in the [Dash docs](https://dash.plotly.com/dash-ag-grid/javascript-and-the-grid).
 
-In Dash AG Grid, the [d3 format functions](https://dash.plotly.com/dash-ag-grid/d3-value-formatters) are included. This makes it even easier to formant numbers and dates.
+In Dash AG Grid, the [d3 format functions](https://dash.plotly.com/dash-ag-grid/d3-value-formatters) are included. This makes it even easier to format numbers and dates.
 
 Let's try this by adding the `valueFormatter` property to our "price" column.
 
@@ -146,12 +146,12 @@ The grid now shows the formatted value in the "price" column:
 
 ## Custom Cell Components
 
-Value Formatters are useful for basic formatting, but for more advanced use-cases we can use [Cell Renderer Components](https://dash.plotly.com/dash-ag-grid/cell-renderer-components) instead.
+Value Formatters are useful for basic formatting, but for more advanced use cases, we can use [Cell Renderer Components](https://dash.plotly.com/dash-ag-grid/cell-renderer-components) instead.
 
-Cell Renderers allow you to add custom HTML, JavaScript and other Dash components within cells. To use a Cell Renderer, set the `cellRenderer` prop on a column, with the value as the name of your Cell Renderer.
+Cell Renderers allow you to add custom HTML, JavaScript, and other Dash components within cells. To use a Cell Renderer, set the `cellRenderer` prop on a column, with the value as the name of your Cell Renderer.
  
 
-If you are new to JavaScript see the Dash Docs:
+If you are new to JavaScript, see the Dash docs:
  - [Adding Your Own CSS and JS to Dash Apps](https://dash.plotly.com/external-resources)
  - [JavaScript and Dash AG Grid](https://dash.plotly.com/dash-ag-grid/javascript-and-the-grid)
  - [Dash AG Grid Components](https://dash.plotly.com/dash-ag-grid/cell-renderer-components)
@@ -194,11 +194,11 @@ columnDefs=[
 ]
 ```
 
-Be sure to check out the dash docs [Cell Renderer](https://dash.plotly.com/dash-ag-grid/cell-renderer-components) section for more details and examples.  Also, check out all the components in the  [Dash AG Grid Custom Component Gallery](https://dashaggridexamples.pythonanywhere.com/)
+Be sure to check out the Dash docs [Cell Renderer](https://dash.plotly.com/dash-ag-grid/cell-renderer-components) section for more details and examples.  Also, check out all the components in the  [Dash AG Grid Custom Component Gallery](https://dashaggridexamples.pythonanywhere.com/)
 
 ![cell_renderer](https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/d8e0f837-bfb3-4496-92a4-4a13553d468c)
 
-## Editing and Provided Cell Editors
+## Editing, and Provided Cell Editors
 
 The grid provides several built-in [cell editors](https://dash.plotly.com/dash-ag-grid/provided-cell-editors), eliminating the need to create custom components for the following:
 
@@ -220,7 +220,7 @@ dag.AgGrid(
     defaultColDef={"editable": True, "filter":True}
 )
 ```
-The grid automatically uses the appropriate cell editors based on the Cell Data Type, just as it selects filters according to data type.
+The grid automatically uses the appropriate cell editors based on the Cell Data Type, just as it selects filters according to the data type.
 
 See the new number, date and checkbox editor in action:
 - The "Successful" column uses the Checkbox Cell Editor
@@ -254,7 +254,7 @@ Certain properties in Dash AG Grid can trigger Dash callbacks. Please refer to t
 In the following example, I'll show how to track changes in data using a callback.
 
 This example includes several more features:
- - Multiple Rows are selectable.  For more info see [Selection](https://dash.plotly.com/dash-ag-grid/checkbox-row-selection) section.
+ - Multiple Rows are selectable.  For more info, see the [Selection](https://dash.plotly.com/dash-ag-grid/checkbox-row-selection) section.
  - The row animation is disabled when you sort, filter or move columns
  - The date is formatted using the D3 functions
  - Numeric columns are right aligned
@@ -269,10 +269,9 @@ Be sure to try it out for yourself in the live version at [Dash AG Grid Examples
 
 Explore additional features with AG Grid Enterprise. A license is required; check [AG Grid docs for pricing details.](https://www.ag-grid.com/license-pricing/)
 
-In AG Grid Enterprise, unlock functionalities like Grouping, Aggregation, Advanced Filtering, Hierarchical Data Support & Tree View, Data Export to Excel, Excel-like Pivoting, Copy/Paste, Sparklines and more.
+In AG Grid Enterprise, unlock functionalities like Grouping, Aggregation, Advanced Filtering, Hierarchical Data Support and Tree View, Data Export to Excel, Excel-like Pivoting, Copy/Paste, Sparklines, and more.
 
-The Enterprise section in Dash Grid docs provides only a few examples, so please refer to the AG Grid documentation for details.
-
+The Enterprise section in the Dash Grid docs provides only a few examples, so please refer to the AG Grid documentation for details.
 
 Here's a new Enterprise feature in Dash AG Grid V31.  You won't find this in the Dash Docs yet, but it's available in this release.
 
@@ -313,21 +312,22 @@ Congratulations! You've completed the tutorial and built your first grid. By now
 
 - __Default Column Definitions__: Similar to Column Definitions, but applies configurations to all columns.
 
--  __Grid Options__: Configure functionality which extends across the entire grid.
+-  __Grid Options__: Configure functionality that extends across the entire grid.
 
 - __Value Formatters__: Functions used for basic text formatting
 
 - __Cell Renderers__: Add your own components to cells
 
-- __Editing__:  Editing cells with provided text, number, date and checkbox editors
+- __Editing__:  Editing cells with provided text, number, date, and checkbox editors
 
-- __Callbacks__ : Events that trigger Dash callbacks, typically as a result of user interaction.
+- __Callbacks__: Events that trigger Dash callbacks, typically as a result of user interaction.
 
 ## Next Steps
 
 - See the [Dash docs](https://dash.plotly.com/dash-ag-grid) and the [AG Grid docs](https://ag-grid.com/) for details on all the features.
-
-- Have questions?  Ask them on the [Dash Community Form](https://community.plotly.com/)
+- If you've found Dash AG Grid valuable, show your support by starring us on [GitHub](https://github.com/plotly/dash-ag-grid)! 🌟.
+- Have questions or want to join the conversation? Head over to the [Dash Community Forum](https://community.plotly.com/) and connect with fellow developers. 
+- If you would like to join our community development team and contribute to making Dash AG Grid even better, feel free to reach out to [Adam Shroeder]()!
 
 Happy Coding!
 
