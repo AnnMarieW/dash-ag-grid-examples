@@ -7,8 +7,6 @@ import pandas as pd
 print("dash-ag-grid version: ", dag.__version__)
 print("AG Grid version: ", dag.grid_version)
 
-
-
 df = pd.DataFrame({
     'a': [random.randint(0, 10000) for _ in range(20)],
     'b': [random.randint(0, 10000) for _ in range(20)],
@@ -32,7 +30,7 @@ app.layout = html.Div(
             rowData=df.to_dict("records"),
             columnDefs=[{"field": i } for i in df.columns],
             defaultColDef={"flex": 1,"cellClass": 'align-right', "enableCellChangeFlash": True},
-            dashGridOptions={"cellFlashDelay": 3000, "cellFadeDelay": 500}
+            dashGridOptions={"cellFlashDelay": 2000, "cellFadeDelay": 500}
 
         )
     ]
