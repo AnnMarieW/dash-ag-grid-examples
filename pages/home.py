@@ -143,6 +143,24 @@ tooltips = [
 tooltips = make_img_card(links.tootips_img, tooltips)
 
 
+grid_api = [
+    html.Div("Tutorial", className="text-primary border-top pt-2"),
+    html.H4(
+        dcc.Link(
+            " How to use the AG Grid API with Dash ", href=links.grid_api
+        )
+    ),
+    dcc.Markdown("""
+    - Accessing the Grid's API in a Dash Clientside Callback
+    - Determining the Correct AG Grid Docs Version for Dash AG Grid
+    - Examples: Flashing Cells using the Grid's API
+    - Differentiating Between Dash AG Grid Functions: `getApiAsync` and `getApi`
+    """, className="small",
+                 ),
+]
+grid_api = make_img_card(links.get_started_V31_img, grid_api)
+
+
 # Component GALLERY -----------------------------------------------
 
 dbc_components = [
@@ -325,6 +343,7 @@ layout = html.Div(
                 dbc.Col(get_started_V31),
                 dbc.Col(theme_switch),
                 dbc.Col(tooltips),
+                dbc.Col(grid_api),
 
             ]
         ),

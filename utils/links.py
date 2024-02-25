@@ -38,6 +38,7 @@ import_export="/import-export"
 styling="/styling"
 tooltips="/tooltips"
 tips_and_tricks="/tips-and-tricks"
+grid_api = "/grid-api"
 
 migrating_DataTable= "/migrating-DataTable"
 
