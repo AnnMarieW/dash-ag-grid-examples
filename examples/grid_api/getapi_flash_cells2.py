@@ -33,7 +33,7 @@ app.layout = html.Div(
             dashGridOptions={"cellFlashDelay": 2000, "cellFadeDelay": 500}
 
         )
-    ]
+    ], className="flash",
 )
 
 # Update some data

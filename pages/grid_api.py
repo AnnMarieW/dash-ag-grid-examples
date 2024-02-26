@@ -125,8 +125,8 @@ version (31.0.3), so we need to continue to use the old prop names.
 
 Here's the CSS to change the flash background color:
 ```
-.ag-theme-alpine,
-.ag-theme-alpine-dark {
+.flash .ag-theme-alpine,
+.flash .ag-theme-alpine-dark {
   --ag-value-change-value-highlight-background-color: #cc222244;
 }
 ```

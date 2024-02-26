@@ -21,7 +21,7 @@
 }
 
 /* used in the grid api flashing cells example */
-.ag-theme-alpine,
-.ag-theme-alpine-dark {
+flash .ag-theme-alpine,
+.flash .ag-theme-alpine-dark {
   --ag-value-change-value-highlight-background-color: #cc222244;
 }
