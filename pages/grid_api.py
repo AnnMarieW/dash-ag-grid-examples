@@ -139,13 +139,20 @@ text3 = """
 
 In Dash AG Grid, there are two function for retrieving the grid API: `getApi` and `getApiAsync`.
 
+Since most of us use Python more than JavaScript, here are some great articles from MDN on the difference between synchronous and asynchronous functions in JavaScript:
+
+- [Introducing asynchronous JavaScript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing)
+
+- [How to use Promises, async and await](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises#async_and_await)
+
+
 `getApi` Method:  
 
-The `getApi` method is a synchronous function, and it provides a straightforward way to obtain the grid API. However,
-you need to  ensure that the grid is rendered before calling this method; otherwise, you'll see an error.
+You can use `getApi` with a regular (synchronous) JavaScript function. It simply checks one time if the grid is ready and returns either the grid's API or an error. This means that if the Dash callback is triggered when the app starts and the grid is not ready, you will get the error.
 
-Here's an example to illustrate.  This callback will be triggered when the app starts and the
-grid won't be ready.
+
+Here's an example to illustrate.  This callback will be triggered when the app starts and the grid won't be ready.
+
 
 ```
 # This uses getApi before the grid is ready and it  won't work:
@@ -162,11 +169,20 @@ clientside_callback(
 
 `getApiAsync` Method:  
 
-The `getApiAsync` method is asynchronous and returns a promise. This allows you to use it within an async function,
-ensuring that the function will wait until the grid is fully rendered before proceeding.
+The `getApiAsync` function is asynchronous and returns a promise.  It uses a timeout and will wait for up to 2 minutes for the grid to be ready before it sends an error. (If it takes longer than 2 minutes to load the grid, you should probably be using background callbacks). 
 
-In this example, even though the function is called when the app starts and the grid hasn't rendered, you will not see
-an error because it is using an async function:
+Here's some info from the MDN article:
+
+>The [`async`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) keyword gives you a simpler way to work with asynchronous promise-based code. Adding `async` at the start of a function makes it an async function.
+>
+>Inside an async function, you can use the `await` keyword before a call to a function that returns a promise. This makes the code wait at that point until the promise is settled, at which point the fulfilled value of the promise is treated as a return value, or the rejected value is thrown.
+
+>This enables you to write code that uses asynchronous functions but looks like synchronous code.
+
+
+This is the same function as above, but it uses `getApiAsync`.  In this example, even though the callback is triggered  when the app starts, it will wait for the grid to render and you are unlikely to see an error.
+
+
 
 ```
 # Flash 2 columns when the app starts using getApiAsync
