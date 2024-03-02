@@ -33,6 +33,28 @@ dagcomponentfuncs.CustomHeaderTooltip = function(props) {
   );
 }
 
+// adds a right aligned icon to a cell
+dagcomponentfuncs.cellEditorIcon = function (props) {
+  return React.createElement(
+    'span',
+    {
+      style: {
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        alignItems: 'center',
+      },
+    },
+    props.value,
+    React.createElement('i', {
+      className: props.icon,
+      style: { marginLeft: 'auto' },
+    })
+  );
+}
+
+
+
 // Simple component to create a custom link
 dagcomponentfuncs.StockLink = function (props) {
     return React.createElement(

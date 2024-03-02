@@ -20,7 +20,7 @@ For more information, please see the [Components](https://dash.plotly.com/dash-a
 
 ## HTML `img` component
 
-This app adds flags in the celss in the country column.  See  this [forum post](https://community.plotly.com/t/ag-grid-country-flags-cell-renderer/75932) for a tutorial.
+This app adds flags in the cells in the country column.  See  this [forum post](https://community.plotly.com/t/ag-grid-country-flags-cell-renderer/75932) for a tutorial.
 
 """
 
@@ -29,6 +29,28 @@ text2 = """
 
 This example shows how to use a custom component in the header tooltip. See the tooltip with icons in the Gold Silver and Bronze columns.
 Note that the Athlete column uses the default tooltip.
+"""
+
+text2b = """
+## HTML `i` component (for cell icons)
+
+This example adds a right aligned icon to indicate a cell is editable. This demo uses the [provided cell editors](https://dash.plotly.com/dash-ag-grid/provided-cell-editors),
+but it can be used with custom cell editors (like the dmc.Select) component as well.
+ 
+The same cell render is used to add icons to both the Company column and the Date column.  You can specify the icon using the  "icon" prop in the `cellRendererParams`:
+
+```
+columnDefs = [
+   {
+        "field": "date",
+        "cellRenderer": "cellEditorIcon",
+        "cellRendererParams": {
+            "icon": "far fa-calendar",
+        },
+    },
+]
+```
+
 """
 
 
@@ -55,6 +77,8 @@ layout = html.Div(
         example_app("examples.components.html_img_flags", make_layout=make_tabs),
          make_md(text2),
         example_app("examples.components.html_i_tooltip_header", make_layout=make_tabs),
+        make_md(text2b),
+        example_app("examples.components.html_i_cell_editor", make_layout=make_tabs),
         make_md(text3),
         example_app("examples.components.html_button_delete_rows", make_layout=make_tabs),
         make_md(text4),

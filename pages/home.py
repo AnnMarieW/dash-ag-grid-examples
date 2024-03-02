@@ -219,7 +219,8 @@ html_components = [
         - `img`  Image of flag in cells 
         - `img`  Upload images and display them in a tooltip
         - `i  `   Icons in header toolip
-        - `button` Delete row button       
+        - `i `    Icons to indicated editable cells 
+        - `button` Delete row button   
                 
 
         """,

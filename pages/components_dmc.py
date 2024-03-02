@@ -39,6 +39,8 @@ This example shows how to set the popup parent to allow the options menu to over
 
 text4 = """
 ## dmc.Select with grouping
+- The "City" column uses both labels and values in the dropdown.
+- The "Things To Do" column has dropdown options  grouped in different categories.
 
 """
 
