@@ -21,6 +21,19 @@ dagcomponentfuncs.CustomTooltipImage = function (props) {
 
 
 
+dagcomponentfuncs.CustomTooltipMarkdown = function (props) {
+    return React.createElement(
+        window.dash_core_components.Markdown, {
+            children: props.value,
+            className: props.className,
+            style: props.style,
+            dangerously_allow_html : props.dangerously_allow_html | false,
+            link_target: props.link_target,
+            mathjax: props.mathjax
+        })
+};
+
+
 
 dagcomponentfuncs.CustomHeaderTooltip = function(props) {
   return React.createElement(

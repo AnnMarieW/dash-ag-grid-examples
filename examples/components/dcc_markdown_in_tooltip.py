@@ -3,6 +3,10 @@ from dash import Dash, html
 import pandas as pd
 
 app = Dash(__name__)
+# Note in Dash>= 2.16 it's necessary to preload the dash-core-component becuase it's not used in the app layout and
+# only exists in the custom cell renderer
+# app = Dash(__name__, preloaded_libraries=['dash_core_components'])
+
 
 df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/ag-grid/space-mission-data.csv").head(20)
 
@@ -46,6 +50,7 @@ app.layout = html.Div(
             columnDefs=columnDefs,
             dashGridOptions={"tooltipShowDelay": 0},
         ),
+
     ]
 )
 

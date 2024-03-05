@@ -39,7 +39,10 @@ app = Dash(
         dark_hljs,
     ] + jquery_external_stylesheets,
     suppress_callback_exceptions=True,
-    external_scripts=jquery_external_scripts
+    external_scripts=jquery_external_scripts,
+    # the following is required in dash >=2.16 for apps where certain libraries are only used in
+    # custom cell renderers
+    # preloaded_libraries=['dash_iconify', 'dash_mantine_components', 'dash_core_components']
 )
 
 

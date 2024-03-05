@@ -7,6 +7,10 @@ from dash import Dash, html, dcc, Input, Output
 import dash_mantine_components as dmc
 
 app = Dash(__name__)
+# Note in Dash>= 2.16 it's necessary to preload the dash-mantine-component if it's not used in
+# the initial layout:
+#app = Dash(__name__, preloaded_libraries=['dash_mantine_components'])
+
 
 city_options = [
     {"label": "New York City", "value": "NYC", "disabled": True},

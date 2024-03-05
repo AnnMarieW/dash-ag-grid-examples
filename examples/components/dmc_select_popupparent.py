@@ -2,6 +2,10 @@ import dash_ag_grid as dag
 from dash import Dash, html
 
 app = Dash(__name__)
+# Note in Dash>= 2.16 it's necessary to preload the dash-mantine-component if it's not used in
+# the initial layout:
+#app = Dash(__name__, preloaded_libraries=['dash_mantine_components'])
+
 
 items = [f"Product Number  {i}" for i in range(15)]
 
