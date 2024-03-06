@@ -8,10 +8,6 @@ import pandas as pd
 import dash_mantine_components as dmc
 
 app = Dash(__name__)
-# Note in Dash>= 2.16 it's necessary to preload the dash-mantine-component and dash-iconify if it's not used in
-# the initial layout:
-#app = Dash(__name__, preloaded_libraries=['dash_mantine_components'])
-
 
 df = pd.read_csv(
     "https://raw.githubusercontent.com/plotly/datasets/master/ag-grid/olympic-winners.csv"
