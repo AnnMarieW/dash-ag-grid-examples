@@ -3,6 +3,40 @@ var dagcomponentfuncs = (window.dashAgGridComponentFunctions =
 
 var dagcomponentfuncs = window.dashAgGridComponentFunctions = window.dashAgGridComponentFunctions || {};
 
+
+
+// DMC RadioGroup component
+dagcomponentfuncs.DMC_RadioGroup = function (props) {
+    const { setData, value } = props;
+
+    const setProps = ({ value }) => {
+        props.node.setDataValue(props.column.colId, value);
+        setData(value);
+    };
+
+    const dataList = props.children;
+    const children = dataList.map(item => {
+        const { label, value, color, disabled } = item;
+
+        return React.createElement(window.dash_mantine_components.Radio, {
+            label: label,
+            value: value,
+            color: color,
+            disabled: disabled,
+        });
+    });
+
+    return React.createElement(
+        window.dash_mantine_components.RadioGroup,
+        {
+            children: children,
+            value: value,
+            setProps: setProps,
+        },
+    );
+};
+
+
 dagcomponentfuncs.CustomTooltipImage = function (props) {
   return React.createElement(
     'img',

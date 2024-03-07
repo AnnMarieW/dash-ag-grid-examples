@@ -243,6 +243,7 @@ dmc_components = [
         - `dmc.Select`
         - `dmc.Select` with Popup Parent
         - `dmc.Select` with Grouping
+        - `dmc.RadioGroup`
 
         """,
         className="small",

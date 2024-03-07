@@ -1,5 +1,6 @@
 from dash import  html, dcc, register_page
 import dash_bootstrap_components as dbc
+import dash_mantine_components as dmc
 from utils.code_and_show import example_app, make_tabs, make_app_first
 from utils.utils import app_description
 from utils.other_components import  up_next, make_md, make_feature_card, make_img_card
@@ -44,10 +45,20 @@ text4 = """
 
 """
 
+text5 = """
+## dmc.RadioGroup
+In this component, you can set the `label`, `value`, `color`, and `disabled` prop for each radio button.
+
+Thanks for this example from @dashamateur, see the post on the  [Dash Community Forum](https://community.plotly.com/t/dmc-radiogroup-as-cell-renderer-for-ag-grid/82771)
+
+Note - This site only has the dmc dark theme enabled. 
+"""
+
 
 next  =f'<dccLink href="{links.get_started_V31}" children="Getting Started with Dash AG Grid V31" />'
 
-layout = html.Div(
+
+layout = dmc.MantineProvider(html.Div(
     [
         make_md(text1),
         example_app("examples.components.dmc_button", make_layout=make_tabs),
@@ -57,6 +68,8 @@ layout = html.Div(
         example_app("examples.components.dmc_select_popupparent", make_layout=make_tabs),
         make_md(text4),
         example_app("examples.components.dmc_select_labels_and_vals", make_layout=make_tabs),
+        make_md(text5),
+        example_app("examples.components.dmc_radio_group", make_layout=make_tabs),
         up_next()
     ],
-)
+), theme={"colorScheme": "dark"})
