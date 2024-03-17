@@ -161,6 +161,26 @@ grid_api = [
 grid_api = make_img_card(links.get_started_V31_img, grid_api)
 
 
+external_filter = [
+    html.Div("Tutorial", className="text-primary border-top pt-2"),
+    html.H4(
+        dcc.Link(
+            " How to filter grid data with external components", href=links.external_filters
+        )
+    ),
+    dcc.Markdown("""
+    - Examples: Filtering the grid with a figure and other Dash components.
+    - How to use External filters:
+      - External Filter API
+      - Updating rowData
+      - Using the Filter Model     
+    """, className="small",
+                 ),
+]
+external_filter = make_img_card(links.external_filter_gif, external_filter)
+
+
+
 # Component GALLERY -----------------------------------------------
 
 dbc_components = [
@@ -346,6 +366,7 @@ layout = html.Div(
                 dbc.Col(theme_switch),
                 dbc.Col(tooltips),
                 dbc.Col(grid_api),
+                dbc.Col(external_filter)
 
             ]
         ),

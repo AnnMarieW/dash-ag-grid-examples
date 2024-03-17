@@ -24,7 +24,7 @@ cell_data_types = "/cell-data-types"
 advanced_filter_dark_gif = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/bca86860-4a26-4c63-96a2-5a4a76411e03"
 advanced_filter_light_gif = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/c0fb4069-2dcb-485a-af61-1d9fda724e31"
 
-
+external_filter_gif = "https://github.com/AnnMarieW/dash-ag-grid-examples/assets/72614349/289f6442-3093-4031-8e4b-d5d8135cd34e"
 
 # Page links
 get_started_V31 = "/get-started-v31"
@@ -39,6 +39,7 @@ styling="/styling"
 tooltips="/tooltips"
 tips_and_tricks="/tips-and-tricks"
 grid_api = "/grid-api"
+external_filters = "/external-filters"
 
 migrating_DataTable= "/migrating-DataTable"
 
