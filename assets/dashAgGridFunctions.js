@@ -1,5 +1,12 @@
 var dagfuncs = window.dashAgGridFunctions = window.dashAgGridFunctions || {};
 
+var dagfuncs = (window.dashAgGridFunctions = window.dashAgGridFunctions || {});
+
+dagfuncs.dynamicOptions = function (params, options) {
+    return {values: options[params.data.country]}
+};
+
+
 // used in updating_rowData_with_ValueGetter
 dagfuncs.commentsValueGetter = (params) => {
    const newComment = "The " + params.data.model + "Sold for $" + params.data.price
@@ -348,22 +355,6 @@ dagfuncs.DatePicker = class {
         return false;
     }
 
-}
-
-
-
-// used in cell editors dynamic options example
-dagfuncs.dynamicOptions = function (params) {
-    const selectedCountry = params.data.country;
-    if (selectedCountry === 'United States') {
-        return {
-            values: ['Boston', 'Chicago', 'San Francisco'],
-        };
-    } else {
-        return {
-            values: ['Montreal', 'Vancouver', 'Calgary']
-        };
-    }
 }
 
 

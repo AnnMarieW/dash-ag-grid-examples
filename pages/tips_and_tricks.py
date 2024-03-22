@@ -70,6 +70,17 @@ There are three tricks demonstrated here:
 
 """
 
+text3 = """
+## 3. Dynamic Select Options Using Built-in Select Component 
+
+This example demonstrates dynamic options based on the value of a different column. For each country listed in the
+ "Country" column, the dropdown in the "Cities" column can display different cities.
+
+The JavaScript function receives a dictionary containing countries and their corresponding cities from the app by
+ setting the cellEditorParams.
+
+"""
+
 
 
 
@@ -81,6 +92,8 @@ layout = html.Div(
         example_app("examples.tips_and_tricks.dag_utilities", make_layout=make_tabs),
         make_md(text2),
         example_app("examples.tips_and_tricks.updating_rowData_with_ValueGetter", make_layout=make_tabs),
+        make_md(text3),
+        example_app("examples.tips_and_tricks.select_dynamic_options", make_layout=make_tabs),
         up_next()
     ],
 )
