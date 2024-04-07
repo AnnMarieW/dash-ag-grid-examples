@@ -19,6 +19,7 @@ app.layout = html.Div(
                 "tooltipHideDelay": 3000, # Hides tooltip after 3000ms
                 "tooltipInteraction": True, # Won't hide when hover on toolip.  Can select and copy content.
                # "tooltipMouseTrack": True # tooltips follows the cursor - don't use when tooltipInteraction = True
+                "popupParent": {"function": "setBody()"} # Allows tooltip content to extend beyond the grid boundary
             },
         ),
     ],

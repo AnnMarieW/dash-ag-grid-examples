@@ -51,6 +51,7 @@ You can configure the following tooltip features in the `dashGridOptions`
 -  `tooltipHideDelay` - set the number of milliseconds before the tooltip is hidden. In the example it's 3000
 - `tooltipInteraction` - When True, the tooltip does not hide on hover.  You can select and copy the content. 
 - `tooltipMouseTrack` - makes the tooltips follow the cursor - don't use when `tooltipInteraction` = True
+- `popupParent` - set to  `{"function": "setBody()"}` to allow the tooltip content to extend beyond the grid boundary
 
 __Try hovering over any cell, then copy tooltip content__
 ```"""
@@ -125,6 +126,8 @@ text6="""
 ### Custom cell tooltip component with figures
 
 Display a figure in a tooltip with this custom component that uses a `dcc.Graph` component.  
+
+Note that the `popupParent` is set so that the tooltip content extends beyond the boundaries of the grid.  
 
 
 """
