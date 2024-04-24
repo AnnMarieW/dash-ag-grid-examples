@@ -2,6 +2,31 @@ var dagfuncs = window.dashAgGridFunctions = window.dashAgGridFunctions || {};
 
 var dagfuncs = (window.dashAgGridFunctions = window.dashAgGridFunctions || {});
 
+
+
+dagfuncs.Intl = Intl;
+
+// used in format_by_row (tips and tricks)
+dagfuncs.FormatNumbersByRow = function(params) {
+    if (params.data["Val ID"] == "Hours") {
+        return Intl.NumberFormat("en-US").format(params.value);
+    }
+    if (params.data["Val ID"] == "Value") {
+        return Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "USD",
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+          }).format(params.value);
+    }
+}
+
+
+
+
+
+
+
 dagfuncs.dynamicOptions = function (params, options) {
     return {values: options[params.data.country]}
 };

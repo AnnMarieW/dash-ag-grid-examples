@@ -339,6 +339,7 @@ tips_and_tricks = [
         - Make a grid with less code  -- by using functions to create a grid with all your favorite features
         - Access data created with a `valueGetter` in a callback
         - Dynamic Select Options- Dropdown options in the "Cities" column change based on the "Country" column.
+        - Formatting numbers by row and conditional editing
     
     """, className="small",
                  ),
