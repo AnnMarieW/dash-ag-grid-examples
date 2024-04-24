@@ -15,11 +15,12 @@ text1 = """
 
 
 ### Overview
-In this tutorial you will learn how to:
+This section contains sample apps to illustrate a variety of topics and address frequently asked questions.
 
-- Make a grid with less code  -- by using functions to create a grid with all your favorite features.
-- Access data created with a `valueGetter` in a callback
-
+- How to make a grid with less code  -- by using functions to create a grid with all your favorite features.
+- How to access data created with a `valueGetter` in a callback
+- How to have different dropdown option in different rows of the same column
+- How to have different value formatters in different rows of the same column
 
 
 
@@ -81,6 +82,21 @@ The JavaScript function receives a dictionary containing countries and their cor
 
 """
 
+text4 = """
+
+## 4. Formatting Cells by Row and Conditional editing
+
+This example demonstrates how to have different [Value Formatters](https://dash.plotly.com/dash-ag-grid/custom-functions-value-formatters) in cells of the same column. It also illustrates how to
+ specify which cells are editable. Additionally, it has the [Undo and Redo Cell Edits](https://dash.plotly.com/dash-ag-grid/undo-redo-edits) feature enabled.
+
+Note the following:
+ - The first column is not editable
+ - The "Year" row is not editable. See [Conditional Editing](https://dash.plotly.com/dash-ag-grid/cell-editing)
+ - The "Hours" row uses a comma for thousands seperator
+ - The "Value" row uses a currency format without decimal places.
+
+"""
+
 
 
 
@@ -94,6 +110,8 @@ layout = html.Div(
         example_app("examples.tips_and_tricks.updating_rowData_with_ValueGetter", make_layout=make_tabs),
         make_md(text3),
         example_app("examples.tips_and_tricks.select_dynamic_options", make_layout=make_tabs),
+        make_md(text4),
+        example_app("examples.tips_and_tricks.format_by_row", make_layout=make_tabs),
         up_next()
     ],
 )
