@@ -77,15 +77,14 @@ if __name__ == "__main__":
 add to a .css file in the /assets folder
 
 ------------------
-
 .priority-1 {
-    background-color: #d8f0d3 !important;
+    background-color: #0074D9 !important;
 }
 .priority-2 {
-    background-color: #f6e3cc !important;
+    background-color: #3D9970 !important;
 }
 .priority-3 {
-    background-color: #f5cccc !important;
+    background-color: #cd0200; !important;
 }
 
 """

@@ -31,3 +31,13 @@ app.layout = dag.AgGrid(
 if __name__ == '__main__':
     app.run(debug=True)
 
+
+"""
+
+Put the following in a .css file in the /assets folder
+------
+
+.range-value {
+    background-color: #3D9970;
+}
+"""

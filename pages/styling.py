@@ -93,8 +93,10 @@ layout = html.Div(
 
         make_md("## Style Rows with a Dropdown Color Picker"),
         example_app("examples.styling.row_color_picker", make_layout=make_tabs),
-        make_md("## Style Rows based on Value of 2 Columns"),
+        make_md("## Style Rows Based on Value of 2 Columns"),
         example_app("examples.styling.style_row_based_on_column", make_layout=make_tabs),
+        make_md("## Style Edited Cells"),
+        example_app("examples.styling.style_edits", make_layout=make_tabs),
 
 
         # make_md("## "),
