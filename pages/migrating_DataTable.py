@@ -40,15 +40,11 @@ text3="""
 
 ### Trigger callbacks on focused cell
 
-Currently, there is no prop in Dash AG Grid to trigger a Dash callback based on which cell is focused (and not clicked).
-The example below is a workaround for apps where it's necessary to trigger a callback when a user navigates around the
- grid with the keyboard.   
+This example shows how to trigger a callback when a user navigates around the grid with the keyboard.   
 
-A clientside callback adds an event listener to the grid, so that when the cell is  focused, it triggers a click on the
- focused cell. This works, but it is not an ideal solution since the grid will   respond as if the user clicked a cell. 
-   This could be an issue in certain cases, such as when "one click editing" is    enabled in the grid, or if you have
-    buttons in the grid that would get triggered just because a user navigates to (or over) the cell with the button.
-    
+A clientside callback adds an event listener to the grid.  When the cell is focused, it uses `setProps` to update
+ the `data` property in the `dcc.Store` component. For more information see the Dash docs [Clientside Callbacks ](https://dash.plotly.com/clientside-callbacks#set-props) section.
+   
 
 Try navigating by either clicking on the cells or using the keyboard arrow keys:
 """
@@ -172,7 +168,7 @@ layout = html.Div(
         make_md(text2),
         example_app("examples.DataTable.cell_clicked", make_layout=make_tabs),
         make_md(text3),
-        example_app("examples.DataTable.active_cell", make_layout=make_tabs),
+        example_app("examples.DataTable.focused_cell", make_layout=make_tabs),
         up_next(next)
     ],
 )
