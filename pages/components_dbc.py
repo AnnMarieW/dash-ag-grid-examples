@@ -35,6 +35,22 @@ text4="""
 
 """
 
+
+text5="""
+## dbc.DropdownMenu
+
+The trick to making this work is to add some CSS so that when the button is clicked, the focused row has a
+lower z-index, which makes the menu visible. 
+
+Place this in a `.css` file in the `assets` folder
+```
+.ag-row-focus {
+    z-index: 999;
+}
+```
+
+"""
+
 next  =f'<dccLink href="{links.get_started_V31}" children="Getting Started with Dash AG Grid V31" />'
 
 layout = html.Div(
@@ -47,6 +63,8 @@ layout = html.Div(
         example_app("examples.components.cell_renderer_dbc_spinner", make_layout=make_tabs),
         make_md(text4),
         example_app("examples.components.dbc_switch", make_layout=make_tabs),
+        make_md(text5),
+        example_app("examples.components.dbc_dropdownmenu", make_layout=make_tabs),
         up_next()
     ],
 )

@@ -2,6 +2,19 @@ var dagcomponentfuncs = (window.dashAgGridComponentFunctions =
     window.dashAgGridComponentFunctions || {});
 
 
+// DBC DropdownMenu
+dagcomponentfuncs.DropdownLinks = function (props) {
+    return  React.createElement(
+        window.dash_bootstrap_components.DropdownMenu,
+        {label: props.value},
+        [
+          React.createElement(window.dash_bootstrap_components.DropdownMenuItem, { href: "#/action-1"}, "Item 1"),
+          React.createElement(window.dash_bootstrap_components.DropdownMenuItem, { href: "#/action-2" }, "Item 2"),
+          React.createElement(window.dash_bootstrap_components.DropdownMenuItem, { href: "#/action-3"}, "Item 3")
+        ]
+      )
+};
+
 // DMC RadioGroup component
 dagcomponentfuncs.DMC_RadioGroup = function (props) {
     const { setData, value } = props;

@@ -25,3 +25,9 @@ flash .ag-theme-alpine,
 .flash .ag-theme-alpine-dark {
   --ag-value-change-value-highlight-background-color: #cc222244;
 }
+
+
+/* for dbc.DropdownMenu - makes the menu visible when button is clicked */
+.ag-row-focus {
+    z-index: 999;
+}

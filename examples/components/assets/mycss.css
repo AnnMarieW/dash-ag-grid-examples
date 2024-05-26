@@ -1,0 +1,6 @@
+
+/* for dbc.DropdownMenu - makes the menu visible when button is clicked */
+
+.ag-row-focus {
+    z-index: 999;
+}

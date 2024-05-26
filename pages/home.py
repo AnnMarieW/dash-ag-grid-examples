@@ -197,6 +197,7 @@ dbc_components = [
         - `dbc.Progress`
         - `dbc.Switch`   
         - `dbc.Spinner`
+        - `dbc.DropdownMenu`
         """,
         className="small",
     ),
