@@ -6,7 +6,7 @@ from utils.other_components import  up_next, make_md, make_feature_card, make_im
 import utils.links as links
 
 register_page(
-    __name__, description=app_description, title="Dash AG Grid Examples: Tips & Tricsk", path=links.tips_and_tricks
+    __name__, description=app_description, title="Dash AG Grid Examples: Tips & Tricks", path=links.tips_and_tricks
 )
 
 
