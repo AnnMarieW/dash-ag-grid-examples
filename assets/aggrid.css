@@ -1,3 +1,7 @@
+/* used with markdown component in cells (dcc.Markdown mathjax) */
+.markdown p {
+   margin: 0
+}
 
 /* used in the styling/row_color_picker */
 .priority-1 {

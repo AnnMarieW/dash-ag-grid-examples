@@ -219,6 +219,7 @@ dcc_components = [
         - `dcc.Clipboard` - copy row
         - `dcc.Graph` - Figure in Tooltip
         - `dcc.Markdown` - Markdown text in a Tooltip
+        - `dcc.Markdown` - Markdown with MathJax
         - `dcc.RadioItems` - Custom Filter in header
         
         """,

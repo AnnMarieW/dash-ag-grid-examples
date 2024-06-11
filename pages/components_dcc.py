@@ -40,6 +40,13 @@ text4 = """
 __Try hovering over the Company column!__
 """
 
+
+text4b = """
+### dcc.Markdown with MathJax
+
+"""
+
+
 text5 = """
 ## `dcc.RadioItems` as a custom filter component in header
 
@@ -61,6 +68,8 @@ layout = html.Div(
         example_app("examples.components.dcc_graph_in_tooltip", make_layout=make_tabs),
         make_md(text4),
         example_app("examples.components.dcc_markdown_in_tooltip", make_layout=make_tabs),
+        make_md(text4b),
+        example_app("examples.components.dcc_markdown_mathjax", make_layout=make_tabs),
         make_md(text5),
         example_app("examples.components.dcc_radioitems_header", make_layout=make_tabs),
         up_next()

@@ -22,7 +22,7 @@ columnDefs = [
     {
         "field": "company",
         "tooltipField": "company_md",
-        "tooltipComponent": "CustomTooltipMarkdown",
+        "tooltipComponent": "DccMarkdown",
         "tooltipComponentParams": {
             "style": {
                 "backgroundColor": "grey",
@@ -63,7 +63,7 @@ Put the following in the dashAgGridComponentFunctions.js file in the assets fold
 var dagcomponentfuncs = window.dashAgGridComponentFunctions = window.dashAgGridComponentFunctions || {};
 
 
-dagcomponentfuncs.CustomTooltipMarkdown = function (props) {
+dagcomponentfuncs.DccMarkdown = function (props) {
     return React.createElement(
         window.dash_core_components.Markdown, {
             children: props.value,

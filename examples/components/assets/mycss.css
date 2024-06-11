@@ -4,3 +4,7 @@
 .ag-row-focus {
     z-index: 999;
 }
+
+.markdown p {
+   margin: 0
+}

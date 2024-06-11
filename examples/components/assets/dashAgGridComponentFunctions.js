@@ -66,8 +66,7 @@ dagcomponentfuncs.CustomTooltipImage = function (props) {
 };
 
 
-
-dagcomponentfuncs.CustomTooltipMarkdown = function (props) {
+dagcomponentfuncs.DccMarkdown = function (props) {
     return React.createElement(
         window.dash_core_components.Markdown, {
             children: props.value,
@@ -78,6 +77,7 @@ dagcomponentfuncs.CustomTooltipMarkdown = function (props) {
             mathjax: props.mathjax
         })
 };
+
 
 
 
