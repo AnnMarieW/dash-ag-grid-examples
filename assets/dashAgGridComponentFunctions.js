@@ -4,15 +4,15 @@ var dagcomponentfuncs = (window.dashAgGridComponentFunctions =
 
 // DBC DropdownMenu
 dagcomponentfuncs.DropdownLinks = function (props) {
-    return  React.createElement(
+    return React.createElement(
         window.dash_bootstrap_components.DropdownMenu,
-        {label: props.value},
+        { label: props.value },
         [
-          React.createElement(window.dash_bootstrap_components.DropdownMenuItem, { href: "#/action-1"}, "Item 1"),
-          React.createElement(window.dash_bootstrap_components.DropdownMenuItem, { href: "#/action-2" }, "Item 2"),
-          React.createElement(window.dash_bootstrap_components.DropdownMenuItem, { href: "#/action-3"}, "Item 3")
+            React.createElement(window.dash_bootstrap_components.DropdownMenuItem, { href: "#/action-1" }, "Item 1"),
+            React.createElement(window.dash_bootstrap_components.DropdownMenuItem, { href: "#/action-2" }, "Item 2"),
+            React.createElement(window.dash_bootstrap_components.DropdownMenuItem, { href: "#/action-3" }, "Item 3")
         ]
-      )
+    )
 };
 
 // DMC RadioGroup component
@@ -48,31 +48,31 @@ dagcomponentfuncs.DMC_RadioGroup = function (props) {
 
 
 dagcomponentfuncs.CustomTooltipImage = function (props) {
-  return React.createElement(
-    'img',
-    {
-      style: props.style || {
-        width: '100%',
-        maxWidth: '400px',
-        height: 'auto',
-        border: '2px solid grey',
-        pointerEvents: 'none',
-      },
-      src: props.value
-    },
-  );
+    return React.createElement(
+        'img',
+        {
+            style: props.style || {
+                width: '100%',
+                maxWidth: '400px',
+                height: 'auto',
+                border: '2px solid grey',
+                pointerEvents: 'none',
+            },
+            src: props.value
+        },
+    );
 };
 
 
 // used in the V31 tutorial
 dagcomponentfuncs.CompanyLogoRenderer = function (props) {
-  var url = "https://www.ag-grid.com/example-assets/space-company-logos/" + props.value.toLowerCase() + ".png";
-  return React.createElement(
-    "span",
-    null,
-    React.createElement("img", { src: url, style: { width: "25px", height: "auto", filter: "brightness(1.1)" } }),
-    React.createElement("span", { style: { paddingLeft: "4px" } }, props.value)
-  );
+    var url = "https://www.ag-grid.com/example-assets/space-company-logos/" + props.value.toLowerCase() + ".png";
+    return React.createElement(
+        "span",
+        null,
+        React.createElement("img", { src: url, style: { width: "25px", height: "auto", filter: "brightness(1.1)" } }),
+        React.createElement("span", { style: { paddingLeft: "4px" } }, props.value)
+    );
 }
 
 
@@ -100,72 +100,72 @@ dagcomponentfuncs.DBC_Spinner = function (props) {
 
 // dcc.Clipboard - copy cell
 dagcomponentfuncs.DCC_Clipboard = function (props) {
-  return React.createElement("div", {}, [
-    props.value,
-    React.createElement(window.dash_core_components.Clipboard, {
-      content: props.value,
-      title: "Copy cell",
-      style: {
-        display: "inline-block",
-        verticalAlign: "top",
-        paddingLeft: 10,
-        cursor: "pointer",
-      },
-      setProps: () => {},
-    }),
-  ]);
+    return React.createElement("div", {}, [
+        props.value,
+        React.createElement(window.dash_core_components.Clipboard, {
+            content: props.value,
+            title: "Copy cell",
+            style: {
+                display: "inline-block",
+                verticalAlign: "top",
+                paddingLeft: 10,
+                cursor: "pointer",
+            },
+            setProps: () => { },
+        }),
+    ]);
 };
 
 // dcc.Clipboard copy row
 dagcomponentfuncs.CopyRow = function (props) {
-  return React.createElement("div", {}, [
-    React.createElement(window.dash_core_components.Clipboard, {
-      content: JSON.stringify(props.data),
-      title: "Copy Row",
-      style: {
-        display: "inline-block",
-        verticalAlign: "top",
-        paddingLeft: 3,
-        cursor: "pointer",
-      },
-      setProps: () => {},
-    }),
-  ]);
+    return React.createElement("div", {}, [
+        React.createElement(window.dash_core_components.Clipboard, {
+            content: JSON.stringify(props.data),
+            title: "Copy Row",
+            style: {
+                display: "inline-block",
+                verticalAlign: "top",
+                paddingLeft: 3,
+                cursor: "pointer",
+            },
+            setProps: () => { },
+        }),
+    ]);
 };
 
 
 dagcomponentfuncs.CustomTooltipGraph = function (props) {
     return React.createElement(
         window.dash_core_components.Graph, {
-            figure: props.value,
-        })
+        figure: props.value,
+    })
 };
 
 
 dagcomponentfuncs.CustomTooltipImage = function (props) {
-  return React.createElement('img', {
-    style: props.style || {
-      width: '100%',
-      maxWidth: '400px',
-      height: 'auto',
-      border: '2px solid grey',
-      pointerEvents: 'none',
-    },
-    src: props.value,
-  });
+    return React.createElement('img', {
+        style: props.style || {
+            width: '100%',
+            maxWidth: '400px',
+            height: 'auto',
+            border: '2px solid grey',
+            pointerEvents: 'none',
+        },
+        src: props.value,
+    });
 };
 
 
 dagcomponentfuncs.DccMarkdown = function (props) {
     return React.createElement(
         window.dash_core_components.Markdown, {
-            children: props.value,
-            className: props.className,
-            style: props.style,
-            dangerously_allow_html : props.dangerously_allow_html | false,
-            link_target: props.link_target,
-            mathjax: props.mathjax
-        })
+        children: props.value,
+        className: props.className,
+        style: props.style,
+        dangerously_allow_html: props.dangerously_allow_html | false,
+        link_target: props.link_target,
+        mathjax: props.mathjax
+    })
 };
 
 
@@ -173,11 +173,11 @@ dagcomponentfuncs.DccMarkdown = function (props) {
 
 // custom component to display boolean data as a DBC Switch
 dagcomponentfuncs.DBC_Switch = function (props) {
-    const {setData, value} = props;
+    const { setData, value } = props;
 
     // updated the dbc component
-    setProps = ({value}) => {
-       // update the grid
+    setProps = ({ value }) => {
+        // update the grid
         props.node.setDataValue(props.column.colId, value);
         // update to trigger a dash callback
         setData(value)
@@ -185,24 +185,24 @@ dagcomponentfuncs.DBC_Switch = function (props) {
 
     return React.createElement(
         window.dash_bootstrap_components.Switch, {
-            value: value,
-            checked: value,
-            setProps,
-            style: {"paddingTop": 6},
-        }
+        value: value,
+        checked: value,
+        setProps,
+        style: { "paddingTop": 6 },
+    }
     )
 };
 
 dagcomponentfuncs.FlagsCellRenderer = function (props) {
 
-   // for more info see https://flagpedia.net/
+    // for more info see https://flagpedia.net/
     const url = `https://flagcdn.com/h20/${props.data.country_code}.png`;
 
     return React.createElement('span', {}, [
         React.createElement(
             'img',
             {
-                style: {height: '10px'},
+                style: { height: '10px' },
                 src: url
             },
 
@@ -210,7 +210,7 @@ dagcomponentfuncs.FlagsCellRenderer = function (props) {
         React.createElement(
             'span',
             {
-                style: {paddingLeft: '4px'},
+                style: { paddingLeft: '4px' },
             },
             props.value
         ),
@@ -220,20 +220,20 @@ dagcomponentfuncs.FlagsCellRenderer = function (props) {
 
 // used in the html I example to show adding icons to a header tooltip
 dagcomponentfuncs.CustomHeaderTooltip = function (props) {
-  return React.createElement(
-    "span",
-    { className: "p-2 bg-secondary text-white" },
-    [
-      React.createElement("i", { className: "fa-solid fa-medal p-2" }),
-      React.createElement("span", null, `${props.value} medal`),
-    ]
-  );
+    return React.createElement(
+        "span",
+        { className: "p-2 bg-secondary text-white" },
+        [
+            React.createElement("i", { className: "fa-solid fa-medal p-2" }),
+            React.createElement("span", null, `${props.value} medal`),
+        ]
+    );
 }
 
 
 dagcomponentfuncs.DeleteButton = function (props) {
     function onClick() {
-          props.api.applyTransaction({ remove: [props.node.data] })
+        props.api.applyTransaction({ remove: [props.node.data] })
     }
     return React.createElement(
         'div',
@@ -249,7 +249,7 @@ dagcomponentfuncs.DeleteButton = function (props) {
             'button',
             {
                 onClick,
-                style: {borderWidth: '1px', height: '95%'},
+                style: { borderWidth: '1px', height: '95%' },
             },
             "X"
         )
@@ -260,22 +260,22 @@ dagcomponentfuncs.DeleteButton = function (props) {
 
 // adds a right aligned icon to a cell
 dagcomponentfuncs.cellEditorIcon = function (props) {
-  return React.createElement(
-    'span',
-    {
-      style: {
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        alignItems: 'center',
-      },
-    },
-    props.value,
-    React.createElement('i', {
-      className: props.icon,
-      style: { marginLeft: 'auto' },
-    })
-  );
+    return React.createElement(
+        'span',
+        {
+            style: {
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                alignItems: 'center',
+            },
+        },
+        props.value,
+        React.createElement('i', {
+            className: props.icon,
+            style: { marginLeft: 'auto' },
+        })
+    );
 }
 
 
@@ -285,14 +285,14 @@ dagcomponentfuncs.cellEditorIcon = function (props) {
 dagcomponentfuncs.StockLink = function (props) {
     return React.createElement(
         'a',
-        {href: 'https://finance.yahoo.com/quote/' + props.value},
+        { href: 'https://finance.yahoo.com/quote/' + props.value },
         props.value
     );
 };
 
 // Simple html.Button
 dagcomponentfuncs.Button = function (props) {
-    const {setData, data} = props;
+    const { setData, data } = props;
 
     function onClick() {
         setData();
@@ -310,7 +310,7 @@ dagcomponentfuncs.Button = function (props) {
 
 // Simple dbc.Button
 dagcomponentfuncs.DBC_Button_Simple = function (props) {
-    const {setData, data} = props;
+    const { setData, data } = props;
 
     function onClick() {
         setData();
@@ -328,7 +328,7 @@ dagcomponentfuncs.DBC_Button_Simple = function (props) {
 
 // Custom  HTML select component
 dagcomponentfuncs.Dropdown = function (props) {
-    const {setData, data} = props;
+    const { setData, data } = props;
 
     function selectionHandler() {
         // update data in the grid
@@ -340,14 +340,14 @@ dagcomponentfuncs.Dropdown = function (props) {
     }
 
     const options = props.colDef.cellRendererParams.values.map((opt) =>
-        React.createElement('option', {value: opt}, opt)
+        React.createElement('option', { value: opt }, opt)
     );
     return React.createElement(
         'select',
         {
             value: props.value,
             onChange: selectionHandler,
-            style: {padding: 10},
+            style: { padding: 10 },
         },
         options
     );
@@ -355,7 +355,7 @@ dagcomponentfuncs.Dropdown = function (props) {
 
 // custom component to display boolean data as a checkbox
 dagcomponentfuncs.Checkbox = function (props) {
-    const {setData, data} = props;
+    const { setData, data } = props;
 
     function onClick() {
         if (!('checked' in event.target)) {
@@ -376,12 +376,12 @@ dagcomponentfuncs.Checkbox = function (props) {
 
     return React.createElement(
         'div',
-        {onClick: onClick},
+        { onClick: onClick },
         React.createElement('input', {
             type: 'checkbox',
             checked: props.value,
             onChange: checkedHandler,
-            style: {cursor: 'pointer'},
+            style: { cursor: 'pointer' },
         })
     );
 };
@@ -424,7 +424,7 @@ dagcomponentfuncs.Tags = function (props) {
 
 // custom html img component to display an image thumbnail in the grid
 dagcomponentfuncs.ImgThumbnail = function (props) {
-    const {setData, data} = props;
+    const { setData, data } = props;
 
     function onClick() {
         setData(props.value);
@@ -442,7 +442,7 @@ dagcomponentfuncs.ImgThumbnail = function (props) {
         },
         React.createElement('img', {
             onClick: onClick,
-            style: {width: '100%', height: 'auto'},
+            style: { width: '100%', height: 'auto' },
             src: props.value,
         })
     );
@@ -450,7 +450,7 @@ dagcomponentfuncs.ImgThumbnail = function (props) {
 
 // Custom button that when clicked updates other columns in the grid
 dagcomponentfuncs.CustomButton = function (props) {
-    const {setData, data} = props;
+    const { setData, data } = props;
 
     function onClick() {
         // update data in the grid
@@ -461,7 +461,7 @@ dagcomponentfuncs.CustomButton = function (props) {
         // Update the dropdown value based on which button was clicked
         props.node.setDataValue('action', colId);
         // update cellRendererData prop so it can be used to trigger a callback - include n_clicks
-        setData({n_clicks: newData['n_clicks']});
+        setData({ n_clicks: newData['n_clicks'] });
     }
 
     return React.createElement(
@@ -500,18 +500,18 @@ dagcomponentfuncs.MoodRenderer = function (props) {
         'https://www.ag-grid.com/example-assets/smileys/' +
         (props.value === 'Happy' ? 'happy.png' : 'sad.png');
 
-    return React.createElement('img', {src: imgForMood, width: '20px'});
+    return React.createElement('img', { src: imgForMood, width: '20px' });
 };
 
 dagcomponentfuncs.GenderRenderer = function (props) {
     const image = props.value === 'Male' ? 'male.png' : 'female.png';
     const imageSource = `https://www.ag-grid.com/example-assets/genders/${image}`;
-    return React.createElement('img', {src: imageSource, width: '20px'});
+    return React.createElement('img', { src: imageSource, width: '20px' });
 };
 
 // use for adding a dcc.Graph to the grid with clickData available in a callback
 dagcomponentfuncs.DCC_GraphClickData = function (props) {
-    const {setData} = props;
+    const { setData } = props;
 
     function setProps() {
         const graphProps = arguments[0];
@@ -523,8 +523,8 @@ dagcomponentfuncs.DCC_GraphClickData = function (props) {
     return React.createElement(window.dash_core_components.Graph, {
         figure: props.value,
         setProps,
-        style: {height: '100%'},
-        config: {displayModeBar: false},
+        style: { height: '100%' },
+        config: { displayModeBar: false },
     });
 };
 
@@ -532,14 +532,14 @@ dagcomponentfuncs.DCC_GraphClickData = function (props) {
 dagcomponentfuncs.DCC_Graph = function (props) {
     return React.createElement(window.dash_core_components.Graph, {
         figure: props.value,
-        style: {height: '100%'},
-        config: {displayModeBar: false},
+        style: { height: '100%' },
+        config: { displayModeBar: false },
     });
 };
 
 // use for making dbc.Button with FontAwesome or Bootstrap icons
 dagcomponentfuncs.DBC_Button = function (props) {
-    const {setData, data} = props;
+    const { setData, data } = props;
 
     function onClick() {
         setData();
@@ -586,7 +586,7 @@ dagcomponentfuncs.DBC_Button = function (props) {
 
 // use for making dbc.Progress
 dagcomponentfuncs.DBC_Progress = function (props) {
-    const {setData, data} = props;
+    const { setData, data } = props;
 
     function onClick() {
         setData(props.value);
@@ -612,7 +612,7 @@ dagcomponentfuncs.DBC_Progress = function (props) {
 
 // use for making dmc.Button with DashIconify icons
 dagcomponentfuncs.DMC_Button = function (props) {
-    const {setData, data} = props;
+    const { setData, data } = props;
 
     function onClick() {
         setData();
@@ -700,8 +700,8 @@ dagcomponentfuncs.ShowCellRenderer = function (props) {
     let children;
     if (props.value) {
         children = [
-            React.createElement('div', {className: 'show-name'}, props.value.name),
-            React.createElement('div', {className: 'show-presenter'}, props.value.presenter),
+            React.createElement('div', { className: 'show-name' }, props.value.name),
+            React.createElement('div', { className: 'show-presenter' }, props.value.presenter),
         ]
     }
     return React.createElement('div', null, children)
@@ -716,14 +716,35 @@ dagcomponentfuncs.CustomCellRenderer = function (props) {
         props.registerRowDragger(myRef.current, props.startDragPixels);
     });
 
-    return React.createElement('div', {className: 'my-custom-cell-renderer'},
+    return React.createElement('div', { className: 'my-custom-cell-renderer' },
         [
-            React.createElement('div', {className: 'athlete-info'}, [
+            React.createElement('div', { className: 'athlete-info' }, [
                 React.createElement('span', null, props.data.athlete),
                 React.createElement('span', null, props.data.country),
             ]),
             React.createElement('span', null, props.data.year),
-            React.createElement('i', {className: 'fas fa-arrows-alt-v', ref: myRef})
+            React.createElement('i', { className: 'fas fa-arrows-alt-v', ref: myRef })
         ]
+    );
+};
+
+// Barcode generator
+dagcomponentfuncs.ValueToBarcode = function (props) {
+    const { value } = props;
+
+    const canvas = document.createElement('canvas');
+    JsBarcode(canvas, value, {
+        format: "CODE128",
+        displayValue: true,
+    });
+
+    const barcodeDataUrl = canvas.toDataURL();
+
+    return React.createElement(
+        'img',
+        {
+            src: barcodeDataUrl,
+            style: { width: '100%', height: '95%' },
+        }
     );
 };

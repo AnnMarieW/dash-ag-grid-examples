@@ -1,4 +1,3 @@
-
 import dash
 from dash import Dash, html, dcc, Input, Output, State, clientside_callback
 import dash_bootstrap_components as dbc
@@ -19,13 +18,18 @@ dark_hljs = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/s
 dbc_css = "https://cdn.jsdelivr.net/gh/AnnMarieW/dash-bootstrap-templates/dbc.min.css"
 
 # for the custom datepicker example
-jquery_external_scripts=[
-        "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js",
-        "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js",
-    ]
-jquery_external_stylesheets=[
-        "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
-    ]
+jquery_external_scripts = [
+    "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js",
+]
+jquery_external_stylesheets = [
+    "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+]
+
+# .js for custom html components - barcodes
+js_custom_html_barcodes = [
+    "https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"
+]
 
 dbc_css = "https://cdn.jsdelivr.net/gh/AnnMarieW/dash-bootstrap-templates/dbc.min.css"
 app = Dash(
@@ -37,9 +41,10 @@ app = Dash(
         dbc.icons.FONT_AWESOME,
         dbc_css,
         dark_hljs,
-    ] + jquery_external_stylesheets,
+    ]
+    + jquery_external_stylesheets,
     suppress_callback_exceptions=True,
-    external_scripts=jquery_external_scripts,
+    external_scripts=jquery_external_scripts + js_custom_html_barcodes,
 )
 
 
@@ -55,10 +60,8 @@ app.layout = html.Div(
     [
         navbar,
         dbc.Container(dash.page_container, className="p-2"),
-
     ],
     className="mb-4 dbc dbc-ag-grid",
-
 )
 
 
@@ -77,4 +80,4 @@ clientside_callback(
 
 
 if __name__ == "__main__":
-    app.run_server(debug=False)
+    app.run_server(debug=True)

@@ -1,12 +1,15 @@
-from dash import  html, dcc, register_page
+from dash import html, dcc, register_page
 import dash_bootstrap_components as dbc
 from utils.code_and_show import example_app, make_tabs, make_app_first
 from utils.utils import app_description
-from utils.other_components import  up_next, make_md, make_feature_card, make_img_card
+from utils.other_components import up_next, make_md, make_feature_card, make_img_card
 import utils.links as links
 
 register_page(
-    __name__, description=app_description, title="Dash AG Grid Examples: html components", path=links.components_html
+    __name__,
+    description=app_description,
+    title="Dash AG Grid Examples: html components",
+    path=links.components_html,
 )
 
 
@@ -61,29 +64,36 @@ This example shows how to add a delete button in each row.  For more information
 
 """
 
-text4="""
+text4 = """
 ## Upload image files and display them in a tooltip
 
 """
 
+text5 = """
+## Barcodes (HTML `canvas` component + HTML `img` component)
+
+"""
 
 
-
-next  =f'<dccLink href="{links.get_started_V31}" children="Getting Started with Dash AG Grid V31" />'
+next = f'<dccLink href="{links.get_started_V31}" children="Getting Started with Dash AG Grid V31" />'
 
 layout = html.Div(
     [
         make_md(text1),
         example_app("examples.components.html_img_flags", make_layout=make_tabs),
-         make_md(text2),
+        make_md(text2),
         example_app("examples.components.html_i_tooltip_header", make_layout=make_tabs),
         make_md(text2b),
         example_app("examples.components.html_i_cell_editor", make_layout=make_tabs),
         make_md(text3),
-        example_app("examples.components.html_button_delete_rows", make_layout=make_tabs),
+        example_app(
+            "examples.components.html_button_delete_rows", make_layout=make_tabs
+        ),
         make_md(text4),
         example_app("examples.components.html_img_upload", make_layout=make_tabs),
         make_feature_card(links.upload_image_files_tooltip_gif, "## After upload"),
-        up_next()
+        make_md(text5),
+        example_app("examples.components.html_barcodes", make_layout=make_tabs),
+        up_next(),
     ],
 )
